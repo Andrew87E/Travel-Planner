@@ -1,0 +1,28 @@
+.navbar {
+  background: #5c5c5c; 
+  overflow: hidden;
+  a {
+    float: right;
+    display: block;
+    color: #02fe73;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    height: 100%;
+    &:hover {
+      background-color: #a8ff36;
+      color: black;
+    }
+    &:active {
+      background-color: #01004e;
+      color: #02fe73;
+    }
+    .icon {
+      float: left;
+      display: none;
+    }
+  }
+}
+
+
