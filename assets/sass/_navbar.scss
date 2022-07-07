@@ -1,28 +1,22 @@
-.navbar {
-  background: #5c5c5c; 
-  overflow: hidden;
+@import "./variables";
+
+.navbar-item {
+  color: #4a4a4a !important;
+}
+span.icon {
+  z-index: 1000;
+}
+input {
+  z-index: 1;
+}
+
+.ae-nav {
+  background-color: $white-sand;
   a {
-    float: right;
-    display: block;
-    color: #02fe73;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    height: 100%;
+    color: $med-blue;
     &:hover {
-      background-color: #a8ff36;
-      color: black;
-    }
-    &:active {
-      background-color: #01004e;
-      color: #02fe73;
-    }
-    .icon {
-      float: left;
-      display: none;
+      color: $neon-grass;
+      background-color: $sandy;
     }
   }
 }
-
-
