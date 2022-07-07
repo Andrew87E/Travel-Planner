@@ -20,6 +20,11 @@ var milesPerGallon= document.querySelector('user input from form');
 // take miles distance from Google API
 var milesToDrive= fetch();
 // take price per gallon from fuel API
+var fuelTypeSel = document.querySelector('button')
+var fuelType = function(event){
+    
+};
+
 var pricePerGallon = function(event){
    event.target.getAttribute('fuel-type');
 };
@@ -100,3 +105,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+fuelType.addEventListener('click', fuelType);
