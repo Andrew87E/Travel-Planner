@@ -1,72 +1,16 @@
-
-
 /* all media queries */
 /* at a width of 768px or lower hamburger menu appears and cards become stacked */
 @media screen and (max-width: 768px) {
-    .card {
-      width: 90%;
-    }
-    .navbar a:not(:first-child) {display: none;}
-  
-    .navbar a.icon {
-      float: right;
-      display: block;
-    }
-    .navbar.responsive {position: relative;}
-  
-    .navbar.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .navbar.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-  
-    .section2 .sec2addr {
-          font-size: 14px;
-      }
-      .section2 .sec2contactform h3 {
-          font-size: 16px;
-      }
-      .section2 .sec2contactform input[type="text"], .section2 .sec2contactform input[type="email"], .section2 .sec2contactform textarea {
-          padding: 10px;
-          margin:3px 0;
-      }
-      .section2 .sec2contactform input[type="submit"] {
-          padding: 10px 30px;
-          font-size: 14px;
-      }
+
   }
   
   @media only screen and (max-width: 1266px) {
-      .section2 {
-          width: 100%;
-      }
+
   }
   @media only screen and (max-width: 960px) {
-      .container {
-          padding: 0 30px 70px;
-      }
-      .section2 .col2 {
-          width: 100%;
-          display: block;
-      }
-      .section2 .col2.first {
-          margin-bottom: 10px;
-      }
-      .section2 .col2.column2 {
-          padding: 0;
-      }
-      body .sec2map {
-          height: 250px !important;
-      }
+
   }
   
   @media only screen and (max-width: 420px) {
-      .section1 h1 {
-          font-size: 28px;
-      }	
+
   }
