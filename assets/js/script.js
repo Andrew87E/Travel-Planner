@@ -20,22 +20,22 @@ fetch('https://priceline-com-provider.p.rapidapi.com/v1/flights/search?itinerary
     console.log(data);
   });
 
-// API call to gas
-const gasOptions = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b',
-    'X-RapidAPI-Host': 'gas-price.p.rapidapi.com'
-  }
-};
+// API call to gas for national average price data
+// const gasOptions = {
+//   method: 'GET',
+//   headers: {
+//     'X-RapidAPI-Key': '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b',
+//     'X-RapidAPI-Host': 'gas-price.p.rapidapi.com'
+//   }
+// };
 
-fetch('https://gas-price.p.rapidapi.com/stateUsaPrice?state=national', options)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data){
-    console.log(data);
-  });
+// fetch('https://gas-price.p.rapidapi.com/stateUsaPrice?state=national', gasOptions)
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(data){
+//     console.log(data);
+//   });
 
 
 // navbar burger menu
