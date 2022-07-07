@@ -16,7 +16,7 @@ function burgerMenu() {
 
 //   Display fuel prices for user input
 // take input from form for mpg 
-var milesPerGallon= document.querySelector('user input from form');
+var milesPerGallon= document.querySelector('user input from form'); 
 // take miles distance from Google API
 var milesToDrive= fetch();
 // take price per gallon from fuel API
@@ -34,3 +34,4 @@ var tripFuelCost= (pricePerGallon*milesToDrive)*milesPerGallon
 tripFuelCost*(function(event){
     event.target.getAttribute('round trip or one way')
 });
+
