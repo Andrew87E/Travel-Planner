@@ -4438,7 +4438,7 @@ button.dropdown-item.is-active {
   flex-direction: column;
   max-height: calc(100vh - 40px);
   overflow: hidden;
-  -ms-overflow-y: visible;
+  /* -ms-overflow-y: visible; */
 }
 
 .modal-card-head,
@@ -10406,4 +10406,15 @@ input {
 .ae-nav a:hover {
   color: #13E800;
   background-color: #e7d9cc;
+}
+
+/* Color Theme Swatches in Hex */
+.ae-hero {
+  height: 800px;
+  background-image: url(../img/QtIqKV.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: -webkit-sticky;
+  position: sticky;
 }/*# sourceMappingURL=style.css.map */
