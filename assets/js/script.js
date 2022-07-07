@@ -5,14 +5,7 @@ var baAPI = '340f1157912d4ff6b27b91b2e968995f1c3a7802';
 
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function burgerMenu() {
-    var x = document.getElementById("myNavbar");
-    if (x.className === "navbar") {
-      x.className += " responsive";
-    } else {
-      x.className = "navbar";
-    }
-  }  
+
 
 //   Display fuel prices for user input
 // take input from form for mpg 
@@ -25,19 +18,16 @@ var milesToDrive= fetch();
 var fuelTypeReg = document.querySelector('fuel-reg-btn');
 var fuelTypePrem= document.querySelector('fuel-prem-btn');
 var fuelTypeDiesel= document.querySelector('fuel-diesel-btn');
-var fuelType = function(event){
-    if (fuelTypeReg){
+var fuelType = function(){
+    if (document.getElementById('fuel-reg-btn').value){
         ('gasoline'*milesPerGallon)%milesToDrive
     } 
-    else if (fuelTypePrem) { ('premium'*milesPerGallon)%milesPerGallon
+    else if (document.getElementById('fuel-prem-btn').value) { ('premium'*milesToDrive)%milesPerGallon
 
     }
-    else if (fuelTypeDiesel){
-        ('diesel'*milesPerGallon)%milesPerGallon
-    };
-        
-
-};
+    else if (document.getElementById('fuel-diesel-btn').value){
+        ('diesel'*milesToDrive)%milesPerGallon
+    }return(tripFuelCost)};
 
 
 //   show results for different fuel types; reg, mid, premium, diesel
@@ -47,9 +37,8 @@ var fuelType = function(event){
     // milesToDrive*(user select for fuel grade)
 // multiply above result by miles traveled
 // user input for round trip or one way
-tripFuelCost*(function(event){
-    event.target.getAttribute('round trip or one way')
-});
+// after user selects round trip runs below function to dounle fuel cost
+var roundTripCost =function(){ tripFuelCost*2};
 
 // This is a test for pushing thru.
 // API Keys
@@ -119,3 +108,4 @@ document.addEventListener("DOMContentLoaded", () => {
 fuelTypeReg.addEventListener('click', fuelType);
 fuelTypePrem.addEventListener('click', fuelType);
 fuelTypeDiesel.addEventListener('click', fuelType);
+roundTrip.addEventListener('click', roundTripCost );
