@@ -1,8 +1,14 @@
 @import "../../node_modules/bulma/bulma.sass";
 @import "./variables";
-@import "./responsive";
 @import "./background";
 @import "./navbar";
 @import "./hero";
+@import "./footer";
+@import "./responsive";
+
+
+.gimme-space {
+  height: 1500px;
+}
 
 
