@@ -16,22 +16,32 @@ function burgerMenu() {
 
 //   Display fuel prices for user input
 // take input from form for mpg 
-var milesPerGallon= document.querySelector('user input from form'); 
+var milesPerGallon= document.querySelector('user-input-form'); 
 // take miles distance from Google API
 var milesToDrive= fetch();
 // take price per gallon from fuel API
-var fuelTypeSel = document.querySelector('button')
+// this function should allow user to select the type of fuel they are going to use and then calculate the prices using the form input for miles per gallon from user form as well as miles to drive from google api
+var fuelTypeReg = document.querySelector('fuel-reg-btn');
+var fuelTypePrem= document.querySelector('fuel-prem-btn');
+var fuelTypeDiesel= document.querySelector('fuel-diesel-btn');
 var fuelType = function(event){
-    
+    if (fuelTypeReg){
+        ('gasoline'*milesPerGallon)%milesToDrive
+    } 
+    else if (fuelTypePrem) { ('premium'*milesPerGallon)%milesPerGallon
+
+    }
+    else if (fuelTypeDiesel){
+        ('diesel'*milesPerGallon)%milesPerGallon
+    };
+        
+
 };
 
-var pricePerGallon = function(event){
-   event.target.getAttribute('fuel-type');
-};
+
 //   show results for different fuel types; reg, mid, premium, diesel
 
 // mulitiply price per gallon against mpg from user
-var tripFuelCost= (pricePerGallon*milesToDrive)*milesPerGallon
 
     // milesToDrive*(user select for fuel grade)
 // multiply above result by miles traveled
@@ -105,4 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-fuelType.addEventListener('click', fuelType);
+fuelTypeReg.addEventListener('click', fuelType);
+fuelTypePrem.addEventListener('click', fuelType);
+fuelTypeDiesel.addEventListener('click', fuelType);
