@@ -1,7 +1,5 @@
-@import './variables';
-@import './navbar';
-@import './responsive';
-
-
-
-
+@import "../../node_modules/bulma/bulma.sass";
+@import "./variables";
+@import "./responsive";
+@import "./background";
+@import "./navbar";

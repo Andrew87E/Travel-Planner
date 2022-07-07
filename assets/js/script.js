@@ -2,17 +2,6 @@
 // API Keys
 // var baGasKey = '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b';
 
-
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function burgerMenu() {
-    var x = document.getElementById("myNavbar");
-    if (x.className === "navbar") {
-      x.className += " responsive";
-    } else {
-      x.className = "navbar";
-    }
-  }
-
 // Api call to priceline for data sorting
 const options = {
 	method: 'GET',
@@ -30,3 +19,33 @@ fetch('https://priceline-com-provider.p.rapidapi.com/v1/flights/search?itinerary
   .then(function (data) {
     console.log(data);
   });
+
+
+
+
+
+// navbar burger menu
+document.addEventListener("DOMContentLoaded", () => {
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(
+    document.querySelectorAll(".navbar-burger"),
+    0
+  );
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach((el) => {
+      el.addEventListener("click", () => {
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle("is-active");
+        $target.classList.toggle("is-active");
+      });
+    });
+  }
+});
+
+
