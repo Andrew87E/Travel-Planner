@@ -20,9 +20,11 @@ input {
 .ae-nav {
   background-color: #F2E4D8;
 }
+
 .ae-nav a {
   color: #157EBF;
 }
+
 .ae-nav a:hover {
   color: #13E800;
   background-color: #e7d9cc;
@@ -51,10 +53,12 @@ input {
   border: 0;
   margin: 0;
 }
+
 .ae-footer a {
   text-decoration: none;
   color: #13E800;
 }
+
 .ae-footer a img {
   height: 128px;
   width: 128px;
@@ -70,56 +74,69 @@ input {
     border-radius: 0;
   }
 }
+
 .gimme-space {
   height: 1500px;
 }
 
 .userInput {
   margin-top: 500px;
-
 }
+
 .userInput input {
   border-radius: 9999px;
   border: 1px solid;
   background-color: #F2E4D8;
   color: #7135F2;
 }
+
 .userInput input:hover {
   border-color: #13E800;
 }
+
 .userInput input:active {
   border: #05DBF2;
 }
+
 .userInput select {
   border-radius: 9999px;
   border: 1px solid;
   background-color: #e7d9cc;
 }
+
 .userInput select:hover {
   border-color: #13E800;
 }
+
 .userInput select:active {
   border: #05DBF2;
 }
+
 .userInput textarea {
   border-radius: 9999px;
   border: 1px solid;
   background-color: #04C4D9;
 }
+
 .userInput textarea:hover {
   border-color: #13E800;
 }
+
 .userInput textarea:active {
   border: #05DBF2;
 }
+
 .userInput button {
   border-radius: 9999px;
   border: 1px solid;
   background-color: #fff;
 }
+
 .userInput button:hover {
   border-color: #13E800;
 }
+
 .userInput button:active {
   border: #05DBF2;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
