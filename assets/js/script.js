@@ -50,6 +50,9 @@ var milesPerGallon = document.querySelector("user-input-form");
 //   .then(function(data){
 //     console.log(data);
 //  for (var i=0; i<data.length; i++);
+  // console.log(data[i].gasoline);
+  // console.log(data[i].premium);
+  // console.log(data[i].diesel);
       // var regGrade=data[i].gasoline;
       // var premGrade=data[i].premium;
       // var dieselFuel=data[i].diesel;
