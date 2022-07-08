@@ -27,11 +27,32 @@ var milesPerGallon= document.querySelector('user-input-form');
 //      .then(function (data) {
 //        console.log(data);
 //      });
-// // for (var i=0; i<data.length; i++)
-        // var milesToDrive = data[i].distance
+// // for (var i=0; i<data.length; i++);
+  // console.log(data[i].distance);
+        // var milesToDrive = data[i].distance;
 // take price per gallon from fuel API
 // this function should allow user to select the type of fuel they are going to use and then calculate the prices using the form input for miles 
 // per gallon from user form as well as miles to drive from google api
+// API call to gas for national average price data
+// const gasOptions = {
+//   method: 'GET',
+//   headers: {
+//     'X-RapidAPI-Key': '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b',
+//     'X-RapidAPI-Host': 'gas-price.p.rapidapi.com'
+//   }
+// };
+
+// fetch('https://gas-price.p.rapidapi.com/stateUsaPrice?state=national', gasOptions)
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(data){
+//     console.log(data);
+// for (var i=0; i<data.lenght; i++);
+    // var regGrade=data[i].gasoline
+    // var premGrade=data[i].premium
+    // var dieselFuel=data[i].diesel
+//   });
 var fuelTypeReg = document.querySelector('fuel-reg-btn');
 var fuelTypePrem= document.querySelector('fuel-prem-btn');
 var fuelTypeDiesel= document.querySelector('fuel-diesel-btn');
@@ -54,7 +75,7 @@ var fuelType = function(){
     // milesToDrive*(user select for fuel grade)
 // multiply above result by miles traveled
 // user input for round trip or one way
-// after user selects round trip runs below function to dounle fuel cost
+// after user selects round trip runs below function to double fuel cost
 var roundTripCost =function(){ tripFuelCost*2};
 
 // This is a test for pushing thru.
