@@ -1,0 +1,23 @@
+
+@import './variables';
+
+
+
+.ae-footer {
+  background-image: url(../img/footer-background-01.jpg);
+  @include background;
+  color: $beauty-blue;
+  position: relative;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: $neon-grass;
+    img {
+      height: 128px;
+      width: 128px;
+      border-radius: 9999px;
+    }
+  }
+}

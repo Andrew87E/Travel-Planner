@@ -1,5 +1,34 @@
-@import "../../node_modules/bulma/bulma.sass";
 @import "./variables";
-@import "./responsive";
 @import "./background";
 @import "./navbar";
+@import "./hero";
+@import "./footer";
+@import "./responsive";
+
+.gimme-space {
+  height: 1500px;
+}
+
+.userInput {
+
+  // margin-top: 500px;
+  margin-top: 500px;
+
+  input {
+    @include form-border;
+    background-color: $white-sand;
+    color: $neon-purple;
+  }
+  select {
+    @include form-border;
+    background-color: $sandy;
+  }
+  textarea {
+    @include form-border;
+    background-color: $deep-teal;
+  }
+  button{
+    @include form-border;
+    background-color: #fff;
+  }
+}

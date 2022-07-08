@@ -1,0 +1,9 @@
+@import './variables';
+
+.ae-hero{
+    height: 800px;
+    background-image: url(../img/QtIqKV.jpg);
+    @include background();
+    position: sticky;
+    
+}
