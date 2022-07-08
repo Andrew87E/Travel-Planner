@@ -34,9 +34,6 @@ var milesPerGallon = document.querySelector("user-input-form");
 //      });
 // // for (var i=0; i<data.length; i++)
         // var milesToDrive = data[i].distance
-
-// var milesToDrive= fetch();
-
 // take price per gallon from fuel API
 // this function should allow user to select the type of fuel they are going to use and then calculate the prices using the form input for miles
 // per gallon from user form as well as miles to drive from google api
