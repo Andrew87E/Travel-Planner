@@ -74,10 +74,6 @@ input {
   height: 1500px;
 }
 
-.userInput {
-  margin-top: 500px;
-
-}
 .userInput input {
   border-radius: 9999px;
   border: 1px solid;
@@ -122,4 +118,8 @@ input {
 }
 .userInput button:active {
   border: #05DBF2;
+}
+
+.pull-right {
+  margin-left: 100px;
 }/*# sourceMappingURL=style.css.map */
