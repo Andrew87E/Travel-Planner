@@ -145,7 +145,6 @@ var roundTripCost = function () {
 
 
 
-
 // navbar burger menu
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
