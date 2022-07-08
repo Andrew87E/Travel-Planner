@@ -32,3 +32,15 @@ $neon-red: #F20519;
     background-position: center;
     background-size: cover;
 }
+
+@mixin form-border{
+    border-radius: 9999px;
+    border: 1px solid;
+    &:hover{
+      border-color: $neon-grass;
+    }
+    &:active{
+      border: $neon-teal;
+    }
+}
+
