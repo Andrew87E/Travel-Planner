@@ -260,3 +260,28 @@ $(function () {
 // fuelTypePrem.addEventListener("click", fuelType);
 // fuelTypeDiesel.addEventListener("click", fuelType);
 // roundTrip.addEventListener("click", roundTripCost);
+
+
+// Targets HTML Element for Gas Results Section
+var gasResultEl = document.getElementsByClassName('gas-results-section');
+
+// Creates Title Element & buttons for the Gas Results Section
+var gasResultsTitleEl = document.createElement('h2');
+var regFuelButton = document.createElement('button');
+var premiumGradeButton = document.createElement('button');
+var dieselFuelButton = document.createElement ('button');
+var totalCostEl = document.createElement('section');
+
+// Text in Title and buttons
+gasResultsTitleEl.textContent = 'Cost to Drive';
+regFuelButton.textContent = 'Regular Fuel';
+premiumGradeButton.textContent = 'Premium Grade Fuel';
+dieselFuelButton.textContent = 'Diesel Fuel';
+totalCostEl.textContent = 'Total Cost: ' + tripFuelCost;
+
+// Append new elements to page
+gasResultEl.appendChild(gasResultsTitleEl);
+gasResultEl.appendChild(regFuelButton);
+gasResultEl.appendChild(premiumGradeButton);
+gasResultEl.appendChild(dieselFuelButton);
+gasResultEl.appendChild(totalCostEl);
