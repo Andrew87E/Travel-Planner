@@ -75,7 +75,8 @@ input {
 }
 
 .userInput {
-  background-color: black;
+  margin-top: 500px;
+
 }
 .userInput input {
   border-radius: 9999px;

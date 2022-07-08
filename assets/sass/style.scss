@@ -10,8 +10,10 @@
 }
 
 .userInput {
+
   // margin-top: 500px;
-  background-color: black;
+  margin-top: 500px;
+
   input {
     @include form-border;
     background-color: $white-sand;
