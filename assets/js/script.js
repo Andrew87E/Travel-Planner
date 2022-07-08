@@ -3,8 +3,14 @@
 var baAPI = "340f1157912d4ff6b27b91b2e968995f1c3a7802";
 // var jpApiKeyFuel = 'f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59' Joel's API Key
 var aeAirAPI = "3a02828a79b9963";
-
-
+var arrival = document.querySelector(#arrival)
+var itinerary = document.querySelector(#itinerary)
+var oneway = document.querySelector(#oneway)
+var roundTrip = document.querySelector(#roundTrip)
+var arrival location = document.querySelector(#arrivallocation)
+var date_departure = document.querySelector(#date_departure)
+var location_departure = document.querySelector(#location_departure)
+var number_of_passengers = document.querySelector(#number_of_passengers)
 
 //   Display fuel prices for user input
 // take input from form for mpg
