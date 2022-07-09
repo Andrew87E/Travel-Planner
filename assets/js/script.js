@@ -3,14 +3,19 @@
 var baAPI = "340f1157912d4ff6b27b91b2e968995f1c3a7802";
 // var jpApiKeyFuel = 'f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59' Joel's API Key
 var aeAirAPI = "3a02828a79b9963";
-
-
+var arrival = document.querySelector('#arrival')
+var itinerary = document.querySelector('#itinerary')
+var oneway = document.querySelector('#oneway')
+var roundTrip = document.querySelector('#roundTrip')
+var arrivallocation = document.querySelector('#arrivallocation')
+var date_departure = document.querySelector('#date_departure')
+var location_departure = document.querySelector('#location_departure')
+var number_of_passengers = document.querySelector('#number_of_passengers')
 
 //   Display fuel prices for user input
 // take input from form for mpg
 var milesPerGallon = document.querySelector("user-input-form");
 // take miles distance from Google API
-
 // const options = {
 // 	method: 'GET',
 // 	headers: {
@@ -35,6 +40,29 @@ var milesPerGallon = document.querySelector("user-input-form");
 // take price per gallon from fuel API
 // this function should allow user to select the type of fuel they are going to use and then calculate the prices using the form input for miles
 // per gallon from user form as well as miles to drive from google api
+// API call to gas for national average price data
+// const gasOptions = {
+//   method: 'GET',
+//   headers: {
+//     'X-RapidAPI-Key': '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b',
+//     'X-RapidAPI-Host': 'gas-price.p.rapidapi.com'
+//   }
+// };
+
+// fetch('https://gas-price.p.rapidapi.com/stateUsaPrice?state=national', gasOptions)
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(data){
+//     console.log(data);
+//  for (var i=0; i<data.length; i++);
+  // console.log(data[i].gasoline);
+  // console.log(data[i].premium);
+  // console.log(data[i].diesel);
+      // var regGrade=data[i].gasoline;
+      // var premGrade=data[i].premium;
+      // var dieselFuel=data[i].diesel;
+//   });
 var fuelTypeReg = document.querySelector("fuel-reg-btn");
 var fuelTypePrem = document.querySelector("fuel-prem-btn");
 var fuelTypeDiesel = document.querySelector("fuel-diesel-btn");
@@ -116,9 +144,7 @@ var roundTripCost = function () {
 //      .then(function (data) {
 //        console.log(data);
 //      });
-
 // --------> need miles data from google api array <------
-
 
 
 
@@ -237,3 +263,28 @@ $(function () {
 // fuelTypePrem.addEventListener("click", fuelType);
 // fuelTypeDiesel.addEventListener("click", fuelType);
 // roundTrip.addEventListener("click", roundTripCost);
+
+
+// Targets HTML Element for Gas Results Section
+var gasResultEl = document.getElementsByClassName('gas-results-section');
+
+// Creates Title Element & buttons for the Gas Results Section
+var gasResultsTitleEl = document.createElement('h2');
+var regFuelButton = document.createElement('button');
+var premiumGradeButton = document.createElement('button');
+var dieselFuelButton = document.createElement ('button');
+var totalCostEl = document.createElement('section');
+
+// Text in Title and buttons
+gasResultsTitleEl.textContent = 'Cost to Drive';
+regFuelButton.textContent = 'Regular Fuel';
+premiumGradeButton.textContent = 'Premium Grade Fuel';
+dieselFuelButton.textContent = 'Diesel Fuel';
+// totalCostEl.textContent = 'Total Cost: ' + tripFuelCost;
+
+// Append new elements to page
+gasResultEl.appendChild(gasResultsTitleEl);
+gasResultEl.appendChild(regFuelButton);
+gasResultEl.appendChild(premiumGradeButton);
+gasResultEl.appendChild(dieselFuelButton);
+gasResultEl.appendChild(totalCostEl);
