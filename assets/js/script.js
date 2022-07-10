@@ -35,6 +35,14 @@ var tripFuelCost=''
 //      });
 // // for (var i=0; i<data.length; i++)
         // var milesToDrive = data[i].distance
+        // var latitude = data[i].lat
+        // var longitude = data[i].lng
+        // console.log(milesToDrive);
+        // console.log(latitude);
+        // console.log(longitude);
+
+
+
 // take price per gallon from fuel API
 // this function should allow user to select the type of fuel they are going to use and then calculate the prices using the form input for miles
 // per gallon from user form as well as miles to drive from google api
@@ -147,7 +155,7 @@ console.log(tripFuelCost);
 //      .then(function (data) {
 //        console.log(data);
 //      });
-// --------> need miles data from google api array <------
+
 
 
 
