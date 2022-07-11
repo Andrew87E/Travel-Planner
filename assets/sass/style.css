@@ -362,4 +362,14 @@ input {
 
 .pull-right {
   margin-left: 100px;
+}
+
+.results {
+  margin-left: 30px;
+}
+.results input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px;
 }/*# sourceMappingURL=style.css.map */
