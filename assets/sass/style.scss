@@ -12,7 +12,7 @@
 .userInput {
 
   // margin-top: 500px;
-  margin-top: 500px;
+  // margin-top: 500px;
 
   input {
     @include form-border;
@@ -31,4 +31,8 @@
     @include form-border;
     background-color: #fff;
   }
+}
+
+.pull-right{
+  margin-left: 100px;
 }
