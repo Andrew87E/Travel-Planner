@@ -20,11 +20,9 @@ input {
 .ae-nav {
   background-color: #F2E4D8;
 }
-
 .ae-nav a {
   color: #157EBF;
 }
-
 .ae-nav a:hover {
   color: #13E800;
   background-color: #e7d9cc;
@@ -32,11 +30,12 @@ input {
 
 /* Color Theme Swatches in Hex */
 .ae-hero {
-  height: 800px;
+  height: 1000px;
   background-image: url(../img/QtIqKV.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-color: #F2E4D8;
   position: -webkit-sticky;
   position: sticky;
 }
@@ -285,18 +284,17 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-color: #F2E4D8;
   color: #0012FF;
   position: relative;
   padding: 0;
   border: 0;
   margin: 0;
 }
-
 .ae-footer a {
   text-decoration: none;
   color: #13E800;
 }
-
 .ae-footer a img {
   height: 128px;
   width: 128px;
@@ -312,7 +310,6 @@ input {
     border-radius: 0;
   }
 }
-
 .gimme-space {
   height: 1500px;
 }
@@ -323,54 +320,42 @@ input {
   background-color: #F2E4D8;
   color: #7135F2;
 }
-
 .userInput input:hover {
   border-color: #13E800;
 }
-
 .userInput input:active {
   border: #05DBF2;
 }
-
 .userInput select {
   border-radius: 9999px;
   border: 1px solid;
   background-color: #e7d9cc;
 }
-
 .userInput select:hover {
   border-color: #13E800;
 }
-
 .userInput select:active {
   border: #05DBF2;
 }
-
 .userInput textarea {
   border-radius: 9999px;
   border: 1px solid;
   background-color: #04C4D9;
 }
-
 .userInput textarea:hover {
   border-color: #13E800;
 }
-
 .userInput textarea:active {
   border: #05DBF2;
 }
-
 .userInput button {
   border-radius: 9999px;
   border: 1px solid;
-  background-color: #F2E4D8;
-  border-color: black;
+  background-color: #e7d9cc;
 }
-
 .userInput button:hover {
   border-color: #13E800;
 }
-
 .userInput button:active {
   border: #05DBF2;
 }
@@ -378,37 +363,3 @@ input {
 .pull-right {
   margin-left: 100px;
 }/*# sourceMappingURL=style.css.map */
-
-/* css for the results of cost to drive and the cost to fly */
-.results{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.driving-results{
-  display: flex;
-  flex-direction: column;
-  padding: 5%;
-  width: 43%;
-}
-
-.flying-results{
-  padding: 5%;
-  width: 43%
-}
-
-.btn{
-  margin-bottom: 5px;
-}
-
-.results-title {
-  font-size: 1.5em ;
-  font-style: bold;
-  text-align: center;
-}
-
-#miles-per-gallon {
-  margin-bottom: 5px;
-}
