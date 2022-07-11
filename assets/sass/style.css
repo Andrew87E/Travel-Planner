@@ -366,10 +366,31 @@ input {
 
 .results {
   margin-left: 30px;
+  height: 400px;
+  width: calc(50% - 30px);
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  color: #7135F2;
+}
+.results h2 {
+  color: #05DBF2;
+  font-weight: 700;
+  font-size: xx-large;
+  margin-left: 20px;
+}
+.results button {
+  background-color: #05DBF2;
+  color: #7135F2;
+  margin: 15px;
+  transition: 0.5s;
+}
+.results button:hover {
+  background-color: #7135F2;
+  color: #55A6D9;
 }
 .results input {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 260px;
   margin: 10px;
 }/*# sourceMappingURL=style.css.map */

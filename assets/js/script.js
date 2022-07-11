@@ -3,21 +3,22 @@
 var baAPI = "340f1157912d4ff6b27b91b2e968995f1c3a7802";
 // var jpApiKeyFuel = 'f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59' Joel's API Key
 var aeAirAPI = "3a02828a79b9963";
-var arrival = document.querySelector('#arrival')
-var itinerary = document.querySelector('#itinerary')
-var oneway = document.querySelector('#oneway')
-var roundTrip = document.querySelector('#roundTrip')
-var arrivalLocation = document.querySelector('#arrivallocation')
-var dateDeparture = document.querySelector('#date_departure')
-var locationDeparture = document.querySelector('#location_departure')
-var numberOfPassengers = document.querySelector('#number_of_passengers')
-var arrivallocation = document.querySelector('#arrivallocation')
-var date_departure = document.querySelector('#date_departure')
-var location_departure = document.querySelector('#location_departure')
-var number_of_passengers = document.querySelector('#number_of_passengers')
-var tripFuelCost=''
-var milesPerGallon= document.querySelector('#miles-per-gallon')
-var milesToDrive=''
+var arrivalLocation = $("#arrival").val();
+var arrivalDate = $('#arrival-date').val();
+var departureDate = $("#departure-date").val();
+var departureLocation = $("#departure").val();
+var numberOfPass = $('#num-pass').val();
+var tripFuelCost = "";
+var milesPerGallon = $("#miles-per-gallon").val();
+var milesToDrive = "";
+var itinerary = $("#itinerary").val();
+var classType = $("#select-class").val();
+console.log(arrivalLocation)
+console.log(departureLocation)
+console.log(classType);
+console.log(numberOfPass);
+console.log(arrivalDate);
+console.log(departureDate);
 
 //   Display fuel prices for user input
 // take input from form for mpg
@@ -109,7 +110,6 @@ console.log(tripFuelCost);
 // API Keys
 // var baGasKey = '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b';
 
-
 // Api call to priceline for data sorting
 // const options = {
 // 	method: 'GET',
@@ -119,7 +119,7 @@ console.log(tripFuelCost);
 // 	}
 // };
 
-// fetch(`https://priceline-com-provider.p.rapidapi.com/v1/flights/search?itinerary_type=ONE_WAY&class_type=ECO&location_arrival=NYC&date_departure=2022-11-15&location_departure=MOW&sort_order=PRICE&number_of_stops=1&price_max=20000&number_of_passengers=1&duration_max=2051&price_min=100&date_departure_return=2022-11-16, options)
+// fetch(`https://priceline-com-provider.p.rapidapi.com/v1/flights/search?itinerary_type=${itinerary}&class_type=${classType}&location_arrival=${arrivalLocation}&date_departure=2022-11-15&location_departure=MOW&sort_order=PRICE&number_of_stops=1&price_max=20000&number_of_passengers=1&duration_max=2051&price_min=100&date_departure_return=2022-11-16, options`)
 
 //   .then(function (response) {
 //     return response.json();
@@ -457,4 +457,4 @@ function init() {
   }
 }
 
-init();
+// init();
