@@ -41,12 +41,11 @@ const options = {
 	}
 };
 
-fetch(`https://distanceto.p.rapidapi.com/get?route=%5B%7B%22t%22%20%3A%20%22${location_departure}%22%7D%2C%20%7B%22t%22%20%3A%20%22${arrival}%22%7D%5D&car=true`, options)
+fetch(`https://distanceto.p.rapidapi.com/get?route=%5B%7B%22t%22%20%3A%20%22${departureLocation}%22%7D%2C%20%7B%22t%22%20%3A%20%22${arrivalLocation}%22%7D%5D&car=true`, options)
 	.then(response => response.json())
 	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
- for (var i=0; i<data.length; i++)
+	.catch(err => console.error(err))
+  for (var i=0; i<data.length; i++)
   var milesToDrive = data[i].steps.distance.car.distance
   console.log(milesToDrive);
 
