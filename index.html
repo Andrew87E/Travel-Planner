@@ -29,6 +29,17 @@
       </a>
     </div>
 
+    <section class="cd-intro">
+      <h1 class="cd-headline push">
+        <span>My favourite food is</span>
+        <span class="cd-words-wrapper">
+          <b class="is-visible">pizza</b>
+          <b>sushi</b>
+          <b>steak</b>
+        </span>
+      </h1>
+    </section>
+
     <div class="navbar-menu navbar-end" id="navMenu">
       <a class="navbar-item"> Home </a>
 
@@ -51,8 +62,22 @@
     <div class="hero-body ae-hero">
       <div
         class="space column is-half-desktop is-three-quarters-mobile is-two-thirds-tablet is-one-third-widescreen is-one-quarter-fullhd">
-
       </div>
+      <section>
+        <section class="results">
+          <div class="driving-results field">
+            <h2> Cost to Drive</h2>
+            <input id='miles-per-gallon' placeholder="How many mpg does you vehicle get?"></input>
+            <button class='btn' id="regFuel">Regular Fuel</button><br>
+            <button class='btn' id='premiumFuel'>Premium Fuel</button><br>
+            <button class='btn' id="dieselFuel">Diesel</button><br>
+          </div>
+          <div class="flying-results">
+              <ul>
+              </ul>
+          </div>
+        </section>
+      </section>
       <div class="login-box">
         <h2>How Would You Like to Travel?</h2>
         <form>
@@ -99,7 +124,7 @@
         <div class="field">
           <div class="control">
             <h1>Date of Departure</h1>
-            <input type="date">
+            <input type="date" id="departure-date">
             </select>
           </div>
         </div>
@@ -107,7 +132,7 @@
         <div class="field">
           <div class="control">
             <h1>Date of Return</h1>
-            <input type="date">
+            <input type="date" id="arrival-date">
             </select>
           </div>
         </div>
@@ -117,20 +142,20 @@
           <!-- <label class="label">Number of Travelers</label> -->
           <div class="control">
             <label class="radio">
-              <input type="radio" name="question">
+              <input type="radio" value="ROUND_TRIP" name="itinerary" id="itinerary">
               Round Trip
             </label>
             <br>
             <label class="radio">
-              <input type="radio" name="question">
+              <input type="radio" value="ONE_WAY" name="itinerary" id="itinerary">
               One Way
             </label>
           </div>
           <br>
           <div class="control">
             <div class="select">
-              <select>
-                <option>Number of Adults</option>
+              <select id="num-pass">
+                <option>Number of Passengers</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -139,29 +164,18 @@
                 <option>6</option>
                 <option>7</option>
               </select>
-              <br>
-              <select>
-                <option>Number of Children</option>
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-              </select>
             </div>
           </div>
         </div>
-        <br><br><br>
+        <br>
         <!-- <h2>Cost To Drive</h2>
           <button>Regular Fuel</button>
           <button>Premium Fuel</button>
           <button>Diesel</button>
           <br><br> -->
         <div class="control">
-          <div class="select">
-            <select>
+          <div>
+            <select id="select-class">
               <option>Cabin Class</option>
               <option>Economy</option>
               <option>Premium Economy</option>
@@ -171,24 +185,7 @@
           </div>
         </div>
     </div>
-    <section>
-      <section class="results">
-        <div class="driving-results field">
-          <h2 class="results-title"> Cost to Drive</h2>
-          <input id='miles-per-gallon' placeholder="Enter your vehicle's miles per gallon"></input>
-          <button class='btn' id="regFuel">Regular Fuel</button>
-          <button class='btn' id='premiumFuel'>Premium Fuel</button>
-          <button class='btn' id="dieselFuel">Diesel</button>
-          <h3> total</h3>
-        </div>
-        <div class="flying-results">
-          <h2 class="results-title"> Cost to Fly</h3>
-            <ul>
-              <li> list items</li>
-            </ul>
-        </div>
-      </section>
-    </section>
+
 
 
 
