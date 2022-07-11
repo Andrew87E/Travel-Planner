@@ -40,14 +40,12 @@ var milesToDrive=''
 //        console.log(data);
 //      });
 //  for (var i=0; i<data.length; i++)
-        // var milesToDrive = data[i].distance
-        // var latitude = data[i].lat
-        // var longitude = data[i].lng
-        // console.log(milesToDrive);
-        // console.log(latitude);
-        // console.log(longitude);
-
-
+// var milesToDrive = data[i].distance
+// var latitude = data[i].lat
+// var longitude = data[i].lng
+// console.log(milesToDrive);
+// console.log(latitude);
+// console.log(longitude);
 
 // take price per gallon from fuel API
 // this function should allow user to select the type of fuel they are going to use and then calculate the prices using the form input for miles
@@ -68,31 +66,30 @@ var milesToDrive=''
 //   .then(function(data){
 //     console.log(data);
 //  for (var i=0; i<data.length; i++);
-  // console.log(data[i].gasoline);
-  // console.log(data[i].premium);
-  // console.log(data[i].diesel);
-  //     var regGrade=data[i].gasoline;
-  //     var premGrade=data[i].premium;
-  //     var dieselFuel=data[i].diesel;
-  // });
-
+// console.log(data[i].gasoline);
+// console.log(data[i].premium);
+// console.log(data[i].diesel);
+//     var regGrade=data[i].gasoline;
+//     var premGrade=data[i].premium;
+//     var dieselFuel=data[i].diesel;
+// });
 
 var regFuelCost = function () {
-    (regGrade * milesPerGallon) % milesToDrive;
-    tripFuelCost=tripFuelCost[0];
-  return (tripFuelCost);
+  (regGrade * milesPerGallon) % milesToDrive;
+  tripFuelCost = tripFuelCost[0];
+  return tripFuelCost;
 };
 
-var premiumGradeCost =function(){
-  (premGrade * milesPerGallon)%milesToDrive;
-  tripFuelCost=tripFuelCost[0];
-  return (tripFuelCost);
+var premiumGradeCost = function () {
+  (premGrade * milesPerGallon) % milesToDrive;
+  tripFuelCost = tripFuelCost[0];
+  return tripFuelCost;
 };
 
-var dieselFuelCost =function(){
-  (dieselFuel * milesPerGallon)%milesToDrive
-  tripFuelCost=tripFuelCost[0];
-  return (tripFuelCost);
+var dieselFuelCost = function () {
+  (dieselFuel * milesPerGallon) % milesToDrive;
+  tripFuelCost = tripFuelCost[0];
+  return tripFuelCost;
 };
 
 console.log(tripFuelCost);
@@ -130,6 +127,39 @@ console.log(tripFuelCost);
 //     console.log(data);
 //   });
 
+// API call to gas for national average price data
+// const gasOptions = {
+//   method: 'GET',
+//   headers: {
+//     'X-RapidAPI-Key': '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b',
+//     'X-RapidAPI-Host': 'gas-price.p.rapidapi.com'
+//   }
+// };
+
+// fetch('https://gas-price.p.rapidapi.com/stateUsaPrice?state=national', gasOptions)
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(data){
+//     console.log(data);
+//   });
+
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '2b4e532ae3msh54b5f70921ddc65p1b9fcejsn1929ae6001ba',
+// 		'X-RapidAPI-Host': 'google-maps28.p.rapidapi.com'
+// 	}
+// };
+
+// fetch('https://google-maps28.p.rapidapi.com/maps/api/place/details/json?fields=address_component%2Cadr_address%2Cbusiness_status%2Cformatted_address%2Cgeometry%2Cicon%2Cicon_mask_base_uri%2Cicon_background_color%2Cname%2Cpermanently_closed%2Cphoto%2Cplace_id%2Cplus_code%2Ctype%2Curl%2Cutc_offset%2Cvicinity%2Cformatted_phone_number%2Cinternational_phone_number%2Copening_hours%2Cwebsite%2Cprice_level%2Crating%2Creview%2Cuser_ratings_total&place_id=ChIJ37HL3ry3t4kRv3YLbdhpWXE&language=en&region=en', options)
+
+// .then(function (response) {
+//        return response.json();
+//      })
+//      .then(function (data) {
+//        console.log(data);
+//      });
 
 // navbar burger menu
 document.addEventListener("DOMContentLoaded", () => {
@@ -155,13 +185,96 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-var apc=function(t,e){var n=this,o={},r="https://www.air-port-codes.com/api/v1/",c;return n={request:function(e){n[t](e)},init:function(){for(var t in e)"key"!==t&&"secret"!==t&&(o[t]=e[t])},autocomplete:function(t){o.term=t,n.doAjax()},multi:function(t){o.term=t,n.doAjax()},single:function(t){o.iata=t,n.doAjax()},countries:function(){n.doAjax()},states:function(){n.doAjax()},doAjax:function(){c.post(r+t,o,function(t){t=JSON.parse(t),t.status?n.onSuccess(t):n.onError(t)})}},c={x:function(){if("undefined"!=typeof XMLHttpRequest)return new XMLHttpRequest;for(var t=["MSXML2.XmlHttp.6.0","MSXML2.XmlHttp.5.0","MSXML2.XmlHttp.4.0","MSXML2.XmlHttp.3.0","MSXML2.XmlHttp.2.0","Microsoft.XmlHttp"],e,n=0;n<t.length;n++)try{e=new ActiveXObject(t[n]);break}catch(t){}return e},send:function(t,n,o,r,i){void 0===i&&(i=!0);var a=c.x();a.open(o,t,i),a.onreadystatechange=function(){4===a.readyState&&n(a.responseText)},"POST"===o&&(a.setRequestHeader("Content-type","application/x-www-form-urlencoded"),a.setRequestHeader("APC-Auth",e.key),e.secret&&a.setRequestHeader("APC-Auth-Secret",e.secret)),a.send(r)},post:function(t,e,n,o){var r=[];for(var i in e)r.push(encodeURIComponent(i)+"="+encodeURIComponent(e[i]));c.send(t,n,"POST",r.join("&"),o)}},n.init(),n};
+var apc = function (t, e) {
+  var n = this,
+    o = {},
+    r = "https://www.air-port-codes.com/api/v1/",
+    c;
+  return (
+    (n = {
+      request: function (e) {
+        n[t](e);
+      },
+      init: function () {
+        for (var t in e) "key" !== t && "secret" !== t && (o[t] = e[t]);
+      },
+      autocomplete: function (t) {
+        (o.term = t), n.doAjax();
+      },
+      multi: function (t) {
+        (o.term = t), n.doAjax();
+      },
+      single: function (t) {
+        (o.iata = t), n.doAjax();
+      },
+      countries: function () {
+        n.doAjax();
+      },
+      states: function () {
+        n.doAjax();
+      },
+      doAjax: function () {
+        c.post(r + t, o, function (t) {
+          (t = JSON.parse(t)), t.status ? n.onSuccess(t) : n.onError(t);
+        });
+      },
+    }),
+    (c = {
+      x: function () {
+        if ("undefined" != typeof XMLHttpRequest) return new XMLHttpRequest();
+        for (
+          var t = [
+              "MSXML2.XmlHttp.6.0",
+              "MSXML2.XmlHttp.5.0",
+              "MSXML2.XmlHttp.4.0",
+              "MSXML2.XmlHttp.3.0",
+              "MSXML2.XmlHttp.2.0",
+              "Microsoft.XmlHttp",
+            ],
+            e,
+            n = 0;
+          n < t.length;
+          n++
+        )
+          try {
+            e = new ActiveXObject(t[n]);
+            break;
+          } catch (t) {}
+        return e;
+      },
+      send: function (t, n, o, r, i) {
+        void 0 === i && (i = !0);
+        var a = c.x();
+        a.open(o, t, i),
+          (a.onreadystatechange = function () {
+            4 === a.readyState && n(a.responseText);
+          }),
+          "POST" === o &&
+            (a.setRequestHeader(
+              "Content-type",
+              "application/x-www-form-urlencoded"
+            ),
+            a.setRequestHeader("APC-Auth", e.key),
+            e.secret && a.setRequestHeader("APC-Auth-Secret", e.secret)),
+          a.send(r);
+      },
+      post: function (t, e, n, o) {
+        var r = [];
+        for (var i in e)
+          r.push(encodeURIComponent(i) + "=" + encodeURIComponent(e[i]));
+        c.send(t, n, "POST", r.join("&"), o);
+      },
+    }),
+    n.init(),
+    n
+  );
+};
 
 $(function () {
   $(".autocomplete").each(function () {
     var apca = new apc("autocomplete", {
-      key: 'd2d92aca5c',
-      secret : '242ad6062b5991e', // Your API Secret Key: use this if you are not connecting from a web server
+      key: "d2d92aca5c",
+      secret: "242ad6062b5991e", // Your API Secret Key: use this if you are not connecting from a web server
       limit: 7,
     });
 
@@ -196,7 +309,7 @@ $(function () {
         apca.onSuccess = function (data) {
           var listAry = [],
             thisAirport;
-            console.log(data)
+          console.log(data);
           if (data.status) {
             // success
             for (var i = 0, len = data.airports.length; i < len; i++) {
@@ -224,10 +337,10 @@ $(function () {
         };
       },
       select: function (event, ui) {
-        locationDeparture = ui.item.code
+        locationDeparture = ui.item.code;
         console.log(locationDeparture);
-        arrivalLocation = ui.item.code
-        console.log(arrivalLocation)
+        arrivalLocation = ui.item.code;
+        console.log(arrivalLocation);
       },
     };
 
@@ -242,16 +355,12 @@ $(function () {
   });
 });
 
-// var flightEl = 
-
-
-
+// var flightEl =
 
 // fuelTypeReg.addEventListener("click", fuelType);
 // fuelTypePrem.addEventListener("click", fuelType);
 // fuelTypeDiesel.addEventListener("click", fuelType);
 // roundTrip.addEventListener("click", roundTripCost);
-
 
 // // Targets HTML Element for Gas Results Section
 // var gasResultEl = document.getElementsByClassName('gas-results-section');
@@ -277,7 +386,7 @@ $(function () {
 // gasResultEl.appendChild(dieselFuelButton);
 // gasResultEl.appendChild(totalCostEl);
 // Targets HTML Element for Gas Results Section
-var gasResultEl = document.getElementsByClassName('gas-results-section');
+var gasResultEl = document.getElementsByClassName("gas-results-section");
 
 // Creates Title Element & buttons for the Gas Results Section
 // var gasResultsTitleEl = document.createElement('h2');
@@ -304,3 +413,47 @@ var gasResultEl = document.getElementsByClassName('gas-results-section');
 // premiumGradeButton.addEventListener('click', premiumGradeCost);
 // dieselFuelButton.addEventListener('click', dieselFuelCost);
 
+function init() {
+  //hide inital section
+  //show flight info section
+  //show cost to drive section
+  //show gas results section
+  //if flight box is checked, show flight info section
+  //if flight box is unchecked, hide flight info section
+  //if cost to drive box is checked, show cost to drive section
+  //if cost to drive box is unchecked, hide cost to drive section
+  // if both are checked, show both sections
+  flightEl.style.diplay = "none";
+  costToDriveBox.style.display = "none";
+  var flightEl = document.getElementsByClassName("userInput");
+  var initalEl = document.getElementsByClassName("login-box");
+  var costToDriveBox = document.getElementById("results");
+  var flying = document.getElementById("flying");
+  var driving = document.getElementById("driving");
+
+  if (flying) {
+    initalEl.style.display = "none";
+    flightInfoEl.style.display = "block";
+    costToDriveEl.style.display = "none";
+    gasResultsEl.style.display = "none";
+  } else {
+    initalEl.style.display = "block";
+    flightInfoEl.style.display = "none";
+    costToDriveEl.style.display = "none";
+    gasResultsEl.style.display = "none";
+  }
+  if (driving) {
+    initalEl.style.display = "none";
+    flightInfoEl.style.display = "none";
+    costToDriveEl.style.display = "block";
+    gasResultsEl.style.display = "none";
+  }
+  if (flying && driving) {
+    initalEl.style.display = "none";
+    flightInfoEl.style.display = "block";
+    costToDriveEl.style.display = "block";
+    gasResultsEl.style.display = "block";
+  }
+}
+
+init();
