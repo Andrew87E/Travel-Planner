@@ -114,7 +114,6 @@ console.log(tripFuelCost);
 
 
 // Api call to priceline for data sorting
-function flightInfo(){
 // const options = {
 // 	method: 'GET',
 // 	headers: {
@@ -135,7 +134,7 @@ function flightInfo(){
 
 
 
-}
+
 // API call to gas for national average price data
 // const gasOptions = {
 //   method: 'GET',
