@@ -16,6 +16,7 @@ var date_departure = document.querySelector('#date_departure')
 var location_departure = document.querySelector('#location_departure')
 var number_of_passengers = document.querySelector('#number_of_passengers')
 var tripFuelCost=''
+var milesPerGallon= document.querySelector('#miles-per-gallon')
 
 
 //   Display fuel prices for user input
