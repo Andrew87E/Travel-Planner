@@ -123,3 +123,11 @@ input {
 .pull-right {
   margin-left: 100px;
 }/*# sourceMappingURL=style.css.map */
+
+/* css for the results of cost to drive and the cost to fly */
+.results{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
