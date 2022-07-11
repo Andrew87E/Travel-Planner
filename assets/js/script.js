@@ -17,7 +17,7 @@ var location_departure = document.querySelector('#location_departure')
 var number_of_passengers = document.querySelector('#number_of_passengers')
 var tripFuelCost=''
 var milesPerGallon= document.querySelector('#miles-per-gallon')
-
+var milesToDrive=''
 
 //   Display fuel prices for user input
 // take input from form for mpg
@@ -131,10 +131,6 @@ console.log(tripFuelCost);
 //     console.log(data);
 //   });
 
-
-
-
-
 // API call to gas for national average price data
 // const gasOptions = {
 //   method: 'GET',
@@ -168,12 +164,6 @@ console.log(tripFuelCost);
 //      .then(function (data) {
 //        console.log(data);
 //      });
-
-
-
-
-
-
 
 // navbar burger menu
 document.addEventListener("DOMContentLoaded", () => {
