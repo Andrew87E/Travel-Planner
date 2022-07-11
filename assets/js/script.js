@@ -16,7 +16,8 @@ var date_departure = document.querySelector('#date_departure')
 var location_departure = document.querySelector('#location_departure')
 var number_of_passengers = document.querySelector('#number_of_passengers')
 var tripFuelCost=''
-
+var milesPerGallon= document.querySelector('#miles-per-gallon')
+var milesToDrive=''
 
 //   Display fuel prices for user input
 // take input from form for mpg
@@ -38,8 +39,14 @@ var tripFuelCost=''
 //      .then(function (data) {
 //        console.log(data);
 //      });
-// // for (var i=0; i<data.length; i++)
-        // var milesToDrive = data[i].distance
+//  for (var i=0; i<data.length; i++)
+// var milesToDrive = data[i].distance
+// var latitude = data[i].lat
+// var longitude = data[i].lng
+// console.log(milesToDrive);
+// console.log(latitude);
+// console.log(longitude);
+
 // take price per gallon from fuel API
 // this function should allow user to select the type of fuel they are going to use and then calculate the prices using the form input for miles
 // per gallon from user form as well as miles to drive from google api
@@ -59,29 +66,30 @@ var tripFuelCost=''
 //   .then(function(data){
 //     console.log(data);
 //  for (var i=0; i<data.length; i++);
-  // console.log(data[i].gasoline);
-  // console.log(data[i].premium);
-  // console.log(data[i].diesel);
-  //     var regGrade=data[i].gasoline;
-  //     var premGrade=data[i].premium;
-  //     var dieselFuel=data[i].diesel;
-  // });
-
+// console.log(data[i].gasoline);
+// console.log(data[i].premium);
+// console.log(data[i].diesel);
+//     var regGrade=data[i].gasoline;
+//     var premGrade=data[i].premium;
+//     var dieselFuel=data[i].diesel;
+// });
 
 var regFuelCost = function () {
-    (regGrade * milesPerGallon) % milesToDrive;
-    tripFuelCost=tripFuelCost[0];
-  return (tripFuelCost);
+  (regGrade * milesPerGallon) % milesToDrive;
+  tripFuelCost = tripFuelCost[0];
+  return tripFuelCost;
 };
-var premiumGradeCost =function(){
-  (premGrade * milesPerGallon)%milesToDrive;
-  tripFuelCost=tripFuelCost[0];
-  return (tripFuelCost);
+
+var premiumGradeCost = function () {
+  (premGrade * milesPerGallon) % milesToDrive;
+  tripFuelCost = tripFuelCost[0];
+  return tripFuelCost;
 };
-var dieselFuelCost =function(){
-  (dieselFuel * milesPerGallon)%milesToDrive
-  tripFuelCost=tripFuelCost[0];
-  return (tripFuelCost);
+
+var dieselFuelCost = function () {
+  (dieselFuel * milesPerGallon) % milesToDrive;
+  tripFuelCost = tripFuelCost[0];
+  return tripFuelCost;
 };
 
 console.log(tripFuelCost);
@@ -100,6 +108,7 @@ console.log(tripFuelCost);
 // This is a test for pushing thru.
 // API Keys
 // var baGasKey = '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b';
+
 
 // Api call to priceline for data sorting
 // const options = {
@@ -152,12 +161,6 @@ console.log(tripFuelCost);
 //      .then(function (data) {
 //        console.log(data);
 //      });
-// --------> need miles data from google api array <------
-
-
-
-
-
 
 // navbar burger menu
 document.addEventListener("DOMContentLoaded", () => {
@@ -183,13 +186,96 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-var apc=function(t,e){var n=this,o={},r="https://www.air-port-codes.com/api/v1/",c;return n={request:function(e){n[t](e)},init:function(){for(var t in e)"key"!==t&&"secret"!==t&&(o[t]=e[t])},autocomplete:function(t){o.term=t,n.doAjax()},multi:function(t){o.term=t,n.doAjax()},single:function(t){o.iata=t,n.doAjax()},countries:function(){n.doAjax()},states:function(){n.doAjax()},doAjax:function(){c.post(r+t,o,function(t){t=JSON.parse(t),t.status?n.onSuccess(t):n.onError(t)})}},c={x:function(){if("undefined"!=typeof XMLHttpRequest)return new XMLHttpRequest;for(var t=["MSXML2.XmlHttp.6.0","MSXML2.XmlHttp.5.0","MSXML2.XmlHttp.4.0","MSXML2.XmlHttp.3.0","MSXML2.XmlHttp.2.0","Microsoft.XmlHttp"],e,n=0;n<t.length;n++)try{e=new ActiveXObject(t[n]);break}catch(t){}return e},send:function(t,n,o,r,i){void 0===i&&(i=!0);var a=c.x();a.open(o,t,i),a.onreadystatechange=function(){4===a.readyState&&n(a.responseText)},"POST"===o&&(a.setRequestHeader("Content-type","application/x-www-form-urlencoded"),a.setRequestHeader("APC-Auth",e.key),e.secret&&a.setRequestHeader("APC-Auth-Secret",e.secret)),a.send(r)},post:function(t,e,n,o){var r=[];for(var i in e)r.push(encodeURIComponent(i)+"="+encodeURIComponent(e[i]));c.send(t,n,"POST",r.join("&"),o)}},n.init(),n};
+var apc = function (t, e) {
+  var n = this,
+    o = {},
+    r = "https://www.air-port-codes.com/api/v1/",
+    c;
+  return (
+    (n = {
+      request: function (e) {
+        n[t](e);
+      },
+      init: function () {
+        for (var t in e) "key" !== t && "secret" !== t && (o[t] = e[t]);
+      },
+      autocomplete: function (t) {
+        (o.term = t), n.doAjax();
+      },
+      multi: function (t) {
+        (o.term = t), n.doAjax();
+      },
+      single: function (t) {
+        (o.iata = t), n.doAjax();
+      },
+      countries: function () {
+        n.doAjax();
+      },
+      states: function () {
+        n.doAjax();
+      },
+      doAjax: function () {
+        c.post(r + t, o, function (t) {
+          (t = JSON.parse(t)), t.status ? n.onSuccess(t) : n.onError(t);
+        });
+      },
+    }),
+    (c = {
+      x: function () {
+        if ("undefined" != typeof XMLHttpRequest) return new XMLHttpRequest();
+        for (
+          var t = [
+              "MSXML2.XmlHttp.6.0",
+              "MSXML2.XmlHttp.5.0",
+              "MSXML2.XmlHttp.4.0",
+              "MSXML2.XmlHttp.3.0",
+              "MSXML2.XmlHttp.2.0",
+              "Microsoft.XmlHttp",
+            ],
+            e,
+            n = 0;
+          n < t.length;
+          n++
+        )
+          try {
+            e = new ActiveXObject(t[n]);
+            break;
+          } catch (t) {}
+        return e;
+      },
+      send: function (t, n, o, r, i) {
+        void 0 === i && (i = !0);
+        var a = c.x();
+        a.open(o, t, i),
+          (a.onreadystatechange = function () {
+            4 === a.readyState && n(a.responseText);
+          }),
+          "POST" === o &&
+            (a.setRequestHeader(
+              "Content-type",
+              "application/x-www-form-urlencoded"
+            ),
+            a.setRequestHeader("APC-Auth", e.key),
+            e.secret && a.setRequestHeader("APC-Auth-Secret", e.secret)),
+          a.send(r);
+      },
+      post: function (t, e, n, o) {
+        var r = [];
+        for (var i in e)
+          r.push(encodeURIComponent(i) + "=" + encodeURIComponent(e[i]));
+        c.send(t, n, "POST", r.join("&"), o);
+      },
+    }),
+    n.init(),
+    n
+  );
+};
 
 $(function () {
   $(".autocomplete").each(function () {
     var apca = new apc("autocomplete", {
-      key: 'd2d92aca5c',
-      secret : '242ad6062b5991e', // Your API Secret Key: use this if you are not connecting from a web server
+      key: "d2d92aca5c",
+      secret: "242ad6062b5991e", // Your API Secret Key: use this if you are not connecting from a web server
       limit: 7,
     });
 
@@ -224,7 +310,7 @@ $(function () {
         apca.onSuccess = function (data) {
           var listAry = [],
             thisAirport;
-            console.log(data)
+          console.log(data);
           if (data.status) {
             // success
             for (var i = 0, len = data.airports.length; i < len; i++) {
@@ -252,10 +338,10 @@ $(function () {
         };
       },
       select: function (event, ui) {
-        locationDeparture = ui.item.code
+        locationDeparture = ui.item.code;
         console.log(locationDeparture);
-        arrivalLocation = ui.item.code
-        console.log(arrivalLocation)
+        arrivalLocation = ui.item.code;
+        console.log(arrivalLocation);
       },
     };
 
@@ -270,15 +356,12 @@ $(function () {
   });
 });
 
-// var flightEl = 
-
-
+// var flightEl =
 
 // fuelTypeReg.addEventListener("click", fuelType);
 // fuelTypePrem.addEventListener("click", fuelType);
 // fuelTypeDiesel.addEventListener("click", fuelType);
 // roundTrip.addEventListener("click", roundTripCost);
-
 
 // // Targets HTML Element for Gas Results Section
 // var gasResultEl = document.getElementsByClassName('gas-results-section');
@@ -304,30 +387,74 @@ $(function () {
 // gasResultEl.appendChild(dieselFuelButton);
 // gasResultEl.appendChild(totalCostEl);
 // Targets HTML Element for Gas Results Section
-var gasResultEl = document.getElementsByClassName('gas-results-section');
+var gasResultEl = document.getElementsByClassName("gas-results-section");
 
 // Creates Title Element & buttons for the Gas Results Section
-var gasResultsTitleEl = document.createElement('h2');
-var regFuelButton = document.createElement('button');
-var premiumGradeButton = document.createElement('button');
-var dieselFuelButton = document.createElement ('button');
-var totalCostEl = document.createElement('section');
+// var gasResultsTitleEl = document.createElement('h2');
+// var regFuelButton = document.createElement('button');
+// var premiumGradeButton = document.createElement('button');
+// var dieselFuelButton = document.createElement ('button');
+// var totalCostEl = document.createElement('section');
 
-// Text in Title and buttons
-gasResultsTitleEl.textContent = 'Cost to Drive';
-regFuelButton.textContent = 'Regular Fuel';
-premiumGradeButton.textContent = 'Premium Grade Fuel';
-dieselFuelButton.textContent = 'Diesel Fuel';
-totalCostEl.textContent = 'Total Cost: ' + tripFuelCost;
+// // Text in Title and buttons
+// gasResultsTitleEl.textContent = 'Cost to Drive';
+// regFuelButton.textContent = 'Regular Fuel';
+// premiumGradeButton.textContent = 'Premium Grade Fuel';
+// dieselFuelButton.textContent = 'Diesel Fuel';
+// totalCostEl.textContent = 'Total Cost: ' + tripFuelCost;
 
-// Append new elements to page
-gasResultEl.appendChild(gasResultsTitleEl);
-gasResultEl.appendChild(regFuelButton);
-gasResultEl.appendChild(premiumGradeButton);
-gasResultEl.appendChild(dieselFuelButton);
-gasResultEl.appendChild(totalCostEl);
+// // Append new elements to page
+// gasResultEl.appendChild(gasResultsTitleEl);
+// gasResultEl.appendChild(regFuelButton);
+// gasResultEl.appendChild(premiumGradeButton);
+// gasResultEl.appendChild(dieselFuelButton);
+// gasResultEl.appendChild(totalCostEl);
 
-regFuelButton.addEventListener('click', regFuelCost);
-premiumGradeButton.addEventListener('click', premiumGradeCost);
-dieselFuelButton.addEventListener('click', dieselFuelCost);
+// regFuelButton.addEventListener('click', regFuelCost);
+// premiumGradeButton.addEventListener('click', premiumGradeCost);
+// dieselFuelButton.addEventListener('click', dieselFuelCost);
 
+function init() {
+  //hide inital section
+  //show flight info section
+  //show cost to drive section
+  //show gas results section
+  //if flight box is checked, show flight info section
+  //if flight box is unchecked, hide flight info section
+  //if cost to drive box is checked, show cost to drive section
+  //if cost to drive box is unchecked, hide cost to drive section
+  // if both are checked, show both sections
+  flightEl.style.diplay = "none";
+  costToDriveBox.style.display = "none";
+  var flightEl = document.getElementsByClassName("userInput");
+  var initalEl = document.getElementsByClassName("login-box");
+  var costToDriveBox = document.getElementById("results");
+  var flying = document.getElementById("flying");
+  var driving = document.getElementById("driving");
+
+  if (flying) {
+    initalEl.style.display = "none";
+    flightInfoEl.style.display = "block";
+    costToDriveEl.style.display = "none";
+    gasResultsEl.style.display = "none";
+  } else {
+    initalEl.style.display = "block";
+    flightInfoEl.style.display = "none";
+    costToDriveEl.style.display = "none";
+    gasResultsEl.style.display = "none";
+  }
+  if (driving) {
+    initalEl.style.display = "none";
+    flightInfoEl.style.display = "none";
+    costToDriveEl.style.display = "block";
+    gasResultsEl.style.display = "none";
+  }
+  if (flying && driving) {
+    initalEl.style.display = "none";
+    flightInfoEl.style.display = "block";
+    costToDriveEl.style.display = "block";
+    gasResultsEl.style.display = "block";
+  }
+}
+
+init();
