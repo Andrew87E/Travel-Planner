@@ -130,45 +130,6 @@ console.log(tripFuelCost);
 //     console.log(data);
 //   });
 
-// API call to gas for national average price data
-// const gasOptions = {
-//   method: 'GET',
-//   headers: {
-//     'X-RapidAPI-Key': '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b',
-//     'X-RapidAPI-Host': 'gas-price.p.rapidapi.com'
-//   }
-// };
-
-// fetch('https://gas-price.p.rapidapi.com/stateUsaPrice?state=national', gasOptions)
-//   .then(function(response) {
-//     return response.json();
-//   })
-//   .then(function(data){
-//     console.log(data);
-//   });
-
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '2b4e532ae3msh54b5f70921ddc65p1b9fcejsn1929ae6001ba',
-// 		'X-RapidAPI-Host': 'google-maps28.p.rapidapi.com'
-// 	}
-// };
-
-// fetch('https://google-maps28.p.rapidapi.com/maps/api/place/details/json?fields=address_component%2Cadr_address%2Cbusiness_status%2Cformatted_address%2Cgeometry%2Cicon%2Cicon_mask_base_uri%2Cicon_background_color%2Cname%2Cpermanently_closed%2Cphoto%2Cplace_id%2Cplus_code%2Ctype%2Curl%2Cutc_offset%2Cvicinity%2Cformatted_phone_number%2Cinternational_phone_number%2Copening_hours%2Cwebsite%2Cprice_level%2Crating%2Creview%2Cuser_ratings_total&place_id=ChIJ37HL3ry3t4kRv3YLbdhpWXE&language=en&region=en', options)
-
-// .then(function (response) {
-//        return response.json();
-//      })
-//      .then(function (data) {
-//        console.log(data);
-//      });
-
-
-
-
-
-
 
 // navbar burger menu
 document.addEventListener("DOMContentLoaded", () => {
