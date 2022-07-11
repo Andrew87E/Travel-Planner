@@ -20,6 +20,7 @@ console.log(numberOfPass);
 console.log(arrivalDate);
 console.log(departureDate);
 
+
 //   Display fuel prices for user input
 // take input from form for mpg
 // var milesPerGallon = document.querySelector("user-input-form");
@@ -32,21 +33,23 @@ console.log(departureDate);
 // 	}
 // };
 
-// fetch('https://google-maps28.p.rapidapi.com/maps/api/place/details/json?fields=address_component%2Cadr_address%2Cbusiness_status%2Cformatted_address%2Cgeometry%2Cicon%2Cicon_mask_base_uri%2Cicon_background_color%2Cname%2Cpermanently_closed%2Cphoto%2Cplace_id%2Cplus_code%2Ctype%2Curl%2Cutc_offset%2Cvicinity%2Cformatted_phone_number%2Cinternational_phone_number%2Copening_hours%2Cwebsite%2Cprice_level%2Crating%2Creview%2Cuser_ratings_total&place_id=ChIJ37HL3ry3t4kRv3YLbdhpWXE&language=en&region=en', options)
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59',
+		'X-RapidAPI-Host': 'distanceto.p.rapidapi.com'
+	}
+};
 
-// .then(function (response) {
-//        return response.json();
-//      })
-//      .then(function (data) {
-//        console.log(data);
-//      });
-//  for (var i=0; i<data.length; i++)
-// var milesToDrive = data[i].distance
-// var latitude = data[i].lat
-// var longitude = data[i].lng
-// console.log(milesToDrive);
-// console.log(latitude);
-// console.log(longitude);
+fetch(`https://distanceto.p.rapidapi.com/get?route=%5B%7B%22t%22%20%3A%20%22${location_departure}%22%7D%2C%20%7B%22t%22%20%3A%20%22${arrival}%22%7D%5D&car=true`, options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+
+ for (var i=0; i<data.length; i++)
+  var milesToDrive = data[i].steps.distance.car.distance
+  console.log(milesToDrive);
+
 
 // take price per gallon from fuel API
 // this function should allow user to select the type of fuel they are going to use and then calculate the prices using the form input for miles
@@ -75,20 +78,20 @@ console.log(departureDate);
 //     var dieselFuel=data[i].diesel;
 // });
 
-var regFuelCost = function () {
-  (regGrade * milesPerGallon) % milesToDrive;
+function regFuelCost() {
+  (regGrade * milesPerGallon) % (milesToDrive%5280);
   tripFuelCost = tripFuelCost[0];
   return tripFuelCost;
-};
+}
 
 var premiumGradeCost = function () {
-  (premGrade * milesPerGallon) % milesToDrive;
+  (premGrade * milesPerGallon) % (milesToDrive%5280);
   tripFuelCost = tripFuelCost[0];
   return tripFuelCost;
 };
 
 var dieselFuelCost = function () {
-  (dieselFuel * milesPerGallon) % milesToDrive;
+  (dieselFuel * milesPerGallon) % (milesToDrive%5280);
   tripFuelCost = tripFuelCost[0];
   return tripFuelCost;
 };
