@@ -3,15 +3,20 @@
 var baAPI = "340f1157912d4ff6b27b91b2e968995f1c3a7802";
 // var jpApiKeyFuel = 'f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59' Joel's API Key
 var aeAirAPI = "3a02828a79b9963";
-var arrival = document.querySelector('#arrival');
-var itinerary = document.querySelector('#itinerary');
-var oneway = document.querySelector('#oneway');
-var roundTrip = document.querySelector('#roundTrip');
-var arrivallocation = document.querySelector('#arrivallocation');
-var date_departure = document.querySelector('#date_departure');
-var location_departure = document.querySelector('#location_departure');
-var number_of_passengers = document.querySelector('#number_of_passengers');
-var tripFuelCost='';
+var arrival = document.querySelector('#arrival')
+var itinerary = document.querySelector('#itinerary')
+var oneway = document.querySelector('#oneway')
+var roundTrip = document.querySelector('#roundTrip')
+var arrivalLocation = document.querySelector('#arrivallocation')
+var dateDeparture = document.querySelector('#date_departure')
+var locationDeparture = document.querySelector('#location_departure')
+var numberOfPassengers = document.querySelector('#number_of_passengers')
+var arrivallocation = document.querySelector('#arrivallocation')
+var date_departure = document.querySelector('#date_departure')
+var location_departure = document.querySelector('#location_departure')
+var number_of_passengers = document.querySelector('#number_of_passengers')
+var tripFuelCost=''
+
 
 //   Display fuel prices for user input
 // take input from form for mpg
@@ -193,8 +198,8 @@ var apc=function(t,e){var n=this,o={},r="https://www.air-port-codes.com/api/v1/"
 $(function () {
   $(".autocomplete").each(function () {
     var apca = new apc("autocomplete", {
-      // key: 'standard-key',
-      secret : '3a02828a79b9963', // Your API Secret Key: use this if you are not connecting from a web server
+      key: 'd2d92aca5c',
+      secret : '242ad6062b5991e', // Your API Secret Key: use this if you are not connecting from a web server
       limit: 7,
     });
 
@@ -229,6 +234,7 @@ $(function () {
         apca.onSuccess = function (data) {
           var listAry = [],
             thisAirport;
+            console.log(data)
           if (data.status) {
             // success
             for (var i = 0, len = data.airports.length; i < len; i++) {
@@ -256,8 +262,10 @@ $(function () {
         };
       },
       select: function (event, ui) {
-        // do something for click event
-        console.log(ui.item.code);
+        locationDeparture = ui.item.code
+        console.log(locationDeparture);
+        arrivalLocation = ui.item.code
+        console.log(arrivalLocation)
       },
     };
 
@@ -272,12 +280,39 @@ $(function () {
   });
 });
 
+// var flightEl = 
+
+
+
 // fuelTypeReg.addEventListener("click", fuelType);
 // fuelTypePrem.addEventListener("click", fuelType);
 // fuelTypeDiesel.addEventListener("click", fuelType);
 // roundTrip.addEventListener("click", roundTripCost);
 
 
+// // Targets HTML Element for Gas Results Section
+// var gasResultEl = document.getElementsByClassName('gas-results-section');
+
+// // Creates Title Element & buttons for the Gas Results Section
+// var gasResultsTitleEl = document.createElement('h2');
+// var regFuelButton = document.createElement('button');
+// var premiumGradeButton = document.createElement('button');
+// var dieselFuelButton = document.createElement ('button');
+// var totalCostEl = document.createElement('section');
+
+// // Text in Title and buttons
+// gasResultsTitleEl.textContent = 'Cost to Drive';
+// regFuelButton.textContent = 'Regular Fuel';
+// premiumGradeButton.textContent = 'Premium Grade Fuel';
+// dieselFuelButton.textContent = 'Diesel Fuel';
+// // totalCostEl.textContent = 'Total Cost: ' + tripFuelCost;
+
+// // Append new elements to page
+// gasResultEl.appendChild(gasResultsTitleEl);
+// gasResultEl.appendChild(regFuelButton);
+// gasResultEl.appendChild(premiumGradeButton);
+// gasResultEl.appendChild(dieselFuelButton);
+// gasResultEl.appendChild(totalCostEl);
 // Targets HTML Element for Gas Results Section
 var gasResultEl = document.getElementsByClassName('gas-results-section');
 
@@ -305,3 +340,4 @@ gasResultEl.appendChild(totalCostEl);
 regFuelButton.addEventListener('click', regFuelCost);
 premiumGradeButton.addEventListener('click', premiumGradeCost);
 dieselFuelButton.addEventListener('click', dieselFuelCost);
+
