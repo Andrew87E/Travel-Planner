@@ -139,3 +139,34 @@ input {
 .pull-right {
   margin-left: 100px;
 }/*# sourceMappingURL=style.css.map */
+
+/* css for the results of cost to drive and the cost to fly */
+.results{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.driving-results{
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.flying-results{
+  padding: 5%;
+}
+
+.btn{
+  margin-bottom: 5px;
+}
+
+.results-title {
+  font-size: 1.5em ;
+  font-style: bold;
+}
+
+#miles-per-gallon {
+  margin-bottom: 5px;
+}
