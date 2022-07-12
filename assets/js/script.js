@@ -283,7 +283,8 @@ function init() {
 }
 
 // create spotify playlist
-var requestToken = 'BQBLfFMi3KcwXOUFIWvqxWh7Khsn17Hv8XBTMnw6_QK'
+var requestToken = document.querySelector('#obtain-new-token')
+var userId = document.querySelector('#user-profile')
 var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
 function createList (playlistname , public);
 response = request.post(
