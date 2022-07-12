@@ -451,5 +451,4 @@ initSubmit.on("click", function () {
     console.log("just drive");
   } else {
     window.alert("Please select at least one option");
-  }
-
+  }});
