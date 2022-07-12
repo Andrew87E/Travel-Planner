@@ -306,27 +306,27 @@ function init() {
 //   public =  false
 // )
 // };
-var requestToken = document.querySelector('#obtain-new-token')
-var userId = document.querySelector('#user-profile')
-var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
-function createList (name , public){
-fetch (createPlaylist);
-response = request.post(
-  createPlaylist,
-  headers = {
-    'Authorization': 'Bearer', requestToken },
-    json={
-     name: 'name',
-    public : 'public',
-  }
-)};
+// var requestToken = document.querySelector('#obtain-new-token')
+// var userId = document.querySelector('#user-profile')
+// var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
+// function createList (name , public){
+// fetch (createPlaylist);
+// response = request.post(
+//   createPlaylist,
+//   headers = {
+//     'Authorization': 'Bearer', requestToken },
+//     json={
+//      name: 'name',
+//     public : 'public',
+//   }
+// )};
 
-function putPlaylist (){
-createList( 
-  name ='My Road Trip Playlist',
-  public =  false
-)
-};
+// function putPlaylist (){
+// createList( 
+//   name ='My Road Trip Playlist',
+//   public =  false
+// )
+// };
 
-const element= document.getElementById('#spotifyLogin');
-element.addEventListener('click', putPlaylist);
+// const element= document.getElementById('#spotifyLogin');
+// element.addEventListener('click', putPlaylist);
