@@ -12,6 +12,7 @@ var baAPI = "340f1157912d4ff6b27b91b2e968995f1c3a7802";
 // api to check specs of car
 // gas stations along route? icebox?
 // ical google cal for road trip
+// progress bar for calculations
 
 var aeAirAPI = "3a02828a79b9963";
 var arrivalLocation = $("#arrival").val();
