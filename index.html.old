@@ -82,26 +82,21 @@
         <h2>How Would You Like to Travel?</h2>
         <form>
           <div class="user-box">
-            <input type="checkbox" name="" required="" id="flying">
+            <input type="checkbox" id="fly-check">
             <label>Fly</label>
           </div>
           <br><br>
           <div class="user-box">
-            <input type="checkbox" name="" required="" id="driving">
+            <input type="checkbox" id="drive-check">
             <label>Drive</label>
           </div>
           <br><br>
-          <!-- <div class="user-box">
-              <input type="checkbox" name="" required="" id="both">
-              <label>Both</label>
-            </div>
-            <br><br> -->
-          <a href="#" id="init-submit">
+          <a href="#">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Submit
+            <button type="submit" id="init-submit">Submit</button> 
           </a>
         </form>
       </div>
@@ -185,7 +180,7 @@
           </div>
         </div>
         <br>
-        <button type="submit" id="fly-submit">Submit</button>
+        <button id="fly-submit">Submit</button>
     </div>
 
 

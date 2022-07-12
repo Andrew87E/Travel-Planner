@@ -2,6 +2,17 @@
 // var baGasKey = '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b';
 var baAPI = "340f1157912d4ff6b27b91b2e968995f1c3a7802";
 // var jpApiKeyFuel = 'f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59' Joel's API Key
+
+// total rewrite
+// road trip planner
+// integrate with google maps
+// integrate with spotify to make new road trip playlist || same length as road trip
+// integrate with weather to check road conditions
+// road conditions api?? {icebox}
+// api to check specs of car
+// gas stations along route? icebox?
+// ical google cal for road trip
+
 var aeAirAPI = "3a02828a79b9963";
 var arrivalLocation = $("#arrival").val();
 var arrivalDate = $("#arrival-date").val();
@@ -10,6 +21,7 @@ var departureLocation = $("#departure").val();
 var numberOfPass = $("#num-pass").val();
 var tripFuelCost = "";
 var milesPerGallon = $("#miles-per-gallon").val();
+var gasResultEl = $("gas-results-section");
 var milesToDrive = "";
 var itinerary = $("#itinerary").val();
 var classType = $("#select-class").val();
@@ -18,11 +30,25 @@ var initalEl = $(".login-box");
 var costToDriveEl = $(".results");
 var initSubmit = $("#init-submit");
 var driveCheck = $("#drive-check");
-var flyCheck = $("#fly-check");
-flightEl.hide();
-costToDriveEl.hide();
+
+/* section for spotify api 
+https://engineering.atspotify.com/2015/03/understanding-spotify-web-api/
+https://developer.spotify.com/console/browse/
+https://www.youtube.com/watch?v=c5sWvP9h3s8
+https://developer.spotify.com/documentation/
+https://developer.spotify.com/documentation/web-api/quick-start/
+https://developer.spotify.com/documentation/web-api/reference/
+*/
+
+/* section for weather api
 
 
+
+
+
+
+
+*/
 
 //   Display fuel prices for user input
 // take input from form for mpg
@@ -60,7 +86,6 @@ costToDriveEl.hide();
 //     "X-RapidAPI-Host": "distanceto.p.rapidapi.com",
 //   },
 // };
-
 
 // fetch(
 //   `https://distanceto.p.rapidapi.com/get?route=%5B%7B%22t%22%20%3A%20%22${departureLocation}%22%7D%2C%20%7B%22t%22%20%3A%20%22${arrivalLocation}%22%7D%5D&car=true`,
@@ -136,41 +161,6 @@ costToDriveEl.hide();
 // var baGasKey = '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b';
 
 // Api call to priceline for data sorting
-  
-function getData(){
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '2b4e532ae3msh54b5f70921ddc65p1b9fcejsn1929ae6001ba',
-    'X-RapidAPI-Host': 'priceline-com-provider.p.rapidapi.com'
-  }
-};
-
-
- fetch(`https://priceline-com-provider.p.rapidapi.com/v1/flights/search?itinerary_type=${itinerary}&class_type=${classType}&location_arrival=${arrivalLocation}&date_departure=${departureDate}&location_departure=${departureLocation}&sort_order=PRICE&number_of_stops=1&price_max=20000&number_of_passengers=${numberOfPass}&duration_max=2051&price_min=100&date_departure_return=${arrivalDate}`, options)
-
-//  fetch('https://priceline-com-provider.p.rapidapi.com/v2/flight/departures?sid=iSiX639&departure_date=${departureDate}&adults=${numberOfPass}&origin_airport_code=YWG&destination_airport_code=JFK', options)
-
-.then(function (response) {
-  return response.json();
-})
-.then(function (data) {
-  console.log(data);
-});
-
-
-flightSubmit.on('click', function(event){
-  event.preventDefault();
-  getData()
-  console.log(arrivalLocation)
-  console.log(departureLocation)
-  console.log(classType);
-  console.log(numberOfPass);
-  console.log(arrivalDate);
-  console.log(departureDate);
-
-  })
-}
 
 // API call to gas for national average price data
 // const gasOptions = {
@@ -230,225 +220,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-var apc = function (t, e) {
-  var n = this,
-    o = {},
-    r = "https://www.air-port-codes.com/api/v1/",
-    c;
-  return (
-    (n = {
-      request: function (e) {
-        n[t](e);
-      },
-      init: function () {
-        for (var t in e) "key" !== t && "secret" !== t && (o[t] = e[t]);
-      },
-      autocomplete: function (t) {
-        (o.term = t), n.doAjax();
-      },
-      multi: function (t) {
-        (o.term = t), n.doAjax();
-      },
-      single: function (t) {
-        (o.iata = t), n.doAjax();
-      },
-      countries: function () {
-        n.doAjax();
-      },
-      states: function () {
-        n.doAjax();
-      },
-      doAjax: function () {
-        c.post(r + t, o, function (t) {
-          (t = JSON.parse(t)), t.status ? n.onSuccess(t) : n.onError(t);
-        });
-      },
-    }),
-    (c = {
-      x: function () {
-        if ("undefined" != typeof XMLHttpRequest) return new XMLHttpRequest();
-        for (
-          var t = [
-              "MSXML2.XmlHttp.6.0",
-              "MSXML2.XmlHttp.5.0",
-              "MSXML2.XmlHttp.4.0",
-              "MSXML2.XmlHttp.3.0",
-              "MSXML2.XmlHttp.2.0",
-              "Microsoft.XmlHttp",
-            ],
-            e,
-            n = 0;
-          n < t.length;
-          n++
-        )
-          try {
-            e = new ActiveXObject(t[n]);
-            break;
-          } catch (t) {}
-        return e;
-      },
-      send: function (t, n, o, r, i) {
-        void 0 === i && (i = !0);
-        var a = c.x();
-        a.open(o, t, i),
-          (a.onreadystatechange = function () {
-            4 === a.readyState && n(a.responseText);
-          }),
-          "POST" === o &&
-            (a.setRequestHeader(
-              "Content-type",
-              "application/x-www-form-urlencoded"
-            ),
-            a.setRequestHeader("APC-Auth", e.key),
-            e.secret && a.setRequestHeader("APC-Auth-Secret", e.secret)),
-          a.send(r);
-      },
-      post: function (t, e, n, o) {
-        var r = [];
-        for (var i in e)
-          r.push(encodeURIComponent(i) + "=" + encodeURIComponent(e[i]));
-        c.send(t, n, "POST", r.join("&"), o);
-      },
-    }),
-    n.init(),
-    n
-  );
-};
+var regularFuel = $("#reg-fuel");
+var premiumFuel = $("#prem-fuel");
+var dieselFuel = $("#diesel-fuel");
+var defaultPremiumCost = 4.95;
+var defaultRegularCost = 4.45;
+var defaultDieselCost = 5.06;
+var defaultMpg = 20;
+var mpg = $("#miles-per-gallon");
 
-$(function () {
-  $(".autocomplete").each(function () {
-    var apca = new apc("autocomplete", {
-      key: "d2d92aca5c",
-      secret: "242ad6062b5991e", // Your API Secret Key: use this if you are not connecting from a web server
-      limit: 7,
-    });
-
-    var dataObj = {
-      source: function (request, response) {
-        // make the request
-        apca.request(request.term);
-
-        // this builds each line of the autocomplete
-        itemObj = function (airport, isChild) {
-          var label;
-          if (isChild) {
-            // format children labels
-            label = "&rdsh;" + airport.iata + " - " + airport.name;
-          } else {
-            // format labels
-            label = airport.city;
-            if (airport.state.abbr) {
-              label += ", " + airport.state.abbr;
-            }
-            label += ", " + airport.country.name;
-            label += " (" + airport.iata + " - " + airport.name + ")";
-          }
-          return {
-            label: label,
-            value: airport.iata + " - " + airport.name,
-            code: airport.iata,
-          };
-        };
-
-        // this deals with the successful response data
-        apca.onSuccess = function (data) {
-          var listAry = [],
-            thisAirport;
-          console.log(data);
-          if (data.status) {
-            // success
-            for (var i = 0, len = data.airports.length; i < len; i++) {
-              thisAirport = data.airports[i];
-              listAry.push(itemObj(thisAirport));
-              if (thisAirport.children) {
-                for (
-                  var j = 0, jLen = thisAirport.children.length;
-                  j < jLen;
-                  j++
-                ) {
-                  listAry.push(itemObj(thisAirport.children[j], true));
-                }
-              }
-            }
-            response(listAry);
-          } else {
-            // no results
-            response();
-          }
-        };
-        apca.onError = function (data) {
-          response();
-          console.log(data.message);
-        };
-      },
-      select: function (event, ui) {
-        locationDeparture = ui.item.code;
-        console.log(locationDeparture);
-        arrivalLocation = ui.item.code;
-        console.log(arrivalLocation);
-      },
-    };
-
-    // this is necessary to allow html entities to display properly in the jqueryUI labels
-    $(this).autocomplete(dataObj).data("ui-autocomplete")._renderItem =
-      function (ul, item) {
-        return $("<li></li>")
-          .data("item.autocomplete", item)
-          .html(item.label)
-          .appendTo(ul);
-      };
-  });
+initSubmit.on("click", function (e) {
+  e.preventDefault();
+  init();
+  generateFuelCost();
+  console.log('mpg: ', mpg);
 });
 
-// var flightEl =
+var hero = $(".hero");
 
-// fuelTypeReg.addEventListener("click", fuelType);
-// fuelTypePrem.addEventListener("click", fuelType);
-// fuelTypeDiesel.addEventListener("click", fuelType);
-// roundTrip.addEventListener("click", roundTripCost);
+function generateFuelCost() {
+  hero.append(
+    '<div class="ae-transparent gas-cost">' + "<h1>" + "Gas Cost" + "</h1>" + "</div>"
+  );
+  var gasInfo = $(".gas-info");
+  if (regularFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Regular Fuel Cost: " +
+        "$" +
+        // regFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  } else if (premiumFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Premium Fuel Cost: " +
+        "$" +
+        // premFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  } else if (dieselFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Diesel Fuel Cost: " +
+        "$" +
+        // dieselFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  }
+}
 
-// // Targets HTML Element for Gas Results Section
-// var gasResultEl = document.getElementsByClassName('gas-results-section');
-
-// // Creates Title Element & buttons for the Gas Results Section
-// var gasResultsTitleEl = document.createElement('h2');
-// var regFuelButton = document.createElement('button');
-// var premiumGradeButton = document.createElement('button');
-// var dieselFuelButton = document.createElement ('button');
-// var totalCostEl = document.createElement('section');
-
-// // Text in Title and buttons
-// gasResultsTitleEl.textContent = 'Cost to Drive';
-// regFuelButton.textContent = 'Regular Fuel';
-// premiumGradeButton.textContent = 'Premium Grade Fuel';
-// dieselFuelButton.textContent = 'Diesel Fuel';
-// // totalCostEl.textContent = 'Total Cost: ' + tripFuelCost;
-
-// // Append new elements to page
-// gasResultEl.appendChild(gasResultsTitleEl);
-// gasResultEl.appendChild(regFuelButton);
-// gasResultEl.appendChild(premiumGradeButton);
-// gasResultEl.appendChild(dieselFuelButton);
-// gasResultEl.appendChild(totalCostEl);
-// Targets HTML Element for Gas Results Section
-var gasResultEl = document.getElementsByClassName("gas-results-section");
-
-initSubmit.on("click", function () {
-  if (driveCheck.prop('checked') && flyCheck.prop('checked')) {
-    costToDriveEl.show();
-    flightEl.show();
-    costToDriveEl.show();
-    console.log("this runs");
-    initalEl.hide();
-    initalEl.hide();
-  } else if (flyCheck.prop('checked') && !driveCheck.prop('checked')) {
-    flightEl.show();
-    console.log('why is this running');
-    initalEl.hide();
-  } else if (driveCheck.prop('checked') && !flyCheck.prop('checked')) {
-    costToDriveEl.show();
-    initalEl.hide();
-    console.log("just drive");
-  } else {
-    window.alert("Please select at least one option");
-  }});
+// function to hide
+function init() {
+  initalEl.hide();
+}

@@ -15,39 +15,37 @@
 </head>
 
 <body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="./index.html">
-        <img src="./assets/img/201623.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112"
-          height="28" />
+  <nav class="navbar ae-nav" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand ae-transparent">
+      <a class="navbar-item ae-transparent" href="./index.html">
       </a>
 
-      <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+      <a role="button" class="navbar-burger ae-transparent" data-target="navMenu" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <section class="cd-intro">
+    <section class="cd-intro ae-transparent">
       <h1 class="cd-headline push">
-        <span>My favourite food is</span>
+        <!-- <span>My favourite food is</span>
         <span class="cd-words-wrapper">
           <b class="is-visible">pizza</b>
           <b>sushi</b>
           <b>steak</b>
-        </span>
+        </span> -->
       </h1>
     </section>
 
-    <div class="navbar-menu navbar-end" id="navMenu">
-      <a class="navbar-item"> Home </a>
+    <div class="navbar-menu navbar-end ae-transparent" id="navMenu">
+      <a class="navbar-item ae-transparent"> Home </a>
 
-      <a class="navbar-item"> Documentation </a>
+      <a class="navbar-item ae-transparent"> Documentation </a>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link"> More </a>
+        <a class="navbar-link ae-transparent"> More </a>
 
-        <div class="navbar-dropdown">
+        <div class="navbar-dropdown ae-transparent">
           <a class="navbar-item"> About </a>
           <a class="navbar-item"> Jobs </a>
           <a class="navbar-item"> Contact </a>
@@ -63,233 +61,162 @@
       <div
         class="space column is-half-desktop is-three-quarters-mobile is-two-thirds-tablet is-one-third-widescreen is-one-quarter-fullhd">
       </div>
-      <section>
-        <section class="results">
-          <div class="driving-results field">
-            <h2> Cost to Drive</h2>
-            <input id='miles-per-gallon' placeholder="How many mpg does you vehicle get?"></input>
-            <button class='btn' id="regFuel">Regular Fuel</button><br>
-            <button class='btn' id='premiumFuel'>Premium Fuel</button><br>
-            <button class='btn' id="dieselFuel">Diesel</button><br>
-          </div>
-          <div class="flying-results">
-              <ul>
-              </ul>
-          </div>
-        </section>
-      </section>
       <div class="login-box">
-        <h2>How Would You Like to Travel?</h2>
+        <h2>Let's take a trip!</h2>
         <form>
           <div class="user-box">
-            <input type="checkbox" id="fly-check">
-            <label>Fly</label>
+            <input id='going-to' placeholder="Where are you headed?"></input>
           </div>
           <br><br>
           <div class="user-box">
-            <input type="checkbox" id="drive-check">
-            <label>Drive</label>
+            <input id='leaving' placeholder="where are you coming form?"></input>
           </div>
+          <br><br>
+          <div class="user-box">
+            <input id='miles-per-gallon' placeholder="How many mpg does you vehicle get?"></input>
+          </div>
+          <br><br>
+          <!-- <div class="user-box" id="prem-fuel">
+            <input type="select" id="reg-fuel"/>
+            <label for="cb-alt">Regular Fuel</label>
+          </div>
+          <br><br>
+          <div class="user-box" id="prem-fuel">
+            <input type="select" id="prem-fuel"/>
+            <label for="cb-alt">Premium Fuel</label>
+          </div>
+          <br><br>
+          <div class="user-box" id="prem-fuel">
+            <input type="select" id="diesel-fuel"/>
+            <label for="cb-alt">Diesel Fuel</label>
+          </div> -->
+          <select id="num-pass">
+            <option>What Type of Fuel?</option>
+            <option>Regular Fuel</option>
+            <option>Premium Fuel</option>
+            <option>Diesel Fuel</option>
+          </select>
           <br><br>
           <a href="#">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            <button type="submit" id="init-submit">Submit</button> 
+            <button type="submit" id="init-submit">Submit</button>
           </a>
         </form>
       </div>
-      <form action=""
-        class="userInput column is-pulled-right is-half-desktop is-three-quarters-mobile is-two-thirds-tablet is-one-third-widescreen is-one-quarter-fullhd">
-        <div class="field">
-          <label class="label">Departure</label>
-          <div class="control">
-            <input id="departure" name="term" class="autocomplete" type="text" placeholder="Departure City">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Arrival</label>
-          <div class="control">
-            <input id="arrival" name="term" class="autocomplete" type="text" placeholder="Arrival City">
-          </div>
-        </div>
-        <br>
-        <!-- dates for departure -->
-        <div class="field">
-          <div class="control">
-            <h1>Date of Departure</h1>
-            <input type="date" id="departure-date">
-            </select>
-          </div>
-        </div>
-        <br>
-        <div class="field">
-          <div class="control">
-            <h1>Date of Return</h1>
-            <input type="date" id="arrival-date">
-            </select>
-          </div>
-        </div>
-
-        <br>
-        <div class="field">
-          <!-- <label class="label">Number of Travelers</label> -->
-          <div class="control">
-            <label class="radio">
-              <input type="radio" value="ROUND_TRIP" name="itinerary" id="itinerary">
-              Round Trip
-            </label>
-            <br>
-            <label class="radio">
-              <input type="radio" value="ONE_WAY" name="itinerary" id="itinerary">
-              One Way
-            </label>
-          </div>
-          <br>
-          <div class="control">
-            <div class="select">
-              <select id="num-pass">
-                <option>Number of Passengers</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <br>
-        <!-- <h2>Cost To Drive</h2>
-          <button>Regular Fuel</button>
-          <button>Premium Fuel</button>
-          <button>Diesel</button>
-          <br><br> -->
-        <div class="control">
-          <div>
-            <select id="select-class">
-              <option>Cabin Class</option>
-              <option>Economy</option>
-              <option>Premium Economy</option>
-              <option>Business</option>
-              <option>First Class</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        <button type="submit" id="fly-submit">Submit</button>
     </div>
+  </section>
 
 
 
 
 
-    <!-- <div class="gimme-space"></div> -->
-    <section class="container gas-results-section">
-      <h3>Hello World</h3>
 
-    </section>
+  <!-- <div class="gimme-space"></div> -->
+  <section class="container gas-results-section">
+    <h3>Hello World</h3>
 
-    <footer class="footer ae-footer">
-      <div class="footer-inner ae-foot-contain">
-        <div class="column is-multiline is-flex-tablet is-flex-mobile">
-          <div class="column">
-            <div class="footer-group">
-              <h4>Meet The Team</h4>
-              <br />
-              <ul>
-                <li>
-                  <a href="https://github.com/aanglin"><img src="https://avatars.githubusercontent.com/u/101485583?v=4"
-                      alt="Aaron" /></a>
-                </li>
-                <li>
-                  <a href="https://github.com/andrew87e"><img
-                      src="https://avatars.githubusercontent.com/u/106359255?s=400&u=7422989cc758a44f33b78d2489f012c8a014ea15&v=4"
-                      alt="Andrew" /></a>
-                </li>
-                <li>
-                  <a href="https://github.com/bralvis2"><img src="https://avatars.githubusercontent.com/u/107074621?v=4"
-                      alt="Brenda" /></a>
-                </li>
-                <li>
-                  <a href="https://github.com/joelprentiss"><img
-                      src="https://avatars.githubusercontent.com/u/107448084?v=4" alt="Joel" /></a>
-                </li>
-                <li>
-                  <a href="https://github.com/LeenaJabr"><img
-                      src="https://avatars.githubusercontent.com/u/107494937?v=4" alt="Leena" /></a>
-                </li>
-              </ul>
-            </div>
+  </section>
+
+  <footer class="footer ae-footer">
+    <div class="footer-inner ae-foot-contain">
+      <div class="column is-multiline is-flex-tablet is-flex-mobile">
+        <div class="column">
+          <div class="footer-group">
+            <h4>Meet The Team</h4>
+            <br />
+            <ul>
+              <li>
+                <a href="https://github.com/aanglin"><img src="https://avatars.githubusercontent.com/u/101485583?v=4"
+                    alt="Aaron" /></a>
+              </li>
+              <li>
+                <a href="https://github.com/andrew87e"><img
+                    src="https://avatars.githubusercontent.com/u/106359255?s=400&u=7422989cc758a44f33b78d2489f012c8a014ea15&v=4"
+                    alt="Andrew" /></a>
+              </li>
+              <li>
+                <a href="https://github.com/bralvis2"><img src="https://avatars.githubusercontent.com/u/107074621?v=4"
+                    alt="Brenda" /></a>
+              </li>
+              <li>
+                <a href="https://github.com/joelprentiss"><img
+                    src="https://avatars.githubusercontent.com/u/107448084?v=4" alt="Joel" /></a>
+              </li>
+              <li>
+                <a href="https://github.com/LeenaJabr"><img src="https://avatars.githubusercontent.com/u/107494937?v=4"
+                    alt="Leena" /></a>
+              </li>
+            </ul>
           </div>
-          <div class="column is-3 is-6-mobile">
-            <div class="footer-group">
-              <h4>Discover</h4>
-              <ul>
-                <li>
-                  <a>Travel Blog</a>
-                </li>
-                <li>
-                  <a>Travel Facts</a>
-                </li>
-                <li>
-                  <a>Be Safe when Traveling</a>
-                </li>
-                <li>
-                  <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html/">Travel Advisories</a>
-                </li>
-              </ul>
-            </div>
+        </div>
+        <div class="column is-3 is-6-mobile">
+          <div class="footer-group">
+            <h4>Discover</h4>
+            <ul>
+              <li>
+                <a>Travel Blog</a>
+              </li>
+              <li>
+                <a>Travel Facts</a>
+              </li>
+              <li>
+                <a>Be Safe when Traveling</a>
+              </li>
+              <li>
+                <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html/">Travel
+                  Advisories</a>
+              </li>
+            </ul>
           </div>
-          <div class="column is-3 is-6-mobile">
-            <div class="footer-group">
-              <h4>Partner with UT-Travel Planner</h4>
-              <ul>
-                <li>
-                  <a>Advertise</a>
-                </li>
-                <li>
-                  <a>UT-Travel Planner Partner Solutions</a>
-                </li>
-              </ul>
-            </div>
+        </div>
+        <div class="column is-3 is-6-mobile">
+          <div class="footer-group">
+            <h4>Partner with UT-Travel Planner</h4>
+            <ul>
+              <li>
+                <a>Advertise</a>
+              </li>
+              <li>
+                <a>UT-Travel Planner Partner Solutions</a>
+              </li>
+            </ul>
           </div>
-          <div class="column is-3 is-6-mobile">
-            <div class="footer-group">
-              <h4>Connect with UT-Travel Planner</h4>
-              <ul>
-                <li>
-                  <a>UT-Travel Planner for iOS</a>
-                </li>
-                <li>
-                  <a>UT-Travel Planner for Android</a>
-                </li>
-                <li>
-                  <a>Facebook</a>
-                </li>
-                <li>
-                  <a>Instagram</a>
-                </li>
-                <li>
-                  <a>Twitter</a>
-                </li>
-                <li>
-                  <a>YouTube</a>
-                </li>
-              </ul>
-            </div>
+        </div>
+        <div class="column is-3 is-6-mobile">
+          <div class="footer-group">
+            <h4>Connect with UT-Travel Planner</h4>
+            <ul>
+              <li>
+                <a>UT-Travel Planner for iOS</a>
+              </li>
+              <li>
+                <a>UT-Travel Planner for Android</a>
+              </li>
+              <li>
+                <a>Facebook</a>
+              </li>
+              <li>
+                <a>Instagram</a>
+              </li>
+              <li>
+                <a>Twitter</a>
+              </li>
+              <li>
+                <a>YouTube</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </footer>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"
-      type="text/javascript"></script>
-    <!-- <script src="air-port-codes-api-min.js"></script> -->
-    <script src="./assets/js/script.js"></script>
+    </div>
+  </footer>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+  <!-- <script src="air-port-codes-api-min.js"></script> -->
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
