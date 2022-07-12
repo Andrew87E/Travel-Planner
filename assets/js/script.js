@@ -23,6 +23,7 @@ flightEl.hide();
 costToDriveEl.hide();
 
 
+
 //   Display fuel prices for user input
 // take input from form for mpg
 // var milesPerGallon = document.querySelector("user-input-form");
@@ -36,12 +37,30 @@ costToDriveEl.hide();
 // };
 
 // const options = {
+
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': 'f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59',
+// 		'X-RapidAPI-Host': 'distanceto.p.rapidapi.com'
+// 	}
+// };
+
+// fetch(`https://distanceto.p.rapidapi.com/get?route=%5B%7B%22t%22%20%3A%20%22${location_departure}%22%7D%2C%20%7B%22t%22%20%3A%20%22${arrival}%22%7D%5D&car=true`, options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
+
+//  for (var i=0; i<data.length; i++)
+//   var milesToDrive = data[i].steps.distance.car.distance
+//   console.log(milesToDrive);
+
 //   method: "GET",
 //   headers: {
 //     "X-RapidAPI-Key": "f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59",
 //     "X-RapidAPI-Host": "distanceto.p.rapidapi.com",
 //   },
 // };
+
 
 // fetch(
 //   `https://distanceto.p.rapidapi.com/get?route=%5B%7B%22t%22%20%3A%20%22${departureLocation}%22%7D%2C%20%7B%22t%22%20%3A%20%22${arrivalLocation}%22%7D%5D&car=true`,
@@ -117,22 +136,41 @@ costToDriveEl.hide();
 // var baGasKey = '1071d15d6cmsh24a0edab985b59ap1dfd1fjsn894de03a6f8b';
 
 // Api call to priceline for data sorting
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '2b4e532ae3msh54b5f70921ddc65p1b9fcejsn1929ae6001ba',
-// 		'X-RapidAPI-Host': 'priceline-com-provider.p.rapidapi.com'
-// 	}
-// };
+  
+function getData(){
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '2b4e532ae3msh54b5f70921ddc65p1b9fcejsn1929ae6001ba',
+    'X-RapidAPI-Host': 'priceline-com-provider.p.rapidapi.com'
+  }
+};
 
-// fetch(`https://priceline-com-provider.p.rapidapi.com/v1/flights/search?itinerary_type=${itinerary}&class_type=${classType}&location_arrival=${arrivalLocation}&date_departure=2022-11-15&location_departure=MOW&sort_order=PRICE&number_of_stops=1&price_max=20000&number_of_passengers=1&duration_max=2051&price_min=100&date_departure_return=2022-11-16, options`)
 
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log(data);
-//   });
+ fetch(`https://priceline-com-provider.p.rapidapi.com/v1/flights/search?itinerary_type=${itinerary}&class_type=${classType}&location_arrival=${arrivalLocation}&date_departure=${departureDate}&location_departure=${departureLocation}&sort_order=PRICE&number_of_stops=1&price_max=20000&number_of_passengers=${numberOfPass}&duration_max=2051&price_min=100&date_departure_return=${arrivalDate}`, options)
+
+//  fetch('https://priceline-com-provider.p.rapidapi.com/v2/flight/departures?sid=iSiX639&departure_date=${departureDate}&adults=${numberOfPass}&origin_airport_code=YWG&destination_airport_code=JFK', options)
+
+.then(function (response) {
+  return response.json();
+})
+.then(function (data) {
+  console.log(data);
+});
+
+
+flightSubmit.on('click', function(event){
+  event.preventDefault();
+  getData()
+  console.log(arrivalLocation)
+  console.log(departureLocation)
+  console.log(classType);
+  console.log(numberOfPass);
+  console.log(arrivalDate);
+  console.log(departureDate);
+
+  })
+}
 
 // API call to gas for national average price data
 // const gasOptions = {
@@ -414,4 +452,4 @@ initSubmit.on("click", function () {
   } else {
     window.alert("Please select at least one option");
   }
-});
+
