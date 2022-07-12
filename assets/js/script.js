@@ -230,12 +230,12 @@ var defaultDieselCost = 5.06;
 var defaultMpg = 20;
 var mpg = $("#miles-per-gallon");
 
-initSubmit.on("click", function (e) {
-  e.preventDefault();
-  init();
-  generateFuelCost();
-  console.log('mpg: ', mpg);
-});
+// initSubmit.on("click", function (e) {
+//   e.preventDefault();
+//   init();
+//   generateFuelCost();
+//   console.log('mpg: ', mpg);
+// });
 
 var hero = $(".hero");
 
@@ -282,7 +282,30 @@ function init() {
   initalEl.hide();
 }
 
+
 // create spotify playlist
+
+// var requestToken = document.querySelector('#obtain-new-token')
+// var userId = document.querySelector('#user-profile')
+// var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
+// function createList (playlistname , public)
+// fetch (createPlaylist)
+// response = request.post(
+//   createPlaylist,
+//   headers = {
+//     'Authorization': 'Bearer', requestToken },
+//     json={
+//      'name': 'name',
+//       'public' : 'public',
+//   }
+// );
+
+// function putPlaylist (){
+// var playlist = createList( 
+//   playlistname ='My Road Trip Playlist',
+//   public =  false
+// )
+// };
 var requestToken = document.querySelector('#obtain-new-token')
 var userId = document.querySelector('#user-profile')
 var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
