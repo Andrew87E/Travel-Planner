@@ -1,30 +1,3 @@
-<<<<<<< Updated upstream
-// var heroEl = $(".hero");
-// var mapEl = $("#map");
-var andrewA = "";
-var destinationInput = document.getElementById('going-to');
-var originInput = document.getElementById('leaving');
-// var aeMap = $("#ae-map");
-var submitBtn = $("#init-submit");
-var mpg = $("#miles-per-gallon");
-var regFuel;
-var regularFuel = $("#reg-fuel");
-var premiumFuel = $("#prem-fuel");
-var dieselFuel = $("#diesel-fuel");
-var defaultPremiumCost = 4.95;
-var defaultRegularCost = 4.45;
-var defaultDieselCost = 5.06;
-var defaultMpg = 20;
-var mpg = $("#miles-per-gallon");
-
-function init() {
-    initalEl.hide();
-  }
-// function addMap() {
-//   aeMap.append(
-//     `<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=${andrewA}&q=Space+Needle,Seattle+WA"></iframe>`
-//   );
-=======
 var heroEl = $(".hero");
 var mapEl = $("#map");
 var andrewA = "AIzaSyCBrNRjKT6zvV08v1SM6-v-kbUtx-cYo8g";
@@ -50,7 +23,6 @@ function init() {
 
 // function splitFuelCost() {
 //     var totalCostPer =
->>>>>>> Stashed changes
 // }
 submitBtn.on("click", function (e) {
     e.preventDefault();
@@ -149,12 +121,8 @@ function initialize() {
 
 google.maps.event.addDomListener(window, "load", initialize);
 
-<<<<<<< Updated upstream
-axios();
-=======
 // function addMap() {
 //   aeMap.append(
 //     `<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=${andrewA}&q=Space+Needle,Seattle+WA"></iframe>`
 //   );
 // }
->>>>>>> Stashed changes
