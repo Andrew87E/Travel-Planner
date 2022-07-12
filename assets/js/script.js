@@ -284,14 +284,20 @@ function init() {
 // create spotify playlist
 var requestToken = 'BQBLfFMi3KcwXOUFIWvqxWh7Khsn17Hv8XBTMnw6_QK'
 var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
-function createPlaylist (name , public);
+function createList (playlistname , public);
 response = request.post(
   createPlaylist,
   headers = {
-    'Authorization': Bearer, requestToken },
+    'Authorization': 'Bearer', requestToken },
     json={
-     'name': "My Road Trip Playlist",
-    'description': "New playlist for my roadtrip",
-    'public' : false,
+     'name': 'name',
+      'public' : 'public',
   }
 );
+
+function putPlaylist (){
+var playlist = createList( 
+  playlistname ='My Road Trip Playlist',
+  public =  false
+)
+};
