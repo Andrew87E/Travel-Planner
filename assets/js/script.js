@@ -275,14 +275,142 @@
 //         "</div>"
 //     );
 //   }
-// }
+// };
+
+// fetch('https://gas-price.p.rapidapi.com/stateUsaPrice?state=national', gasOptions)
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(data){
+//     console.log(data);
+//   });
+
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '2b4e532ae3msh54b5f70921ddc65p1b9fcejsn1929ae6001ba',
+// 		'X-RapidAPI-Host': 'google-maps28.p.rapidapi.com'
+// 	}
+// };
+
+// fetch('https://google-maps28.p.rapidapi.com/maps/api/place/details/json?fields=address_component%2Cadr_address%2Cbusiness_status%2Cformatted_address%2Cgeometry%2Cicon%2Cicon_mask_base_uri%2Cicon_background_color%2Cname%2Cpermanently_closed%2Cphoto%2Cplace_id%2Cplus_code%2Ctype%2Curl%2Cutc_offset%2Cvicinity%2Cformatted_phone_number%2Cinternational_phone_number%2Copening_hours%2Cwebsite%2Cprice_level%2Crating%2Creview%2Cuser_ratings_total&place_id=ChIJ37HL3ry3t4kRv3YLbdhpWXE&language=en&region=en', options)
+
+// .then(function (response) {
+//        return response.json();
+//      })
+//      .then(function (data) {
+//        console.log(data);
+//      });
+
+// navbar burger menu
+document.addEventListener("DOMContentLoaded", () => {
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(
+    document.querySelectorAll(".navbar-burger"),
+    0
+  );
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach((el) => {
+      el.addEventListener("click", () => {
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle("is-active");
+        $target.classList.toggle("is-active");
+      });
+    });
+  }
+});
+
+var regularFuel = $("#reg-fuel");
+var premiumFuel = $("#prem-fuel");
+var dieselFuel = $("#diesel-fuel");
+var defaultPremiumCost = 4.95;
+var defaultRegularCost = 4.45;
+var defaultDieselCost = 5.06;
+var defaultMpg = 20;
+var mpg = $("#miles-per-gallon");
+
+// initSubmit.on("click", function (e) {
+//   e.preventDefault();
+//   init();
+//   generateFuelCost();
+//   console.log('mpg: ', mpg);
+// });
+
+var hero = $(".hero");
+
+function generateFuelCost() {
+  hero.append(
+    '<div class="ae-transparent gas-cost">' + "<h1>" + "Gas Cost" + "</h1>" + "</div>"
+  );
+  var gasInfo = $(".gas-info");
+  if (regularFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Regular Fuel Cost: " +
+        "$" +
+        // regFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  } else if (premiumFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Premium Fuel Cost: " +
+        "$" +
+        // premFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  } else if (dieselFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Diesel Fuel Cost: " +
+        "$" +
+        // dieselFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  }
+}
 
 // // function to hide
 // function init() {
 //   initalEl.hide();
 // }
 
+
 // create spotify playlist
+
+// var requestToken = document.querySelector('#obtain-new-token')
+// var userId = document.querySelector('#user-profile')
+// var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
+// function createList (playlistname , public)
+// fetch (createPlaylist)
+// response = request.post(
+//   createPlaylist,
+//   headers = {
+//     'Authorization': 'Bearer', requestToken },
+//     json={
+//      'name': 'name',
+//       'public' : 'public',
+//   }
+// );
+
+// function putPlaylist (){
+// var playlist = createList( 
+//   playlistname ='My Road Trip Playlist',
+//   public =  false
+// )
+// };
 var requestToken = document.querySelector('#obtain-new-token')
 var userId = document.querySelector('#user-profile')
 var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
@@ -304,3 +432,6 @@ createList(
   public =  false
 )
 };
+
+const element= document.getElementById('#spotifyLogin');
+element.addEventListener('click', putPlaylist);
