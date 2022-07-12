@@ -281,3 +281,26 @@ function generateFuelCost() {
 function init() {
   initalEl.hide();
 }
+
+// create spotify playlist
+var requestToken = document.querySelector('#obtain-new-token')
+var userId = document.querySelector('#user-profile')
+var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
+function createList (playlistname , public);
+fetch (createPlaylist);
+response = request.post(
+  createPlaylist,
+  headers = {
+    'Authorization': 'Bearer', requestToken },
+    json={
+     'name': 'name',
+      'public' : 'public',
+  }
+);
+
+function putPlaylist (){
+var playlist = createList( 
+  playlistname ='My Road Trip Playlist',
+  public =  false
+)
+};
