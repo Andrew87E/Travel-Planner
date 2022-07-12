@@ -31,6 +31,8 @@ var initalEl = $(".login-box");
 var costToDriveEl = $(".results");
 var initSubmit = $("#init-submit");
 var driveCheck = $("#drive-check");
+var weatherApiKey = '76dea1d2eaa53c39fea214a799bab840'
+var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`
 
 /* section for spotify api 
 https://engineering.atspotify.com/2015/03/understanding-spotify-web-api/
@@ -282,28 +284,22 @@ function init() {
   initalEl.hide();
 }
 
-// create spotify playlist
-var requestToken = document.querySelector('#obtain-new-token')
-var userId = document.querySelector('#user-profile')
-var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
-function createList (name , public){
-fetch (createPlaylist);
-response = request.post(
-  createPlaylist,
-  headers = {
-    'Authorization': 'Bearer', requestToken },
-    json={
-     name: 'name',
-    public : 'public',
-  }
-)};
+function renderCurrentForcast (weather , city, timeZone){
+  var {temperature , humidity , uvIndex} =weather
+  console.log(temperature. humidity,uvIndex);
+ }    
 
-function putPlaylist (){
-createList( 
-  name ='My Road Trip Playlist',
-  public =  false
-)
-};
-
-const element= document.getElementById('#spotifyLogin');
-element.addEventListener('click', putPlaylist);
+   
+var weatherSearch=     
+      (function(){
+      fetch(weatherApiCall)
+      .then (function(response){
+              return response.json()}
+      .then (function(data){
+       for (var i=0; i<data.length; i++){
+       var currentWeather= document.createElement('forecast-day');
+                         }
+              })
+          )}
+          
+      );  
