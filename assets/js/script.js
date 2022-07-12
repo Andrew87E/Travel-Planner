@@ -13,7 +13,6 @@ var baAPI = "340f1157912d4ff6b27b91b2e968995f1c3a7802";
 // gas stations along route? icebox?
 // ical google cal for road trip
 
-
 var aeAirAPI = "3a02828a79b9963";
 var arrivalLocation = $("#arrival").val();
 var arrivalDate = $("#arrival-date").val();
@@ -33,14 +32,13 @@ var initSubmit = $("#init-submit");
 var driveCheck = $("#drive-check");
 
 /* section for spotify api 
-
-
-
-
-
-
+https://engineering.atspotify.com/2015/03/understanding-spotify-web-api/
+https://developer.spotify.com/console/browse/
+https://www.youtube.com/watch?v=c5sWvP9h3s8
+https://developer.spotify.com/documentation/
+https://developer.spotify.com/documentation/web-api/quick-start/
+https://developer.spotify.com/documentation/web-api/reference/
 */
-
 
 /* section for weather api
 
@@ -51,10 +49,6 @@ var driveCheck = $("#drive-check");
 
 
 */
-
-
-
-
 
 //   Display fuel prices for user input
 // take input from form for mpg
@@ -226,23 +220,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-initSubmit.on("click", function () {
-  if (driveCheck.prop("checked") && flyCheck.prop("checked")) {
-    costToDriveEl.show();
-    flightEl.show();
-    costToDriveEl.show();
-    console.log("this runs");
-    initalEl.hide();
-    initalEl.hide();
-  } else if (flyCheck.prop("checked") && !driveCheck.prop("checked")) {
-    flightEl.show();
-    console.log("why is this running");
-    initalEl.hide();
-  } else if (driveCheck.prop("checked") && !flyCheck.prop("checked")) {
-    costToDriveEl.show();
-    initalEl.hide();
-    console.log("just drive");
-  } else {
-    window.alert("Please select at least one option");
-  }
+var regularFuel = $("#reg-fuel");
+var premiumFuel = $("#prem-fuel");
+var dieselFuel = $("#diesel-fuel");
+var defaultPremiumCost = 4.95;
+var defaultRegularCost = 4.45;
+var defaultDieselCost = 5.06;
+var defaultMpg = 20;
+var mpg = $("#miles-per-gallon");
+
+initSubmit.on("click", function (e) {
+  e.preventDefault();
+  init();
+  generateFuelCost();
+  console.log('mpg: ', mpg);
 });
+
+var hero = $(".hero");
+
+function generateFuelCost() {
+  hero.append(
+    '<div class="ae-transparent gas-cost">' + "<h1>" + "Gas Cost" + "</h1>" + "</div>"
+  );
+  var gasInfo = $(".gas-info");
+  if (regularFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Regular Fuel Cost: " +
+        "$" +
+        // regFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  } else if (premiumFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Premium Fuel Cost: " +
+        "$" +
+        // premFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  } else if (dieselFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Diesel Fuel Cost: " +
+        "$" +
+        // dieselFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  }
+}
+
+// function to hide
+function init() {
+  initalEl.hide();
+}
