@@ -3,17 +3,25 @@
 var baAPI = "340f1157912d4ff6b27b91b2e968995f1c3a7802";
 // var jpApiKeyFuel = 'f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59' Joel's API Key
 var aeAirAPI = "3a02828a79b9963";
-var arrivalLocation = $('#arrival').val();
-var arrivalDate = $('#arrival-date').val();
-var departureDate = $('#departure-date').val();
-var departureLocation = $('#departure').val();
-var numberOfPass = $('#num-pass').val();
+var arrivalLocation = $("#arrival").val();
+var arrivalDate = $("#arrival-date").val();
+var departureDate = $("#departure-date").val();
+var departureLocation = $("#departure").val();
+var numberOfPass = $("#num-pass").val();
 var tripFuelCost = "";
-var milesPerGallon = $('#miles-per-gallon').val();
-var milesToDrive = '';
-var itinerary = $('#itinerary').val();
-var classType = $('#select-class').val();
-var flightSubmit = $('#fly-submit')
+var milesPerGallon = $("#miles-per-gallon").val();
+var milesToDrive = "";
+var itinerary = $("#itinerary").val();
+var classType = $("#select-class").val();
+var flightEl = $(".userInput");
+var initalEl = $(".login-box");
+var costToDriveEl = $(".results");
+var initSubmit = $("#init-submit");
+var driveCheck = $("#drive-check");
+var flyCheck = $("#fly-check");
+flightEl.hide();
+costToDriveEl.hide();
+
 
 
 //   Display fuel prices for user input
@@ -29,6 +37,7 @@ var flightSubmit = $('#fly-submit')
 // };
 
 // const options = {
+
 // 	method: 'GET',
 // 	headers: {
 // 		'X-RapidAPI-Key': 'f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59',
@@ -45,6 +54,24 @@ var flightSubmit = $('#fly-submit')
 //   var milesToDrive = data[i].steps.distance.car.distance
 //   console.log(milesToDrive);
 
+//   method: "GET",
+//   headers: {
+//     "X-RapidAPI-Key": "f55357b73fmsha3fe6da1e79249ep1bc9bfjsnde4582e28e59",
+//     "X-RapidAPI-Host": "distanceto.p.rapidapi.com",
+//   },
+// };
+
+
+// fetch(
+//   `https://distanceto.p.rapidapi.com/get?route=%5B%7B%22t%22%20%3A%20%22${departureLocation}%22%7D%2C%20%7B%22t%22%20%3A%20%22${arrivalLocation}%22%7D%5D&car=true`,
+//   options
+// )
+//   .then((response) => response.json())
+//   .then((response) => console.log(response))
+//   .catch((err) => console.error(err));
+//   for (var i = 0; i < data.length; i++)
+//   var milesToDrive = data[i].steps.distance.car.distance;
+// console.log(milesToDrive);
 
 // take price per gallon from fuel API
 // this function should allow user to select the type of fuel they are going to use and then calculate the prices using the form input for miles
@@ -73,25 +100,25 @@ var flightSubmit = $('#fly-submit')
 //     var dieselFuel=data[i].diesel;
 // });
 
-function regFuelCost() {
-  (regGrade * milesPerGallon) % (milesToDrive%5280);
-  tripFuelCost = tripFuelCost[0];
-  return tripFuelCost;
-}
+// function regFuelCost() {
+//   (regGrade * milesPerGallon) % (milesToDrive % 5280);
+//   tripFuelCost = tripFuelCost[0];
+//   return tripFuelCost;
+// }
 
-var premiumGradeCost = function () {
-  (premGrade * milesPerGallon) % (milesToDrive%5280);
-  tripFuelCost = tripFuelCost[0];
-  return tripFuelCost;
-};
+// var premiumGradeCost = function () {
+//   (premGrade * milesPerGallon) % (milesToDrive % 5280);
+//   tripFuelCost = tripFuelCost[0];
+//   return tripFuelCost;
+// };
 
-var dieselFuelCost = function () {
-  (dieselFuel * milesPerGallon) % (milesToDrive%5280);
-  tripFuelCost = tripFuelCost[0];
-  return tripFuelCost;
-};
+// var dieselFuelCost = function () {
+//   (dieselFuel * milesPerGallon) % (milesToDrive % 5280);
+//   tripFuelCost = tripFuelCost[0];
+//   return tripFuelCost;
+// };
 
-console.log(tripFuelCost);
+// console.log(tripFuelCost);
 //   show results for different fuel types; reg, mid, premium, diesel
 
 // mulitiply price per gallon against mpg from user
@@ -406,74 +433,23 @@ $(function () {
 // Targets HTML Element for Gas Results Section
 var gasResultEl = document.getElementsByClassName("gas-results-section");
 
-// Creates Title Element & buttons for the Gas Results Section
-// var gasResultsTitleEl = document.createElement('h2');
-// var regFuelButton = document.createElement('button');
-// var premiumGradeButton = document.createElement('button');
-// var dieselFuelButton = document.createElement ('button');
-// var totalCostEl = document.createElement('section');
-
-// // Text in Title and buttons
-// gasResultsTitleEl.textContent = 'Cost to Drive';
-// regFuelButton.textContent = 'Regular Fuel';
-// premiumGradeButton.textContent = 'Premium Grade Fuel';
-// dieselFuelButton.textContent = 'Diesel Fuel';
-// totalCostEl.textContent = 'Total Cost: ' + tripFuelCost;
-
-// // Append new elements to page
-// gasResultEl.appendChild(gasResultsTitleEl);
-// gasResultEl.appendChild(regFuelButton);
-// gasResultEl.appendChild(premiumGradeButton);
-// gasResultEl.appendChild(dieselFuelButton);
-// gasResultEl.appendChild(totalCostEl);
-
-// regFuelButton.addEventListener('click', regFuelCost);
-// premiumGradeButton.addEventListener('click', premiumGradeCost);
-// dieselFuelButton.addEventListener('click', dieselFuelCost);
-
-function init() {
-  //hide inital section
-  //show flight info section
-  //show cost to drive section
-  //show gas results section
-  //if flight box is checked, show flight info section
-  //if flight box is unchecked, hide flight info section
-  //if cost to drive box is checked, show cost to drive section
-  //if cost to drive box is unchecked, hide cost to drive section
-  // if both are checked, show both sections
-  flightEl.style.diplay = "none";
-  costToDriveBox.style.display = "none";
-  var flightEl = document.getElementsByClassName("userInput");
-  var initalEl = document.getElementsByClassName("login-box");
-  var costToDriveBox = document.getElementById("results");
-  var flying = document.getElementById("flying");
-  var driving = document.getElementById("driving");
-
-  if (flying) {
-    initalEl.style.display = "none";
-    flightInfoEl.style.display = "block";
-    costToDriveEl.style.display = "none";
-    gasResultsEl.style.display = "none";
+initSubmit.on("click", function () {
+  if (driveCheck.prop('checked') && flyCheck.prop('checked')) {
+    costToDriveEl.show();
+    flightEl.show();
+    costToDriveEl.show();
+    console.log("this runs");
+    initalEl.hide();
+    initalEl.hide();
+  } else if (flyCheck.prop('checked') && !driveCheck.prop('checked')) {
+    flightEl.show();
+    console.log('why is this running');
+    initalEl.hide();
+  } else if (driveCheck.prop('checked') && !flyCheck.prop('checked')) {
+    costToDriveEl.show();
+    initalEl.hide();
+    console.log("just drive");
   } else {
-    initalEl.style.display = "block";
-    flightInfoEl.style.display = "none";
-    costToDriveEl.style.display = "none";
-    gasResultsEl.style.display = "none";
+    window.alert("Please select at least one option");
   }
-  if (driving) {
-    initalEl.style.display = "none";
-    flightInfoEl.style.display = "none";
-    costToDriveEl.style.display = "block";
-    gasResultsEl.style.display = "none";
-  }
-  if (flying && driving) {
-    initalEl.style.display = "none";
-    flightInfoEl.style.display = "block";
-    costToDriveEl.style.display = "block";
-    gasResultsEl.style.display = "block";
-  }
-}
 
- 
-
-// init();

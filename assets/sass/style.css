@@ -155,6 +155,22 @@ input {
   -webkit-animation-delay: 0.75s;
           animation-delay: 0.75s;
 }
+.login-box button {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+.login-box button:active {
+  background: none;
+  border: none;
+  outline: none;
+}
+.login-box button:focus {
+  outline: none;
+  background: none;
+  border: none;
+}
 
 @-webkit-keyframes btn-anim1 {
   0% {
@@ -394,39 +410,3 @@ input {
   width: 260px;
   margin: 10px;
 }/*# sourceMappingURL=style.css.map */
-
-/* css for the results of cost to drive and the cost to fly */
-.results{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.driving-results{
-  display: flex;
-  flex-direction: column;
-  padding: 5%;
-  width: 43%;
-}
-
-.flying-results{
-  padding: 5%;
-  width: 43%
-}
-
-.btn{
-  margin-bottom: 5px;
-}
-
-
-.results-title {
-  font-size: 1.5em ;
-  font-style: bold;
-  text-align: center;
-}
-
-#miles-per-gallon{
-  width: 96%;
-  text-align: center;
-}
