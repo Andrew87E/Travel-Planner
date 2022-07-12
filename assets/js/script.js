@@ -287,6 +287,7 @@ var requestToken = document.querySelector('#obtain-new-token')
 var userId = document.querySelector('#user-profile')
 var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
 function createList (playlistname , public);
+fetch (createPlaylist);
 response = request.post(
   createPlaylist,
   headers = {
