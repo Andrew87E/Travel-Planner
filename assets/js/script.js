@@ -239,3 +239,68 @@ var mpg = $("#miles-per-gallon");
 
 var hero = $(".hero");
 
+function generateFuelCost() {
+  hero.append(
+    '<div class="ae-transparent gas-cost">' + "<h1>" + "Gas Cost" + "</h1>" + "</div>"
+  );
+  var gasInfo = $(".gas-info");
+  if (regularFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Regular Fuel Cost: " +
+        "$" +
+        // regFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  } else if (premiumFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Premium Fuel Cost: " +
+        "$" +
+        // premFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  } else if (dieselFuel.prop("checked")) {
+    gasInfo.append(
+      '<div class="gas-cost">' +
+        "<h2>" +
+        "Diesel Fuel Cost: " +
+        "$" +
+        // dieselFuelCost +
+        "</h2>" +
+        "</div>"
+    );
+  }
+}
+
+// function to hide
+function init() {
+  initalEl.hide();
+}
+
+// create spotify playlist
+var requestToken = document.querySelector('#obtain-new-token')
+var userId = document.querySelector('#user-profile')
+var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
+function createList (playlistname , public);
+fetch (createPlaylist);
+response = request.post(
+  createPlaylist,
+  headers = {
+    'Authorization': 'Bearer', requestToken },
+    json={
+     'name': 'name',
+      'public' : 'public',
+  }
+);
+
+function putPlaylist (){
+var playlist = createList( 
+  playlistname ='My Road Trip Playlist',
+  public =  false
+)
+};
