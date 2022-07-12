@@ -230,54 +230,12 @@ var defaultDieselCost = 5.06;
 var defaultMpg = 20;
 var mpg = $("#miles-per-gallon");
 
-initSubmit.on("click", function (e) {
-  e.preventDefault();
-  init();
-  generateFuelCost();
-  console.log('mpg: ', mpg);
-});
+// initSubmit.on("click", function (e) {
+//   e.preventDefault();
+//   init();
+//   generateFuelCost();
+//   console.log('mpg: ', mpg);
+// });
 
 var hero = $(".hero");
 
-function generateFuelCost() {
-  hero.append(
-    '<div class="ae-transparent gas-cost">' + "<h1>" + "Gas Cost" + "</h1>" + "</div>"
-  );
-  var gasInfo = $(".gas-info");
-  if (regularFuel.prop("checked")) {
-    gasInfo.append(
-      '<div class="gas-cost">' +
-        "<h2>" +
-        "Regular Fuel Cost: " +
-        "$" +
-        // regFuelCost +
-        "</h2>" +
-        "</div>"
-    );
-  } else if (premiumFuel.prop("checked")) {
-    gasInfo.append(
-      '<div class="gas-cost">' +
-        "<h2>" +
-        "Premium Fuel Cost: " +
-        "$" +
-        // premFuelCost +
-        "</h2>" +
-        "</div>"
-    );
-  } else if (dieselFuel.prop("checked")) {
-    gasInfo.append(
-      '<div class="gas-cost">' +
-        "<h2>" +
-        "Diesel Fuel Cost: " +
-        "$" +
-        // dieselFuelCost +
-        "</h2>" +
-        "</div>"
-    );
-  }
-}
-
-// function to hide
-function init() {
-  initalEl.hide();
-}
