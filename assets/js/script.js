@@ -304,3 +304,6 @@ createList(
   public =  false
 )
 };
+
+const element= document.getElementById('#spotifyLogin');
+element.addEventListener('click', putPlaylist);
