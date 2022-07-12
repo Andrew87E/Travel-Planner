@@ -11,12 +11,28 @@ input {
 }
 
 .ae-nav {
-  background-color: $white-sand;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(27, 35, 20, 0.405);
+  color: $dark-grass;
   a {
     color: $med-blue;
+    background: rgb(49, 49, 49, 0);
     &:hover {
       color: $neon-grass;
-      background-color: $sandy;
+      background: rgb(49, 49, 49, 0);
+    }
+  }
+}
+
+.ae-transparent {
+  background: rgb(49, 49, 49, 0);
+  a {
+    background: rgb(49, 49, 49, 0);
+    &:hover {
+      background: rgb(49, 49, 49, 0);
+      &:active {
+        background: rgb(49, 49, 49, 0);
+      }
     }
   }
 }
