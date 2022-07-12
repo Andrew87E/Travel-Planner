@@ -1,6 +1,6 @@
 // var heroEl = $(".hero");
 // var mapEl = $("#map");
-var andrewA = "AIzaSyCBrNRjKT6zvV08v1SM6-v-kbUtx-cYo8g";
+var andrewA = "";
 var destinationInput = document.getElementById('going-to');
 var originInput = document.getElementById('leaving');
 // var aeMap = $("#ae-map");
@@ -21,4 +21,20 @@ function initialize() {
   google.maps.event.addDomListener(window, 'load', initialize);
   
 
+var axios = require('axios');
 
+var config = {
+  method: 'get',
+  url: 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=Washington%2C%20DC&destinations=New%20York%20City%2C%20NY&units=imperial&key=${andrewA}',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+axios();
