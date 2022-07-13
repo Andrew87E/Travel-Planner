@@ -47,9 +47,9 @@ var driveCheck = $("#drive-check");
 // var itinerary = $("#itinerary").val();
 // var classType = $("#select-class").val();
 // var flightEl = $(".userInput");
-// var initalEl = $(".login-box");
+var initalEl = $(".login-box");
 // var costToDriveEl = $(".results");
-// var initSubmit = $("#init-submit");
+var initSubmit = $("#init-submit");
 // var driveCheck = $("#drive-check");
 
 // /* section for spotify api 
@@ -403,9 +403,11 @@ function generateFuelCost() {
 }
 
 // // function to hide
-// function init() {
-//   initalEl.hide();
-// }
+function init() {
+  initalEl.hide();
+}
+
+initSubmit.on('click', init);
 
 
 function renderCurrentForcast (weather , city, timeZone){
