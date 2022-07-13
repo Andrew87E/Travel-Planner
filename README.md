@@ -59,21 +59,6 @@ Mobile Tester <br>
 
 Desktop Tester 
 
-## Team
-
-## Team
-
-[Aaron Anglin](https://github.com/aanglin)<br>
-[Andrew Edwards](https://github.com/andrew87e)
-[Brenda Alvis](https://github.com/bralvis2)
-[Joel Prentiss](https://github.com/joelprentiss)
-[Leena Jabr](https://github.com/LeenaJabr)
-
-[![Aaron Anglin](https://avatars.githubusercontent.com/u/101485583?v=4)](https://github.com/aanglin)
-[![Andrew Edwards](https://avatars.githubusercontent.com/u/106359255?size=100)](https://github.com/andrew87e)
-[![Brenda Alvis](https://avatars.githubusercontent.com/u/107074621?v=4)](https://github.com/bralvis2)
-[![Joel Prentiss](https://avatars.githubusercontent.com/u/107448084?v=4)](https://github.com/joelprentiss)
-[![Leena Jabr](https://avatars.githubusercontent.com/u/107494937?v=4)](https://github.com/LeenaJabr)
 
 # Contributors ✨
 
