@@ -5,7 +5,7 @@ var destinationInput = document.getElementById("going-to");
 var originInput = document.getElementById("leaving");
 var aeMap = $("#ae-map");
 var submitBtn = $("#init-submit");
-var mpg = $("#miles-per-gallon");
+// var mpg = $("#miles-per-gallon");
 var fuelTypeEl = $("#fuel-type");
 var defaultPremiumCost = 4.95;
 var defaultRegularCost = 4.45;
@@ -18,31 +18,42 @@ var steps;
 var stepsArray;
 var destLatitude;
 var destLongitude;
+<<<<<<< Updated upstream
 var weatherApiKey = "46b9fbe392a7416271fab6f07e46740a";
 var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${weatherApiKey}`;
 var cityName =document.getElementById("going-to");
 var currentCityEl = document.getElementById("weather-forecast");
 
+=======
+var weatherApiKey = "76dea1d2eaa53c39fea214a799bab840";
+var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${destLatitude}&lon=${destLongitude}&exclude={part}&appid=${weatherApiKey}`;
+>>>>>>> Stashed changes
 
 function init() {
   initalEl.hide();
 }
 
+$(document).keypress(function (event) {
+  if (event.which == "13") {
+    event.preventDefault();
+  }
+});
+
 // function splitFuelCost() {
 //     var totalCostPer =
 // }
 submitBtn.on("click", function (e) {
-    e.preventDefault();
-    var destination = destinationInput.value;
-    var origin = originInput.value;
-    var url = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${andrewA}`;
-    console.log(url);
-    fetch(url)
+  e.preventDefault();
+  var destination = destinationInput.value;
+  var origin = originInput.value;
+  var url = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${andrewA}`;
+  console.log(url);
+  fetch(url)
     .then(function (response) {
-        return response.json();
-        }
-    )
+      return response.json();
+    })
     .then(function (data) {
+<<<<<<< Updated upstream
         console.log(data);
         var directions = data.routes[0].legs[0];
          destLatitude = data.routes[0].legs[0].end_location.lat;
@@ -59,20 +70,35 @@ submitBtn.on("click", function (e) {
         console.log(stepsString);
         var directionsEl = $(".directions");
         directionsEl.html(`<h2>Directions</h2>
+=======
+      console.log(data);
+      var directions = data.routes[0].legs[0];
+      destLatitude = data.routes[0].legs[0].end_location[0].lat;
+      destLongitude = data.routes[0].legs[0].end_location[0].lng;
+      var distance = directions.distance.text;
+      var duration = directions.duration.text;
+      var steps = directions.steps;
+      var stepsArray = [];
+      for (var i = 0; i < steps.length; i++) {
+        stepsArray.push(steps[i].html_instructions);
+      }
+      console.log(stepsArray);
+      var stepsString = stepsArray.join("<br>");
+      console.log(stepsString);
+      var directionsEl = $(".directions");
+      directionsEl.html(`<h2>Directions</h2>
+>>>>>>> Stashed changes
         <p>${stepsString}</p>
         <p>Distance: ${distance}</p>
         <p>Duration: ${duration}</p>`);
-        }
-    )
+    })
     .catch(function (err) {
-        console.log(err);
-    }
-    );
-}
-);
+      console.log(err);
+    });
+});
 // }
 
-
+var mpg = $("#miles-per-gallon");
 
 submitBtn.on("click", function (e) {
   e.preventDefault();
@@ -105,7 +131,7 @@ submitBtn.on("click", function (e) {
       console.log(stepsArray);
       var stepsString = stepsArray.join("<br>");
       console.log(stepsString);
-      generateFuelCost();
+      generateFuelCost(distance, mpg);
     });
   // .catch(function (err) {
   //   console.log(err);
@@ -120,7 +146,8 @@ submitBtn.on("click", function (e) {
     } else if (fuelType === "diesel-fuel") {
       var dieselFuelCost = (distance / mpg) * defaultDieselCost;
       console.log(dieselFuelCost);
-    }}
+    }
+  }
 });
 
 function initialize() {
@@ -130,6 +157,7 @@ function initialize() {
 
 google.maps.event.addDomListener(window, "load", initialize);
 
+<<<<<<< Updated upstream
 
 function generateCurrentWeather() 
   // $("#uvi").show();
@@ -176,6 +204,26 @@ function generateCurrentWeather()
               });
           }
 
+=======
+var weatherSearch = function () {
+  fetch(weatherApiCall).then(
+    function (response) {
+      return response.json();
+    }.then(function (data) {
+      for (var i = 0; i < data.length; i++) {
+        var currentWeather = data[i];
+        document.getElementById("#weather-forecast").innerHTML = currentWeather;
+      }
+    })
+  );
+};
+
+// document.getElementById('#init-submit').addEventListener('click', weatherSearch);
+var el = document.getElementById("#init-submit");
+if (el) {
+  el.addEventListener("click", swapper, false);
+}
+>>>>>>> Stashed changes
 // function addMap() {
 //   aeMap.append(
 //     `<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=${andrewA}&q=Space+Needle,Seattle+WA"></iframe>`
