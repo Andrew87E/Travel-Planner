@@ -31,8 +31,8 @@ var initalEl = $(".login-box");
 var costToDriveEl = $(".results");
 var initSubmit = $("#init-submit");
 var driveCheck = $("#drive-check");
-var weatherApiKey = '76dea1d2eaa53c39fea214a799bab840'
-var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${destLatitude}&lon=${destLongitude}&exclude={part}&appid=${weatherApiKey}`
+// var weatherApiKey = '76dea1d2eaa53c39fea214a799bab840'
+// var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${destLatitude}&lon=${destLongitude}&exclude={part}&appid=${weatherApiKey}`
 // var aeAirAPI = "3a02828a79b9963";
 // var arrivalLocation = $("#arrival").val();
 // var arrivalDate = $("#arrival-date").val();
