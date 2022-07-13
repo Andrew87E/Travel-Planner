@@ -1,3 +1,12 @@
+/*TO-DO
+1 add map
+2 weather
+3 styling
+4 pics
+5 polish
+*/
+
+
 var heroEl = $(".ae-hero");
 var mapEl = $("#map");
 var andrewA = "AIzaSyCBrNRjKT6zvV08v1SM6-v-kbUtx-cYo8g";
@@ -15,7 +24,6 @@ var regfuelCost = 0;
 var premFuelCost = 0;
 var dieselFuelCost = 0;
 var formEl = $(".login-box");
-
 var directions;
 var distance;
 var duration;
