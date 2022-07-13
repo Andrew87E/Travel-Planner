@@ -1,46 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Int Test</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" type="text/css" href="main.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet"
+        href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="./assets/sass/style.css" />
+    <link rel="icon" href="./assets/img/201623.png" />
 </head>
+
 <body>
+
+    <nav class="navbar ae-nav" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand ae-transparent">
+            <a class="navbar-item ae-transparent" href="./index.html">
+            </a>
+
+            <a role="button" class="navbar-burger ae-transparent" data-target="navMenu" aria-label="menu"
+                aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <section class="cd-intro ae-transparent">
+            <h1 class="cd-headline push">
+                <!-- <span>My favourite food is</span>
+            <span class="cd-words-wrapper">
+              <b class="is-visible">pizza</b>
+              <b>sushi</b>
+              <b>steak</b>
+            </span> -->
+            </h1>
+        </section>
+
+        <div class="navbar-menu navbar-end ae-transparent" id="navMenu">
+            <a class="navbar-item ae-transparent"> Home </a>
+
+            <a class="navbar-item ae-transparent"> Documentation </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link ae-transparent"> More </a>
+
+                <div class="navbar-dropdown ae-transparent">
+                    <a class="navbar-item"> About </a>
+                    <a class="navbar-item"> Jobs </a>
+                    <a class="navbar-item"> Contact </a>
+                    <hr class="navbar-divider" />
+                    <a class="navbar-item"> Report an issue </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <section class="hero columns is-1">
+        <div class="hero-body ae-hero">
+          <div
+            class="space column is-half-desktop is-three-quarters-mobile is-two-thirds-tablet is-one-third-widescreen is-one-quarter-fullhd">
+          </div>
+          <div class="container">
+            <form action="">
+                <input type="hidden" id='hidden_token'>
+                <div class="col-sm-6 form-group row mt-4 px-0">
+                    <label for="Genre" class="form-label col-sm-2">Genre:</label>
+                    <select name="" id="select_genre" class="form-control form-control-sm col-sm-10">
+                        <option>Select...</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 form-group row px-0">
+                    <label for="Genre" class="form-label col-sm-2">Playlists:</label>
+                    <select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">
+                        <option>Select...</option>
+                    </select>
+                </div><br>
+                <div class="col-sm-6 row form-group px-0">
+                    <button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Search</button>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-sm-6 px-0">
+                    <div class="list-group song-list">
     
-    <div class="container">        
-        <form action="">
-            <input type="hidden" id='hidden_token'>
-            <div class="col-sm-6 form-group row mt-4 px-0">
-                <label for="Genre" class="form-label col-sm-2">Genre:</label>
-                <select name="" id="select_genre" class="form-control form-control-sm col-sm-10">
-                    <option>Select...</option>                    
-                </select>
+                    </div>
+                </div>
+                <div class="offset-md-1 col-sm-4" id="song-detail">
+                </div>
             </div>
-            <div class="col-sm-6 form-group row px-0">
-                <label for="Genre" class="form-label col-sm-2">Playlists:</label>
-                <select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">
-                    <option>Select...</option>                    
-                </select>
-            </div>                  
-            <div class="col-sm-6 row form-group px-0">
-                <button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Search</button>
-            </div>          
-        </form>        
-        <div class="row">
-            <div class="col-sm-6 px-0">
-                <div class="list-group song-list">
-                    
-                </div>                                             
-            </div>
-            <div class="offset-md-1 col-sm-4" id="song-detail">                
-            </div>
-        </div>   
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </div>
+        </div>
+      </section>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="./assets/js/spot.js" type="text/javascript"></script>
 </body>
+
 </html>

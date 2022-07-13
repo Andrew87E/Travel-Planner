@@ -1,0 +1,45 @@
+@import "./variables";
+
+$green: #1eac50;
+$white: #ffffff;
+$greenRGB: rgba(30, 215, 96, 0.6);
+$blackRGB: rgba(25, 20, 20, 0.5);
+
+.ae-hero {
+    label{
+        font-size: larger;
+        font-weight: 700;
+        color: $beauty-blue
+    }
+  select {
+    @include form-border;
+    width: 500px;
+    // transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 25px $blackRGB;
+    border-radius: 10px;
+    &:focus{
+        background: $blackRGB;
+    }
+    &:hover{
+        background: $greenRGB;
+        box-shadow: 0 15px 25px $blackRGB;
+        border-radius: 10px;
+    
+    }
+  }
+  button{
+    background-color: $green;
+    color: $black;
+    border-radius: 9999px;
+    border: $black 1px;
+    &:hover{
+        color: $green;
+        background-color: $black;
+    }
+    &:focus{
+        border: $grassy 3px dotted;
+    }
+  }
+}

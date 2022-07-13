@@ -321,6 +321,49 @@ input {
   margin-bottom: 10px;
 }
 
+/* Color Theme Swatches in Hex */
+.ae-hero label {
+  font-size: larger;
+  font-weight: 700;
+  color: #0012FF;
+}
+.ae-hero select {
+  border-radius: 9999px;
+  border: 1px solid;
+  width: 500px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(25, 20, 20, 0.5);
+  border-radius: 10px;
+}
+.ae-hero select:hover {
+  border-color: #13E800;
+}
+.ae-hero select:active {
+  border: #05DBF2;
+}
+.ae-hero select:focus {
+  background: rgba(25, 20, 20, 0.5);
+}
+.ae-hero select:hover {
+  background: rgba(30, 215, 96, 0.6);
+  box-shadow: 0 15px 25px rgba(25, 20, 20, 0.5);
+  border-radius: 10px;
+}
+.ae-hero button {
+  background-color: #1eac50;
+  color: #191414;
+  border-radius: 9999px;
+  border: #191414 1px;
+}
+.ae-hero button:hover {
+  color: #1eac50;
+  background-color: #191414;
+}
+.ae-hero button:focus {
+  border: #65A603 3px dotted;
+}
+
 .gimme-space {
   height: 1500px;
 }
