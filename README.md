@@ -69,11 +69,11 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-<td align="center"><a href="https://github.com/aanglin"><img src="https://avatars.githubusercontent.com/u/101485583?v=4" width="100px;" alt=""/><br /><sub><b>Aaron Anglin</b></sub></a></td>
-<td align="center"><a href="https://github.com/andrew87e"><img src="https://avatars.githubusercontent.com/u/106359255?size=100" width="100px;" alt=""/><br /><sub><b>Andrew Edwards</b></sub></a></td>
-<td align="center"><a href="https://github.com/bralvis2"><img src="https://avatars.githubusercontent.com/u/107074621?v=4" width="100px;" alt=""/><br /><sub><b>Brenda Alvis</b></sub></a></td>
-<td align="center"><a href="https://github.com/joelprentiss"><img src="https://avatars.githubusercontent.com/u/107448084?v=4" width="100px;" alt=""/><br /><sub><b>Joel Prentiss</b></sub></a></td>
-<td align="center"><a href="https://github.com/LeenaJabr"><img src="https://avatars.githubusercontent.com/u/107494937?v=4" width="100px;" alt=""/><br /><sub><b>Leena Jabr</b></sub></a></td>
+<td align="center"><a href="https://github.com/aanglin"><img src="https://avatars.githubusercontent.com/u/101485583?v=4" width="100px;" alt=""/><br /><sub><b>Aaron Anglin 📆🔌💡 </b></sub></a></td>
+<td align="center"><a href="https://github.com/andrew87e"><img src="https://avatars.githubusercontent.com/u/106359255?size=100" width="100px;" alt=""/><br /><sub><b>Andrew Edwards 🤖🧑‍🏫</b></sub></a></td>
+<td align="center"><a href="https://github.com/bralvis2"><img src="https://avatars.githubusercontent.com/u/107074621?v=4" width="100px;" alt=""/><br /><sub><b>Brenda Alvis 🎨💡</b></sub></a></td>
+<td align="center"><a href="https://github.com/joelprentiss"><img src="https://avatars.githubusercontent.com/u/107448084?v=4" width="100px;" alt=""/><br /><sub><b>Joel Prentiss 💻 🔣</b></sub></a></td>
+<td align="center"><a href="https://github.com/LeenaJabr"><img src="https://avatars.githubusercontent.com/u/107494937?v=4" width="100px;" alt=""/><br /><sub><b>Leena Jabr 🌍📖</b></sub></a></td>
  </tr>
 </table>
 
