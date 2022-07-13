@@ -18,8 +18,10 @@ var steps;
 var stepsArray;
 var destLatitude;
 var destLongitude;
-var weatherApiKey = '76dea1d2eaa53c39fea214a799bab840'
-var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${destLatitude}&lon=${destLongitude}&exclude={part}&appid=${weatherApiKey}`
+var weatherApiKey = "46b9fbe392a7416271fab6f07e46740a";
+var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${weatherApiKey}`;
+var cityName =document.getElementById("going-to");
+var currentCityEl = document.getElementById("weather-forecast");
 
 
 function init() {
@@ -129,21 +131,50 @@ function initialize() {
 google.maps.event.addDomListener(window, "load", initialize);
 
 
-document.getElementById('#init-submit').addEventListener('click', weatherSearch());   
-      function weatherSearch(){
-      fetch(weatherApiCall)
-      .then (function(response){
-        console.log(response)
-              return response.json()}
-      .then (function(data){
-       for (var i=0; i<data.length; i++){
-       var currentWeather= data[i]
-        document.getElementById('#weather-forecast').innerHTML = currentWeather
-                         }
+function generateCurrentWeather() 
+  // $("#uvi").show();
+
+  currentCityEl.append(`  
+    <h1>
+      The current weather in  ${cityName}<br>
+      ${todaysDate}
+    </h1><br>
+    <p>
+      The current temp is: ${weatherCurrent.temp}<br>
+      It feels like: ${weatherCurrent.feels_like}<br>
+      The humidity is: ${weatherCurrent.humidity}<br>
+      The wind speed is: ${weatherCurrent.wind_speed}mph<br>    
+      <br><span id="uvi">The current UV Index is: ${Math.floor(
+        weatherCurrent.uvi
+      )}</span>
+    </p>
+  `);
+
+          function generateGeo() {
+            fetch(
+              `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`
+            )
+              .then(function (response) {
+                return response.json();
               })
-          )};  
-
-
+              .then(function (data) {
+                console.log(data);
+                lat = data[0].lat;
+                lon = data[0].lon;
+                // })
+                // .then(function () {
+                var weatherAPIUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+                fetch(weatherAPIUrl)
+                  .then(function (response) {
+                    return response.json();
+                  })
+                  .then(function (data) {
+                    weatherCurrent = data.current;
+                    weatherDaily = data.daily;
+                    generateCurrentWeather();
+                  });
+              });
+          }
 
 // function addMap() {
 //   aeMap.append(
