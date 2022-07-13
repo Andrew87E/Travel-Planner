@@ -1,5 +1,5 @@
 # Project 1 💻
- ## A Simple Application For Planning A Road Trip
+ ## A Simple Application For Planning A Road Trip 🚇
  Made for Project 1 UT-Austin coding bootcamp
 
 ![UTRT-Planner]
