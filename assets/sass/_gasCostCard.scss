@@ -3,7 +3,7 @@
 .gas-card{
   position: absolute;
   top: 50%;
-  left: 22%;
+  left: 50%;
   width: 30%;
   padding: 40px;
   transform: translate(-50%, -50%);
@@ -11,7 +11,7 @@
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  color: white;
+  color: $white;
   text-align: center;
   h1 {
     font-size: 1.5em;
@@ -20,7 +20,6 @@
     margin-bottom: 10px;
   }
 }
-
 
 
 

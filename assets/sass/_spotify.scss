@@ -1,15 +1,15 @@
 @import "./variables";
 
-$green: #1eac50;
-$white: #ffffff;
-$greenRGB: rgba(30, 215, 96, 0.6);
-$blackRGB: rgba(25, 20, 20, 0.5);
-
 .ae-spot {
+  position: absolute;
+  right: 0;
+  top: 15%;
+  margin-top: 50px;
+  width: 550px;
   label {
     font-size: larger;
     font-weight: 700;
-    color: $black;
+    color: $white;
   }
   select {
     @include form-border;
@@ -53,16 +53,16 @@ $blackRGB: rgba(25, 20, 20, 0.5);
 }
 
 .ae-spot-head {
-  color: $black;
+  color: $white;
   font-size: 35px;
   font-weight: 500;
 }
 
 .ae-track-list-div {
-  background-color: $blackRGB;
+  // background-color: $blackRGB;
   margin: 5px;
   margin-top: 25px;
-  width: 700px;
+  // width: 700px;
   &:visited {
     color: $green;
     text-decoration: none;
@@ -75,13 +75,15 @@ $blackRGB: rgba(25, 20, 20, 0.5);
 
 .ae-track-list {
   text-decoration: none;
-  color: $green;
-  font-size: 20px;
-  font-weight: 400px;
+  color: $black;
+  font-size: 24px;
+  text-shadow: $green 1px 1px;
+  font-weight: 1000px;
   &:hover {
     text-decoration: none;
-    font-size: 25px;
-    color: $white;
+    color: $green;
+    text-shadow: $black 1px 1px;
+
   }
   &:visited {
     color: $green;
