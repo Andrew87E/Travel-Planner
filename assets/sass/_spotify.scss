@@ -8,7 +8,8 @@ $blackRGB: rgba(25, 20, 20, 0.5);
 .ae-spot {
   position: absolute;
   right: 0;
-  top: 4;
+  top: 0;
+  margin-top: 50px;
   width: 550px;
   label {
     font-size: larger;
