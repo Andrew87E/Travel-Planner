@@ -7,7 +7,6 @@ https://developer.spotify.com/documentation/web-api/quick-start/
 https://developer.spotify.com/documentation/web-api/reference/
 */
 
-
 const APIController = (function () {
   const clientId = "fd92cbedfcfb43238cc62e23b5e30f02";
   const clientSecret = "947bc8aa427841519415c68add0ce601";
@@ -41,7 +40,7 @@ const APIController = (function () {
   };
 
   const _getPlaylistByGenre = async (token, genreId) => {
-    const limit = 10;
+    const limit = 20;
 
     const result = await fetch(
       `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
@@ -56,7 +55,7 @@ const APIController = (function () {
   };
 
   const _getTracks = async (token, tracksEndPoint) => {
-    const limit = 10;
+    const limit = 25;
 
     const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
       method: "GET",
@@ -138,7 +137,7 @@ const UIController = (function () {
 
     // need method to create a track list group item
     createTrack(id, name) {
-      const html = `<a href="#" class="list-group-item list-group-item-action list-group-item-light" id="${id}">${name}</a>`;
+      const html = `<a href="#" class="ae-track-list" id="${id}">${name}</a><br>`;
       document
         .querySelector(DOMElements.divSonglist)
         .insertAdjacentHTML("beforeend", html);

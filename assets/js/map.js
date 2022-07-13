@@ -1,3 +1,11 @@
+/*TO-DO
+1 add map
+2 weather
+3 styling
+4 pics
+5 polish
+*/
+
 var heroEl = $(".ae-hero");
 var mapEl = $("#map");
 var andrewA = "AIzaSyCBrNRjKT6zvV08v1SM6-v-kbUtx-cYo8g";
@@ -15,7 +23,6 @@ var regfuelCost = 0;
 var premFuelCost = 0;
 var dieselFuelCost = 0;
 var formEl = $(".login-box");
-
 var directions;
 var distance;
 var duration;
@@ -131,10 +138,50 @@ submitBtn.on("click", function (e) {
       var stepsString = stepsArray.join("<br>");
       console.log(stepsString);
       generateFuelCost(distance, milesPerGallon);
+    //   generateSpotify();
     });
   // .catch(function (err) {
   //   console.log(err);
   // });
+
+//   function generateSpotify() {
+//     heroEl.append(
+//       '<div class="container ae-transparent spotify-card">' +
+//         "<h1>" +
+//         "Generate a playlist with Spotify!" +
+//         "</h1>" +
+//         '<form action="">' +
+//         '<input type="hidden" id="hidden_token">' +
+//         '<div class="col-sm-6 form-group row mt-4 px-0">' +
+//         '<label for="Genre" class="form-label col-sm-2">Genre:</label>' +
+//         '<select name="" id="select_genre" class="form-control form-control-sm col-sm-10">' +
+//         "<option>Select...</option>" +
+//         "</select>" +
+//         "</div>" +
+//         '<div class="col-sm-6 form-group row px-0">' +
+//         '<label for="Genre" class="form-label col-sm-2">Playlists:</label>' +
+//         '<select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">' +
+//         "<option>Select...</option>" +
+//         "</select>" +
+//         "</div>" +
+//         '<div class="col-sm-6 row form-group px-0">' +
+//         '<button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Search</button>' +
+//         "</div>" +
+//         "</form>" +
+//         '<div class="row">' +
+//         '<div class="col-sm-6 px-0">' +
+//         '<div class="list-group song-list">' +
+//         "</div>" +
+//         "</div>" +
+//         '<div class="offset-md-1 col-sm-4" id="song-detail">' +
+//         "</div>" +
+//         "</div>" +
+//         "</div>" +
+//         "</div>"
+//     );
+//     spotifyCardEl = $(".spotify-card");
+    
+//   }
 
   function generateFuelCost() {
     if (fuelType === "premium-fuel") {

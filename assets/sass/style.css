@@ -321,6 +321,99 @@ input {
   margin-bottom: 10px;
 }
 
+/* Color Theme Swatches in Hex */
+.ae-spot label {
+  font-size: larger;
+  font-weight: 700;
+  color: #191414;
+}
+.ae-spot select {
+  border-radius: 9999px;
+  border: 1px solid;
+  width: 500px;
+  box-sizing: border-box;
+  background: rgba(25, 20, 20, 0.5);
+  box-shadow: 0 15px 25px rgba(25, 20, 20, 0.5);
+  border-radius: 10px;
+}
+.ae-spot select:hover {
+  border-color: #13E800;
+}
+.ae-spot select:active {
+  border: #05DBF2;
+}
+.ae-spot select:focus {
+  background: rgba(25, 20, 20, 0.5);
+}
+.ae-spot select:hover {
+  background: rgba(25, 20, 20, 0.5);
+  box-shadow: 0 15px 25px rgba(25, 20, 20, 0.5);
+  border-radius: 10px;
+}
+.ae-spot option {
+  background: rgba(25, 20, 20, 0.5);
+  box-shadow: 0 15px 25px rgba(25, 20, 20, 0.5);
+  border-radius: 10px;
+}
+.ae-spot option:hover {
+  background: rgba(30, 215, 96, 0.6);
+  box-shadow: 0 15px 25px rgba(25, 20, 20, 0.5);
+}
+.ae-spot button {
+  background-color: #1eac50;
+  color: #191414;
+  border-radius: 9999px;
+  border: #191414 1px;
+}
+.ae-spot button:hover {
+  color: #1eac50;
+  background-color: #191414;
+}
+.ae-spot button:focus {
+  border: #65A603 3px dotted;
+}
+
+.ae-spot-head {
+  color: #191414;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.ae-track-list-div {
+  background-color: rgba(25, 20, 20, 0.5);
+  margin: 5px;
+  margin-top: 25px;
+  width: 700px;
+}
+.ae-track-list-div:visited {
+  color: #1eac50;
+  text-decoration: none;
+}
+.ae-track-list-div:active {
+  text-decoration: none;
+  color: #191414;
+}
+
+.ae-track-list {
+  text-decoration: none;
+  color: #1eac50;
+  font-size: 20px;
+  font-weight: 400px;
+}
+.ae-track-list:hover {
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+}
+.ae-track-list:visited {
+  color: #1eac50;
+  text-decoration: none;
+}
+.ae-track-list:active {
+  text-decoration: none;
+  color: #191414;
+}
+
 .gimme-space {
   height: 1500px;
 }
