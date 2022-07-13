@@ -124,7 +124,7 @@ submitBtn.on("click", function (e) {
       gasCardEl.append(
         '<div class="gas-cost">' +
           "<h2>" +
-          "Regular Fuel Cost: " +
+          "Premium Fuel Cost: " +
           "$" +
           premFuelCost +
           "</h2>" +
@@ -137,7 +137,7 @@ submitBtn.on("click", function (e) {
       gasCardEl.append(
         '<div class="gas-cost">' +
           "<h2>" +
-          "Premium Fuel Cost: " +
+          "Regular Fuel Cost: " +
           "$" +
           regFuelCost +
           "</h2>" +
