@@ -1,16 +1,16 @@
-# Project 1
+# Project 1 💻
  ## A Simple Application For Planning A Road Trip
  Made for Project 1 UT-Austin coding bootcamp
 
 ![UTRT-Planner]
 
-## Demo
+## Demo ⚠️
 
 [Here is a demo of it in action!](Insert Site Here) 
 
 
 
-## Instructions
+## Instructions 📝
 
 Fill in the Let's Take a Trip pop up box with answers for the information prompted regarding your travel plans. 
 
