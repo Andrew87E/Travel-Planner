@@ -15,7 +15,7 @@ $dark-grass: #00731E;
 $lighter-teal: #55FFFF;
 $neon-orange: #FF4407;
 $beauty-blue: #0012FF;
-$black: #0F1926;
+$black: #191414;
 $neon-purple: #7135F2;
 $neon-teal: #05DBF2;
 $neon-sand: #F2B29B;
@@ -26,12 +26,15 @@ $dark-grey: #404040;
 $sky-blue: #6DBFF2;
 $pink: #F277B0;
 $neon-red: #F20519;
+$green: #1eac50;
+$white: #ffffff;
+$greenRGB: rgba(30, 215, 96, 0.6);
+$blackRGB: rgba(25, 20, 20, 0.5);
 
 @mixin background {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-color: $white-sand;
 }
 
 @mixin form-border{

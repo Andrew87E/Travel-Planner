@@ -1,9 +1,14 @@
 @import './variables';
 
 .ae-hero{
-    height: 1200px;
+    position: relative;
+    height: 1500px;
     background-image: url(../img/pexels-pixabay-56832.jpg);
-    @include background();
-    position: sticky;
-    
+    padding: 0;
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    // margin: 0;
+    margin-top: 12px;
 }

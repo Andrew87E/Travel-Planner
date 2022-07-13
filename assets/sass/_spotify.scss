@@ -1,0 +1,96 @@
+@import "./variables";
+
+.ae-spot {
+  position: absolute;
+  right: 0;
+  top: 15%;
+  margin-top: 50px;
+  width: 550px;
+  label {
+    font-size: larger;
+    font-weight: 700;
+    color: $white;
+  }
+  select {
+    @include form-border;
+    width: 500px;
+    // transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background: $blackRGB;
+    box-shadow: 0 15px 25px $blackRGB;
+    border-radius: 10px;
+    &:focus {
+      background: $blackRGB;
+    }
+    &:hover {
+      background: $blackRGB;
+      box-shadow: 0 15px 25px $blackRGB;
+      border-radius: 10px;
+    }
+  }
+  option {
+    background: $blackRGB;
+    box-shadow: 0 15px 25px $blackRGB;
+    border-radius: 10px;
+    &:hover {
+      background: $greenRGB;
+      box-shadow: 0 15px 25px $blackRGB;
+    }
+  }
+  button {
+    background-color: $green;
+    color: $black;
+    border-radius: 9999px;
+    border: $black 1px;
+    &:hover {
+      color: $green;
+      background-color: $black;
+    }
+    &:focus {
+      border: $grassy 3px dotted;
+    }
+  }
+}
+
+.ae-spot-head {
+  color: $white;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.ae-track-list-div {
+  // background-color: $blackRGB;
+  margin: 5px;
+  margin-top: 25px;
+  // width: 700px;
+  &:visited {
+    color: $green;
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+.ae-track-list {
+  text-decoration: none;
+  color: $black;
+  font-size: 24px;
+  text-shadow: $green 1px 1px;
+  font-weight: 1000px;
+  &:hover {
+    text-decoration: none;
+    color: $green;
+    text-shadow: $black 1px 1px;
+
+  }
+  &:visited {
+    color: $green;
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+    color: $black;
+  }
+}

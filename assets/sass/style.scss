@@ -1,12 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Gloria+Hallelujah&family=Gochi+Hand&family=Offside&display=swap");
+
+// font-family: 'Edu SA Beginner', cursive;
+// font-family: 'Gloria Hallelujah', cursive;
+// font-family: 'Gochi Hand', cursive;
+// font-family: 'Offside', cursive;
+@import "./head";
 @import "./variables";
 @import "./background";
 @import "./navbar";
 @import "./hero";
-@import './testform';
+@import "./testform";
 @import "./footer";
 @import "./responsive";
 @import "./gasCostCard";
+@import "./spotify";
+@import "./directionsCard";
 
+// body{
+//   padding: 0;
+// }
 
 .gimme-space {
   height: 1500px;
@@ -15,6 +27,7 @@
 .userInput {
   // margin-top: 500px;
   // margin-top: 500px;
+  font-family: "Edu SA Beginner", cursive;
   input {
     @include form-border;
     background-color: $white-sand;
@@ -28,17 +41,17 @@
     @include form-border;
     background-color: $deep-teal;
   }
-  button{
+  button {
     @include form-border;
     background-color: $sandy;
   }
 }
 
-.pull-right{
+.pull-right {
   margin-left: 100px;
 }
 
-.results{
+.results {
   margin-left: 30px;
   height: 400px;
   width: calc(50% - 30px);
@@ -47,29 +60,29 @@
   left: 25%;
   transform: translate(-50%, -50%);
   color: $neon-purple;
-  h2{
+  h2 {
     color: $neon-teal;
     font-weight: 700;
     font-size: xx-large;
     margin-left: 20px;
   }
-  button{
-    background-color:$neon-teal;
+  button {
+    background-color: $neon-teal;
     color: $neon-purple;
     margin: 15px;
     transition: 0.5s;
-  &:hover{
-    background-color: $neon-purple;
-    color: $light-blue;
+    &:hover {
+      background-color: $neon-purple;
+      color: $light-blue;
+    }
   }
-  }
-  input{
+  input {
     width: 260px;
     margin: 10px;
   }
 }
 
-.gas-info{
+.gas-info {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -79,24 +92,73 @@
   background-color: $white-sand;
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  h1{
+  h1 {
     color: $neon-teal;
     font-weight: 700;
     font-size: xx-large;
     margin-left: 20px;
   }
-  button{
-    background-color:$neon-teal;
+  button {
+    background-color: $neon-teal;
     color: $neon-purple;
     margin: 15px;
     transition: 0.5s;
-    &:hover{
+    &:hover {
       background-color: $neon-purple;
       color: $light-blue;
     }
   }
-  input{
+  input {
     width: 260px;
     margin: 10px;
   }
+}
+
+.ae-head {
+  font-size: 1.15rem;
+  color: $blackRGB;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-family: "Gochi Hand", cursive;
+}
+
+.going-to {
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.pac-container {
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: $white;
+  font-family: 'Gochi Hand', cursive;;
+}
+.pac-item {
+color: $white;
+font-size: .8rem;
+}	
+.pac-item:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+.pac-item-selected	{
+  background: rgba(0, 0, 0, 0.5);
+}
+.pac-item-query {
+color: $white;
+font-size: .8rem;
+}
+.pac-matched	{
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: $white;
 }
