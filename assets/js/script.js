@@ -31,6 +31,7 @@ var initalEl = $(".login-box");
 var costToDriveEl = $(".results");
 var initSubmit = $("#init-submit");
 var driveCheck = $("#drive-check");
+
 // var weatherApiKey = '76dea1d2eaa53c39fea214a799bab840'
 // var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${destLatitude}&lon=${destLongitude}&exclude={part}&appid=${weatherApiKey}`
 // var aeAirAPI = "3a02828a79b9963";
@@ -449,21 +450,18 @@ response = request.post(
   }
 )};
 
-   
-var weatherSearch=     
-      (function(){
-      fetch(weatherApiCall)
-      .then (function(response){
-              return response.json()}
-      .then (function(data){
-       for (var i=0; i<data.length; i++){
-       var currentWeather= data[i]
-        document.getElementById('#weather-forecast').innerHTML = currentWeather
-                         }
-              })
-          )}
-          
-      );  
+// document.getElementById('#init-submit').addEventListener('click', weatherSearch());   
+//       function weatherSearch(){
+//       fetch(weatherApiCall)
+//       .then (function(response){
+//         console.log(response)
+//               return response.json()}
+//       .then (function(data){
+//        for (var i=0; i<data.length; i++){
+//        var currentWeather= data[i]
+//         document.getElementById('#weather-forecast').innerHTML = currentWeather
+//                          }
+//               })
+//           )};  
 
 
-document.getElementById('#init-submit').addEventListener('click', weatherSearch);
