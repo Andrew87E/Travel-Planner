@@ -14,6 +14,25 @@
 // // ical google cal for road trip
 // // progress bar for calculations
 
+var aeAirAPI = "3a02828a79b9963";
+var arrivalLocation = $("#arrival").val();
+var arrivalDate = $("#arrival-date").val();
+var departureDate = $("#departure-date").val();
+var departureLocation = $("#departure").val();
+var numberOfPass = $("#num-pass").val();
+var tripFuelCost = "";
+var milesPerGallon = $("#miles-per-gallon").val();
+var gasResultEl = $("gas-results-section");
+var milesToDrive = "";
+var itinerary = $("#itinerary").val();
+var classType = $("#select-class").val();
+var flightEl = $(".userInput");
+var initalEl = $(".login-box");
+var costToDriveEl = $(".results");
+var initSubmit = $("#init-submit");
+var driveCheck = $("#drive-check");
+// var weatherApiKey = '76dea1d2eaa53c39fea214a799bab840'
+// var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${destLatitude}&lon=${destLongitude}&exclude={part}&appid=${weatherApiKey}`
 // var aeAirAPI = "3a02828a79b9963";
 // var arrivalLocation = $("#arrival").val();
 // var arrivalDate = $("#arrival-date").val();
@@ -27,9 +46,9 @@
 // var itinerary = $("#itinerary").val();
 // var classType = $("#select-class").val();
 // var flightEl = $(".userInput");
-// var initalEl = $(".login-box");
+var initalEl = $(".login-box");
 // var costToDriveEl = $(".results");
-// var initSubmit = $("#init-submit");
+var initSubmit = $("#init-submit");
 // var driveCheck = $("#drive-check");
 
 // /* section for spotify api 
@@ -383,11 +402,17 @@ function generateFuelCost() {
 }
 
 // // function to hide
-// function init() {
-//   initalEl.hide();
-// }
+function init() {
+  initalEl.hide();
+}
+
+initSubmit.on('click', init);
 
 
+function renderCurrentForcast (weather , city, timeZone){
+  var {temperature , humidity , uvIndex} =weather
+  console.log(temperature. humidity,uvIndex);
+ }    
 // create spotify playlist
 
 // var requestToken = document.querySelector('#obtain-new-token')
@@ -426,12 +451,21 @@ function generateFuelCost() {
 //   }
 // )};
 
-// function putPlaylist (){
-// createList( 
-//   name ='My Road Trip Playlist',
-//   public =  false
-// )
-// };
+   
+var weatherSearch=     
+      (function(){
+      fetch(weatherApiCall)
+      .then (function(response){
+              return response.json()}
+      .then (function(data){
+       for (var i=0; i<data.length; i++){
+       var currentWeather= data[i]
+        document.getElementById('#weather-forecast').innerHTML = currentWeather
+                         }
+              })
+          )}
+          
+      );  
 
-// const element= document.getElementById('#spotifyLogin');
-// element.addEventListener('click', putPlaylist);
+
+document.getElementById('#init-submit').addEventListener('click', weatherSearch);

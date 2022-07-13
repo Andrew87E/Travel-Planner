@@ -16,6 +16,11 @@ var distance;
 var duration;
 var steps;
 var stepsArray;
+var destLatitude;
+var destLongitude;
+var weatherApiKey = '76dea1d2eaa53c39fea214a799bab840'
+var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${destLatitude}&lon=${destLongitude}&exclude={part}&appid=${weatherApiKey}`
+
 
 function init() {
   initalEl.hide();
@@ -38,6 +43,8 @@ submitBtn.on("click", function (e) {
     .then(function (data) {
         console.log(data);
         var directions = data.routes[0].legs[0];
+         destLatitude = data.routes[0].legs[0].end_location[0].lat;
+         destLongitude = data.routes[0].legs[0].end_location[0].lng;
         var distance = directions.distance.text;
         var duration = directions.duration.text;
         var steps = directions.steps;
@@ -121,10 +128,30 @@ function initialize() {
 
 google.maps.event.addDomListener(window, "load", initialize);
 
-function addMap() {
-  aeMap.append(
-    `<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=${andrewA}&q=Space+Needle,Seattle+WA"></iframe>`
-  );
-}
 
-addMap();
+var weatherSearch=     
+      (function(){
+      fetch(weatherApiCall)
+      .then (function(response){
+              return response.json()}
+      .then (function(data){
+       for (var i=0; i<data.length; i++){
+       var currentWeather= data[i]
+        document.getElementById('#weather-forecast').innerHTML = currentWeather
+                         }
+              })
+          )}
+          
+      );  
+
+
+// document.getElementById('#init-submit').addEventListener('click', weatherSearch);
+var el = document.getElementById('#init-submit');
+if(el){
+  el.addEventListener('click', swapper, false);
+}
+// function addMap() {
+//   aeMap.append(
+//     `<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=${andrewA}&q=Space+Needle,Seattle+WA"></iframe>`
+//   );
+// }
