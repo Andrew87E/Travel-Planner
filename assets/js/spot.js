@@ -12,7 +12,7 @@ const APIController = (function () {
   const clientSecret = "947bc8aa427841519415c68add0ce601";
 
   // private methods
-  const getToken = async () => {
+  const _getToken = async () => {
     const result = await fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
       headers: {
@@ -26,7 +26,7 @@ const APIController = (function () {
     return data.access_token;
   };
 
-  const getGenres = async (token) => {
+  const _getGenres = async (token) => {
     const result = await fetch(
       `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
       {
@@ -39,8 +39,8 @@ const APIController = (function () {
     return data.categories.items;
   };
 
-  const getPlaylistByGenre = async (token, genreId) => {
-    const limit = 10;
+  const _getPlaylistByGenre = async (token, genreId) => {
+    const limit = 20;
 
     const result = await fetch(
       `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
@@ -54,8 +54,8 @@ const APIController = (function () {
     return data.playlists.items;
   };
 
-  const getTracks = async (token, tracksEndPoint) => {
-    const limit = 10;
+  const _getTracks = async (token, tracksEndPoint) => {
+    const limit = 25;
 
     const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
       method: "GET",
@@ -66,7 +66,7 @@ const APIController = (function () {
     return data.items;
   };
 
-  const getTrack = async (token, trackEndPoint) => {
+  const _getTrack = async (token, trackEndPoint) => {
     const result = await fetch(`${trackEndPoint}`, {
       method: "GET",
       headers: { Authorization: "Bearer " + token },
@@ -78,19 +78,19 @@ const APIController = (function () {
 
   return {
     getToken() {
-      return getToken();
+      return _getToken();
     },
     getGenres(token) {
-      return getGenres(token);
+      return _getGenres(token);
     },
     getPlaylistByGenre(token, genreId) {
-      return getPlaylistByGenre(token, genreId);
+      return _getPlaylistByGenre(token, genreId);
     },
     getTracks(token, tracksEndPoint) {
-      return getTracks(token, tracksEndPoint);
+      return _getTracks(token, tracksEndPoint);
     },
     getTrack(token, trackEndPoint) {
-      return getTrack(token, trackEndPoint);
+      return _getTrack(token, trackEndPoint);
     },
   };
 })();
@@ -137,7 +137,7 @@ const UIController = (function () {
 
     // need method to create a track list group item
     createTrack(id, name) {
-      const html = `<a href="#" class="list-group-item list-group-item-action list-group-item-light" id="${id}">${name}</a>`;
+      const html = `<a href="#" class="ae-track-list" id="${id}">${name}</a><br>`;
       document
         .querySelector(DOMElements.divSonglist)
         .insertAdjacentHTML("beforeend", html);
@@ -150,16 +150,16 @@ const UIController = (function () {
       detailDiv.innerHTML = "";
 
       const html = `
-                <div class="row col-sm-12 px-0">
-                    <img src="${img}" alt="">        
-                </div>
-                <div class="row col-sm-12 px-0">
-                    <label for="Genre" class="form-label col-sm-12">${title}:</label>
-                </div>
-                <div class="row col-sm-12 px-0">
-                    <label for="artist" class="form-label col-sm-12">By ${artist}:</label>
-                </div> 
-                `;
+            <div class="row col-sm-12 px-0">
+                <img src="${img}" alt="">        
+            </div>
+            <div class="row col-sm-12 px-0">
+                <label for="Genre" class="form-label col-sm-12">${title}:</label>
+            </div>
+            <div class="row col-sm-12 px-0">
+                <label for="artist" class="form-label col-sm-12">By ${artist}:</label>
+            </div> 
+            `;
 
       detailDiv.insertAdjacentHTML("beforeend", html);
     },

@@ -5,41 +5,90 @@ $white: #ffffff;
 $greenRGB: rgba(30, 215, 96, 0.6);
 $blackRGB: rgba(25, 20, 20, 0.5);
 
-.ae-hero {
-    label{
-        font-size: larger;
-        font-weight: 700;
-        color: $beauty-blue
-    }
+.ae-spot {
+  label {
+    font-size: larger;
+    font-weight: 700;
+    color: $black;
+  }
   select {
     @include form-border;
     width: 500px;
     // transform: translate(-50%, -50%);
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.5);
+    background: $blackRGB;
     box-shadow: 0 15px 25px $blackRGB;
     border-radius: 10px;
-    &:focus{
-        background: $blackRGB;
+    &:focus {
+      background: $blackRGB;
     }
-    &:hover{
-        background: $greenRGB;
-        box-shadow: 0 15px 25px $blackRGB;
-        border-radius: 10px;
-    
+    &:hover {
+      background: $blackRGB;
+      box-shadow: 0 15px 25px $blackRGB;
+      border-radius: 10px;
     }
   }
-  button{
+  option {
+    background: $blackRGB;
+    box-shadow: 0 15px 25px $blackRGB;
+    border-radius: 10px;
+    &:hover {
+      background: $greenRGB;
+      box-shadow: 0 15px 25px $blackRGB;
+    }
+  }
+  button {
     background-color: $green;
     color: $black;
     border-radius: 9999px;
     border: $black 1px;
-    &:hover{
-        color: $green;
-        background-color: $black;
+    &:hover {
+      color: $green;
+      background-color: $black;
     }
-    &:focus{
-        border: $grassy 3px dotted;
+    &:focus {
+      border: $grassy 3px dotted;
     }
+  }
+}
+
+.ae-spot-head {
+  color: $black;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.ae-track-list-div {
+  background-color: $blackRGB;
+  margin: 5px;
+  margin-top: 25px;
+  width: 700px;
+  &:visited {
+    color: $green;
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+.ae-track-list {
+  text-decoration: none;
+  color: $green;
+  font-size: 20px;
+  font-weight: 400px;
+  &:hover {
+    text-decoration: none;
+    font-size: 25px;
+    color: $white;
+  }
+  &:visited {
+    color: $green;
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+    color: $black;
   }
 }
