@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Gloria+Hallelujah&family=Gochi+Hand&family=Offside&display=swap");
+
+// font-family: 'Edu SA Beginner', cursive;
+// font-family: 'Gloria Hallelujah', cursive;
+// font-family: 'Gochi Hand', cursive;
+// font-family: 'Offside', cursive;
 @import "./head";
 @import "./variables";
 @import "./background";
@@ -8,6 +14,11 @@
 @import "./responsive";
 @import "./gasCostCard";
 @import "./spotify";
+@import "./directionsCard";
+
+// body{
+//   padding: 0;
+// }
 
 .gimme-space {
   height: 1500px;
@@ -16,6 +27,7 @@
 .userInput {
   // margin-top: 500px;
   // margin-top: 500px;
+  font-family: "Edu SA Beginner", cursive;
   input {
     @include form-border;
     background-color: $white-sand;
@@ -104,11 +116,49 @@
 
 .ae-head {
   font-size: 1.15rem;
-  font-family: "Source Sans Pro", sans-serif;
   color: $blackRGB;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  font-family: "Gochi Hand", cursive;
+}
+
+.going-to {
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.pac-container {
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: $white;
+  font-family: 'Gochi Hand', cursive;;
+}
+.pac-item {
+color: $white;
+font-size: .8rem;
+}	
+.pac-item:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+.pac-item-selected	{
+  background: rgba(0, 0, 0, 0.5);
+}
+.pac-item-query {
+color: $white;
+font-size: .8rem;
+}
+.pac-matched	{
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: $white;
 }

@@ -3,13 +3,13 @@
 .ae-spot {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 15%;
   margin-top: 50px;
   width: 550px;
   label {
     font-size: larger;
     font-weight: 700;
-    color: $black;
+    color: $white;
   }
   select {
     @include form-border;
@@ -53,7 +53,7 @@
 }
 
 .ae-spot-head {
-  color: $black;
+  color: $white;
   font-size: 35px;
   font-weight: 500;
 }

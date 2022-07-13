@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Gloria+Hallelujah&family=Gochi+Hand&family=Offside&display=swap");
 .cd-title {
   position: relative;
   height: 160px;
@@ -26,7 +27,8 @@
 }
 .cd-intro {
   width: 90%;
-  text-align: center;
+  position: absolute;
+  left: 20%;
 }
 
 .cd-intro {
@@ -890,14 +892,15 @@ input {
 
 /* Color Theme Swatches in Hex */
 .ae-hero {
+  position: relative;
   height: 1500px;
   background-image: url(../img/pexels-pixabay-56832.jpg);
+  padding: 0;
+  display: flex;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #F2E4D8;
-  position: -webkit-sticky;
-  position: sticky;
+  margin-top: 12px;
 }
 
 /* Color Theme Swatches in Hex */
@@ -918,6 +921,7 @@ input {
   padding: 0;
   color: #fff;
   text-align: center;
+  font-family: "Offside", cursive;
 }
 .login-box .user-box {
   position: relative;
@@ -932,6 +936,7 @@ input {
   border-bottom: 1px solid #fff;
   outline: none;
   background: transparent;
+  font-family: "Gochi Hand", cursive;
 }
 .login-box .user-box label {
   position: absolute;
@@ -942,6 +947,7 @@ input {
   color: #fff;
   pointer-events: none;
   transition: 0.5s;
+  font-family: "Gochi Hand", cursive;
 }
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
@@ -962,6 +968,7 @@ input {
   transition: 0.5s;
   margin-top: 40px;
   letter-spacing: 4px;
+  font-family: "Gochi Hand", cursive;
 }
 .login-box a:hover {
   background: #03e9f4;
@@ -1020,6 +1027,7 @@ input {
   border: none;
   width: 100%;
   height: 100%;
+  font-family: "Gochi Hand", cursive;
 }
 .login-box button:active {
   background: none;
@@ -1038,6 +1046,7 @@ input {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   color: #F2E4D8;
+  font-family: "Gochi Hand", cursive;
   text-align: center;
 }
 .login-box select:hover {
@@ -1121,7 +1130,6 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #F2E4D8;
   color: #ffffff;
   position: relative;
   padding: 0;
@@ -1151,7 +1159,7 @@ input {
 .gas-card {
   position: absolute;
   top: 50%;
-  left: 22%;
+  left: 50%;
   width: 30%;
   padding: 40px;
   transform: translate(-50%, -50%);
@@ -1159,7 +1167,7 @@ input {
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  color: white;
+  color: #ffffff;
   text-align: center;
 }
 .gas-card h1 {
@@ -1173,14 +1181,14 @@ input {
 .ae-spot {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 15%;
   margin-top: 50px;
   width: 550px;
 }
 .ae-spot label {
   font-size: larger;
   font-weight: 700;
-  color: #191414;
+  color: #ffffff;
 }
 .ae-spot select {
   border-radius: 9999px;
@@ -1229,7 +1237,7 @@ input {
 }
 
 .ae-spot-head {
-  color: #191414;
+  color: #ffffff;
   font-size: 35px;
   font-weight: 500;
 }
@@ -1268,10 +1276,44 @@ input {
   color: #191414;
 }
 
+/* Color Theme Swatches in Hex */
+.ae-direct {
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  min-height: 500px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  min-width: 250px;
+  position: absolute;
+  bottom: 0;
+}
+
+.ae-card {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  z-index: 1;
+  font-size: small;
+}
+.ae-card h3 {
+  font-size: x-large;
+  font-weight: 800;
+  border-bottom: solid 1px;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
 .gimme-space {
   height: 1500px;
 }
 
+.userInput {
+  font-family: "Edu SA Beginner", cursive;
+}
 .userInput input {
   border-radius: 9999px;
   border: 1px solid;
@@ -1387,11 +1429,54 @@ input {
 
 .ae-head {
   font-size: 1.15rem;
-  font-family: "Source Sans Pro", sans-serif;
   color: rgba(25, 20, 20, 0.5);
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  font-family: "Gochi Hand", cursive;
+}
+
+.going-to {
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.pac-container {
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "Gochi Hand", cursive;
+}
+
+.pac-item {
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+
+.pac-item:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.pac-item-selected {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.pac-item-query {
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+
+.pac-matched {
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: #ffffff;
 }/*# sourceMappingURL=style.css.map */
