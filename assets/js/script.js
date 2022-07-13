@@ -14,6 +14,25 @@
 // // ical google cal for road trip
 // // progress bar for calculations
 
+var aeAirAPI = "3a02828a79b9963";
+var arrivalLocation = $("#arrival").val();
+var arrivalDate = $("#arrival-date").val();
+var departureDate = $("#departure-date").val();
+var departureLocation = $("#departure").val();
+var numberOfPass = $("#num-pass").val();
+var tripFuelCost = "";
+var milesPerGallon = $("#miles-per-gallon").val();
+var gasResultEl = $("gas-results-section");
+var milesToDrive = "";
+var itinerary = $("#itinerary").val();
+var classType = $("#select-class").val();
+var flightEl = $(".userInput");
+var initalEl = $(".login-box");
+var costToDriveEl = $(".results");
+var initSubmit = $("#init-submit");
+var driveCheck = $("#drive-check");
+var weatherApiKey = '76dea1d2eaa53c39fea214a799bab840'
+var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`
 // var aeAirAPI = "3a02828a79b9963";
 // var arrivalLocation = $("#arrival").val();
 // var arrivalDate = $("#arrival-date").val();
@@ -388,6 +407,10 @@ function generateFuelCost() {
 // }
 
 
+function renderCurrentForcast (weather , city, timeZone){
+  var {temperature , humidity , uvIndex} =weather
+  console.log(temperature. humidity,uvIndex);
+ }    
 // create spotify playlist
 
 // var requestToken = document.querySelector('#obtain-new-token')
@@ -411,20 +434,20 @@ function generateFuelCost() {
 //   public =  false
 // )
 // };
-// var requestToken = document.querySelector('#obtain-new-token')
-// var userId = document.querySelector('#user-profile')
-// var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
-// function createList (name , public){
-// fetch (createPlaylist);
-// response = request.post(
-//   createPlaylist,
-//   headers = {
-//     'Authorization': 'Bearer', requestToken },
-//     json={
-//      name: 'name',
-//     public : 'public',
-//   }
-// )};
+var requestToken = document.querySelector('#obtain-new-token')
+var userId = document.querySelector('#user-profile')
+var createPlaylist = `https://api.spotify.com/v1/users/${userId}/playlists`
+function createList (name , public){
+fetch (createPlaylist);
+response = request.post(
+  createPlaylist,
+  headers = {
+    'Authorization': 'Bearer', requestToken },
+    json={
+     name: 'name',
+    public : 'public',
+  }
+)};
 
    
 var weatherSearch=     

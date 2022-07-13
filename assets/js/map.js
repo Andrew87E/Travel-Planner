@@ -41,8 +41,8 @@ submitBtn.on("click", function (e) {
     .then(function (data) {
         console.log(data);
         var directions = data.routes[0].legs[0];
-        var destLatitude = data.routes[0].leg[0].end_location[0].lat
-        var destLongitude = data.routes[0].leg[0].end_location[0].lng
+        destLatitude = data.routes[0].legs[0].end_location[0].lat;
+        destLongitude = data.routes[0].legs[0].end_location[0].lng;
         var distance = directions.distance.text;
         var duration = directions.duration.text;
         var steps = directions.steps;
