@@ -16,6 +16,9 @@ var distance;
 var duration;
 var steps;
 var stepsArray;
+var destLatitude;
+var destLongitude;
+
 
 function init() {
   initalEl.hide();
@@ -38,6 +41,8 @@ submitBtn.on("click", function (e) {
     .then(function (data) {
         console.log(data);
         var directions = data.routes[0].legs[0];
+        destLatitude = data.routes[0].legs[0].end_location[0].lat;
+        destLongitude = data.routes[0].legs[0].end_location[0].lng;
         var distance = directions.distance.text;
         var duration = directions.duration.text;
         var steps = directions.steps;
