@@ -1117,12 +1117,12 @@ input {
 }
 /* Color Theme Swatches in Hex */
 .ae-footer {
-  background-image: url(../img/transparent-map.png);
+  background-image: url(../img/pexels-max-andrey-1197095.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #554940d2;
-  color: #dbdcdf;
+  background-color: #F2E4D8;
+  color: #ffffff;
   position: relative;
   padding: 0;
   border: 0;
@@ -1130,16 +1130,8 @@ input {
 }
 .ae-footer a {
   text-decoration: none;
-  color: #ffffff;
-  font-family:Arial, Helvetica, sans-serif
+  color: #13E800;
 }
-
-.ae-footer h4{
-  color: #ffffff;
-  font-size: larger;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
 .ae-footer a img {
   height: 128px;
   width: 128px;
