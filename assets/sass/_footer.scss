@@ -1,9 +1,9 @@
 @import './variables';
 
 .ae-footer {
-  background-image: url(../img/pngfind.com-world-map-png-591441.png);
+  background-image: url(../img/footer-background-01.jpg);
   @include background;
-  color:azure;
+  color: $beauty-blue;
   position: relative;
   padding: 0;
   border: 0;
@@ -17,4 +17,3 @@
       border-radius: 9999px;
     }
   }
-}
