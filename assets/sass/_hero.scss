@@ -2,13 +2,19 @@
 
 .ae-hero{
     position: relative;
-    height: 1500px;
+    height: 2000px;
     background-image: url(../img/pexels-pixabay-56832.jpg);
     padding: 0;
     display: flex;
+    flex: block;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    // margin-right: -12px;
+    margin-bottom: -16px;
     // margin: 0;
-    margin-top: 12px;
+    // margin-top: 12px;
+    // display: grid;
+    // grid-template-columns: 2fr 1fr 2fr;
+
 }

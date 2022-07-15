@@ -3,8 +3,9 @@
 .ae-spot {
   position: absolute;
   right: 0;
-  top: 15%;
-  margin-top: 50px;
+  // top: 15%;
+  margin-left: 10px;
+  margin-top: 700px;
   width: 550px;
   label {
     font-size: larger;
@@ -63,6 +64,7 @@
   margin: 5px;
   margin-top: 25px;
   // width: 700px;
+  // z-index: 200;
   &:visited {
     color: $green;
     text-decoration: none;
