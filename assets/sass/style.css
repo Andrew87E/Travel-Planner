@@ -893,14 +893,15 @@ input {
 /* Color Theme Swatches in Hex */
 .ae-hero {
   position: relative;
-  height: 1500px;
+  height: 2000px;
   background-image: url(../img/pexels-pixabay-56832.jpg);
   padding: 0;
   display: flex;
+  flex: block;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin-top: 12px;
+  margin-bottom: -16px;
 }
 
 /* Color Theme Swatches in Hex */
@@ -1155,6 +1156,26 @@ input {
     border-radius: 0;
   }
 }
+@media only screen and (max-width: 1519px) {
+  .ae-card {
+    margin-top: 150px;
+  }
+}
+@media only screen and (max-width: 978px) {
+  .ae-spot {
+    margin-top: 1500px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .aa-one {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .aa-one, img {
+    width: 100%;
+  }
+}
 /* Color Theme Swatches in Hex */
 .gas-card {
   position: absolute;
@@ -1162,6 +1183,7 @@ input {
   left: 50%;
   width: 30%;
   padding: 40px;
+  margin-top: 200px;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.5);
@@ -1181,8 +1203,8 @@ input {
 .ae-spot {
   position: absolute;
   right: 0;
-  top: 15%;
-  margin-top: 50px;
+  margin-left: 10px;
+  margin-top: 700px;
   width: 550px;
 }
 .ae-spot label {
@@ -1287,7 +1309,7 @@ input {
   max-width: fit-content;
   min-width: 250px;
   position: absolute;
-  bottom: 0;
+  margin-top: 200px;
 }
 
 .ae-card {
@@ -1297,7 +1319,6 @@ input {
   color: #ffffff;
   margin-bottom: 15px;
   margin-left: 15px;
-  z-index: 1;
   font-size: small;
 }
 .ae-card h3 {
