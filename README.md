@@ -14,7 +14,8 @@
 
 Fill in the Let's Take a Trip pop up box with answers for the information prompted regarding your travel plans. 
 
-<img src="Insert Img Source" width=650 height=350 alt="Let's Take a Trip">
+https://user-images.githubusercontent.com/107494937/180061568-02d03e09-2d6f-4382-8d52-2fa9a98a1ecb.mp4
+
 
 Next you will be presented with "need to finish what will pop up after". 
 <details>
