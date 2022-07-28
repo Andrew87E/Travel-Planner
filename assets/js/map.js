@@ -9,7 +9,7 @@
 
 var heroEl = $(".ae-hero");
 var mapEl = $("#map");
-var andrewA = "AIzaSyCBrNRjKT6zvV08v1SM6-v-kbUtx-cYo8g";
+var andrewA = "";
 var destinationInput = document.getElementById("going-to");
 var originInput = document.getElementById("leaving");
 var aeMap = $("#ae-map");
@@ -34,7 +34,7 @@ spotEl.hide();
 
 // var destLatitude;
 // var destLongitude;
-// var weatherApiKey = "76dea1d2eaa53c39fea214a799bab840";
+// var weatherApiKey = "";
 // var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${destLatitude}&lon=${destLongitude}&exclude={part}&appid=${weatherApiKey}`;
 
 $(document).keypress(function (event) {
