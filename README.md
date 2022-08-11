@@ -1,3 +1,10 @@
+![Header]![pexels-pixabay-56832](https://user-images.githubusercontent.com/107494937/184211770-f170bb6b-68c5-42e9-a7cd-600a109dee41.jpg)
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+
 # Project 1 💻
  ## A Simple Application For Planning A Road Trip 🚇
  Made for Project 1 UT-Austin coding bootcamp
