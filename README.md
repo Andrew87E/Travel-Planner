@@ -29,8 +29,7 @@ In orther to accomplish the project, the following steps were done:
 
 
 
-https://user-images.githubusercontent.com/107494937/184216797-8749027a-ebe2-47ad-8a0f-57899d83e21c.mp4
-
+![ezgif com-gif-maker(4)](https://user-images.githubusercontent.com/107494937/184216984-075e9dd2-0007-4ba8-bd49-2093a9c8d1d6.gif)
 
 
 
