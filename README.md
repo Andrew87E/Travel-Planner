@@ -43,9 +43,6 @@ In orther to accomplish the project, the following steps were done:
 
 Fill in the Let's Take a Trip pop up box with answers for the information prompted regarding your travel plans. 
 
-
-https://user-images.githubusercontent.com/107494937/180061568-02d03e09-2d6f-4382-8d52-2fa9a98a1ecb.mp4
-
 Next you will be presented with "need to finish what will pop up after". 
 
 The generator will alert the user if they have not selected anything!  
