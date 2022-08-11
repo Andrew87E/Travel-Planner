@@ -14,7 +14,18 @@
 
 ## Demo ⚠️
 
-[Here is a demo of it in action!](Insert Site Here) 
+[Here is a demo of it in action!](https://andrew87e.github.io/Travel-Planner/) 
+
+
+
+## The Process
+In orther to accomplish the project, the following steps were done:
+  - Used a CSS framework other than Bootstrap
+  - Polished Ui
+  - Did not use alerts, confirms, or prompts (use modals).
+  - Created a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+  - Used client-side storage to store persistent data
+  - Usde at least two server-side APIs.
 
 
 
@@ -95,3 +106,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
  
 
 MIT © [Andrew Edwards](https://github.com/andrew87e)
+
+MIT License
+
+Copyright (c) 2022
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
