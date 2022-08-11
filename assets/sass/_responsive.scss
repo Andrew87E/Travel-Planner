@@ -9,14 +9,28 @@
     }
   }
 }
+
+@media only screen and (max-width: 1519px) {
+    .ae-card {
+      margin-top: 150px;
+    }
+}
+
   
-  @media only screen and (max-width: 1266px) {
+  @media only screen and (max-width: 978px) {
+    .ae-spot{
+      margin-top: 1500px;
+    }
 
   }
   @media only screen and (max-width: 960px) {
-
+.aa-one{
+ width: 50%;
+}
   }
   
   @media only screen and (max-width: 420px) {
-
+.aa-one,img{
+  width: 100%;
+}
   }

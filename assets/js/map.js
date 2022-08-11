@@ -1,6 +1,15 @@
+/*TO-DO
+1 add map
+2 weather
+3 styling
+4 pics
+5 polish
+6 add duration to gas card
+*/
+
 var heroEl = $(".ae-hero");
 var mapEl = $("#map");
-var andrewA = "AIzaSyCBrNRjKT6zvV08v1SM6-v-kbUtx-cYo8g";
+var andrewA = "";
 var destinationInput = document.getElementById("going-to");
 var originInput = document.getElementById("leaving");
 var aeMap = $("#ae-map");
@@ -15,20 +24,18 @@ var regfuelCost = 0;
 var premFuelCost = 0;
 var dieselFuelCost = 0;
 var formEl = $(".login-box");
-
 var directions;
 var distance;
 var duration;
 var steps;
 var stepsArray;
+var spotEl = $(".ae-spot");
+spotEl.hide();
+
 // var destLatitude;
 // var destLongitude;
-// var weatherApiKey = "76dea1d2eaa53c39fea214a799bab840";
+// var weatherApiKey = "";
 // var weatherApiCall = `https://api.openweathermap.org/data/3.0/onecall?lat=${destLatitude}&lon=${destLongitude}&exclude={part}&appid=${weatherApiKey}`;
-
-function init() {
-  initalEl.hide();
-}
 
 $(document).keypress(function (event) {
   if (event.which == "13") {
@@ -41,6 +48,7 @@ $(document).keypress(function (event) {
 // }
 submitBtn.on("click", function (e) {
   e.preventDefault();
+  spotEl.show();
   var destination = destinationInput.value;
   var origin = originInput.value;
   var url = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${andrewA}`;
@@ -65,11 +73,25 @@ submitBtn.on("click", function (e) {
       var stepsString = stepsArray.join("<br>");
       console.log(stepsString);
       var directionsEl = $(".directions");
-      directionsEl.html(`<h2>Directions</h2>
+      directionsEl.html(`
+      <div class="ae-card">
+      <header class="ae-card-header">
+      <h3>Directions</h3>
+	</header>
+  <br>
+  <div>
+		<div>
         <p>${stepsString}</p>
-        <p>Distance: ${distance}</p>
-        <p>Duration: ${duration}</p>`);
+        
+         <p>Distance: ${distance}</p>
+        
+        <p>Duration: ${duration}</p>
+       </div> 
+        </div>
+        </div>
+      `);
     });
+
   // .catch(function (err) {
   //   console.log(err);
   // });
@@ -111,10 +133,50 @@ submitBtn.on("click", function (e) {
       var stepsString = stepsArray.join("<br>");
       console.log(stepsString);
       generateFuelCost(distance, milesPerGallon);
+      //   generateSpotify();
     });
   // .catch(function (err) {
   //   console.log(err);
   // });
+
+  //   function generateSpotify() {
+  //     heroEl.append(
+  //       '<div class="container ae-transparent spotify-card">' +
+  //         "<h1>" +
+  //         "Generate a playlist with Spotify!" +
+  //         "</h1>" +
+  //         '<form action="">' +
+  //         '<input type="hidden" id="hidden_token">' +
+  //         '<div class="col-sm-6 form-group row mt-4 px-0">' +
+  //         '<label for="Genre" class="form-label col-sm-2">Genre:</label>' +
+  //         '<select name="" id="select_genre" class="form-control form-control-sm col-sm-10">' +
+  //         "<option>Select...</option>" +
+  //         "</select>" +
+  //         "</div>" +
+  //         '<div class="col-sm-6 form-group row px-0">' +
+  //         '<label for="Genre" class="form-label col-sm-2">Playlists:</label>' +
+  //         '<select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">' +
+  //         "<option>Select...</option>" +
+  //         "</select>" +
+  //         "</div>" +
+  //         '<div class="col-sm-6 row form-group px-0">' +
+  //         '<button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Search</button>' +
+  //         "</div>" +
+  //         "</form>" +
+  //         '<div class="row">' +
+  //         '<div class="col-sm-6 px-0">' +
+  //         '<div class="list-group song-list">' +
+  //         "</div>" +
+  //         "</div>" +
+  //         '<div class="offset-md-1 col-sm-4" id="song-detail">' +
+  //         "</div>" +
+  //         "</div>" +
+  //         "</div>" +
+  //         "</div>"
+  //     );
+  //     spotifyCardEl = $(".spotify-card");
+
+  //   }
 
   function generateFuelCost() {
     if (fuelType === "premium-fuel") {
@@ -124,7 +186,7 @@ submitBtn.on("click", function (e) {
       gasCardEl.append(
         '<div class="gas-cost">' +
           "<h2>" +
-          "Regular Fuel Cost: " +
+          "Premium Fuel Cost: " +
           "$" +
           premFuelCost +
           "</h2>" +
@@ -137,7 +199,7 @@ submitBtn.on("click", function (e) {
       gasCardEl.append(
         '<div class="gas-cost">' +
           "<h2>" +
-          "Premium Fuel Cost: " +
+          "Regular Fuel Cost: " +
           "$" +
           regFuelCost +
           "</h2>" +
