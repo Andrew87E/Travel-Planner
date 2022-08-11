@@ -60,6 +60,12 @@ Once you make all of your choices. your cost of the roadtrip and directions will
 
 ![ezgif com-gif-maker(3)](https://user-images.githubusercontent.com/107494937/184215536-2ecdfc8d-1968-4eec-b3e7-9c745902b086.gif)
 
+## Future Development 
+
+   - Analytics: Give user suggestions based on low gasoline prices
+   - Air Travel: Incorporte flight costs so users can compare.
+   - Electric Vehicle Options: Suggest Charging Stations
+
 
 ## Bug Testers 🐛
 
