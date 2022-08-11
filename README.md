@@ -12,6 +12,8 @@
 
 ![UTRT-Planner]
 
+
+
 ## Demo ⚠️
 
 [Here is a demo of it in action!](https://andrew87e.github.io/Travel-Planner/) 
@@ -32,6 +34,9 @@ In orther to accomplish the project, the following steps were done:
 ![ezgif com-gif-maker(4)](https://user-images.githubusercontent.com/107494937/184216984-075e9dd2-0007-4ba8-bd49-2093a9c8d1d6.gif)
 
 
+## Technologies Used
+
+![Tech Used](https://user-images.githubusercontent.com/107494937/184217403-671bb0af-fa96-47b5-895a-449d3345182d.PNG)
 
 
 ## Instructions 📝
