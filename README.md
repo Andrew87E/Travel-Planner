@@ -29,6 +29,12 @@ In orther to accomplish the project, the following steps were done:
 
 
 
+https://user-images.githubusercontent.com/107494937/184216797-8749027a-ebe2-47ad-8a0f-57899d83e21c.mp4
+
+
+
+
+
 ## Instructions 📝
 
 Fill in the Let's Take a Trip pop up box with answers for the information prompted regarding your travel plans. 
