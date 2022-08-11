@@ -33,43 +33,22 @@ In orther to accomplish the project, the following steps were done:
 
 Fill in the Let's Take a Trip pop up box with answers for the information prompted regarding your travel plans. 
 
-<img src="Insert Img Source" width=650 height=350 alt="Let's Take a Trip">
-
 Next you will be presented with "need to finish what will pop up after". 
-<details>
-    <summary>Need to Fill Out</summary>
-    <br>
-    The generator will alert the user if they have not selected anything!  
-    <br>
-        <img src="Enter Image Source for No Input Submit" width=450 height=350 alt="Happens when no valid entry"><br>
-<br>
-<br>
-<br>
-<br>
-</details>
 
-<img src="Img Source">
+The generator will alert the user if they have not selected anything!  
 
 Input your destination in the Where Are You Headed prompt. As you begin typing out the destination name, you may see the name autopopulating in a dropbox. Click the autopopulated destination name.
 
-<img src="Img Source" width=650 height=350 alt="Where Are You Headed">
-
 Input your destination in the Where Are You Coming From prompt. As you begin typing out the departure location name, you may see the name autopopulating in a dropbox. Click the autopopulated departure name.
-
-<img src="Img Source" width=650 height=350 alt="Where Are You Coming From">
 
 In the How Many MPG does your Vehicle Get box, input your vehicles MPG. 
 
-<img src="Img Source" width=650 height=350 alt="MPG">
-
 Finally, choose the type of fuel your vehicle takes. 
-
-<img src="IMG Source" width=650 height=350 alt="Fuel Choice">
 
 Once you make all of your choices. your cost of the roadtrip and directions will populate!
 
-<img src="Img Source" width=650 height=350 alt="Final Submit">
 
+![ezgif com-gif-maker(3)](https://user-images.githubusercontent.com/107494937/184215536-2ecdfc8d-1968-4eec-b3e7-9c745902b086.gif)
 
 
 ## Bug Testers 🐛
