@@ -1,4 +1,4 @@
-![pexels-pixabay-56832](https://user-images.githubusercontent.com/107494937/184212066-97cdffb2-1cbd-4fcb-8e27-200fd8d63439.jpg)
+![ezgif com-gif-maker(3)](https://user-images.githubusercontent.com/107494937/184215536-2ecdfc8d-1968-4eec-b3e7-9c745902b086.gif)
 
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
@@ -10,42 +10,15 @@
  ## A Simple Application For Planning A Road Trip 🚇
  Made for Project 1 UT-Austin coding bootcamp
 
-![UTRT-Planner]
-
-
-
 ## Demo ⚠️
 
 [Here is a demo of it in action!](https://andrew87e.github.io/Travel-Planner/) 
-
-
-
-## The Process
-In orther to accomplish the project, the following steps were done:
-  - Used a CSS framework other than Bootstrap
-  - Polished Ui
-  - Did not use alerts, confirms, or prompts (use modals).
-  - Created a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-  - Used client-side storage to store persistent data
-  - Usde at least two server-side APIs.
-
-
-
-![ezgif com-gif-maker(4)](https://user-images.githubusercontent.com/107494937/184216984-075e9dd2-0007-4ba8-bd49-2093a9c8d1d6.gif)
-
-
-## Technologies Used
-
-![Tech Used](https://user-images.githubusercontent.com/107494937/184217403-671bb0af-fa96-47b5-895a-449d3345182d.PNG)
-
 
 ## Instructions 📝
 
 Fill in the Let's Take a Trip pop up box with answers for the information prompted regarding your travel plans. 
 
 Next you will be presented with "need to finish what will pop up after". 
-
-The generator will alert the user if they have not selected anything!  
 
 Input your destination in the Where Are You Headed prompt. As you begin typing out the destination name, you may see the name autopopulating in a dropbox. Click the autopopulated destination name.
 
@@ -58,7 +31,14 @@ Finally, choose the type of fuel your vehicle takes.
 Once you make all of your choices. your cost of the roadtrip and directions will populate!
 
 
-![ezgif com-gif-maker(3)](https://user-images.githubusercontent.com/107494937/184215536-2ecdfc8d-1968-4eec-b3e7-9c745902b086.gif)
+## Outline and wireframe 
+
+![ezgif com-gif-maker(4)](https://user-images.githubusercontent.com/107494937/184216984-075e9dd2-0007-4ba8-bd49-2093a9c8d1d6.gif)
+
+## Technologies Used
+
+![Tech Used](https://user-images.githubusercontent.com/107494937/184217403-671bb0af-fa96-47b5-895a-449d3345182d.PNG)
+
 
 ## Future Development 
 
@@ -66,21 +46,6 @@ Once you make all of your choices. your cost of the roadtrip and directions will
    - Air Travel: Incorporte flight costs so users can compare.
    - Electric Vehicle Options: Suggest Charging Stations
 
-
-## Bug Testers 🐛
-
-Mobile Tester <br>
-
-Desktop Tester 
-
-👩🏾‍💻 **Contributers to project development:**
-
-<table>
-  <tr>
-<td align="center"><a href="https://github.com/iandarland"><img src="https://avatars.githubusercontent.com/u/79872626?v=4" width="100px;" alt=""/><br /><sub><b>Ian Darland 📆🔌💡 </b></sub></a></td>
-<td align="center"><a href="https://github.com/vTajae?tab=overview&from=2022-07-01&to=2022-07-31"><img src="https://avatars.githubusercontent.com/u/61326464?v=4" width="100px;" alt=""/><br /><sub><b>VTajae 🌍📖</b></sub></a></td>
-    </tr>
-</table>
 
 
 # Team ✨
