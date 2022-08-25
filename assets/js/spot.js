@@ -1,12 +1,3 @@
-/* section for spotify api
-https://engineering.atspotify.com/2015/03/understanding-spotify-web-api/
-https://developer.spotify.com/console/browse/
-https://www.youtube.com/watch?v=c5sWvP9h3s8
-https://developer.spotify.com/documentation/
-https://developer.spotify.com/documentation/web-api/quick-start/
-https://developer.spotify.com/documentation/web-api/reference/
-*/
-
 const APIController = (function () {
   const clientId = "fd92cbedfcfb43238cc62e23b5e30f02";
   const clientSecret = "947bc8aa427841519415c68add0ce601";
